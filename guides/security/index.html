@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://owe-s.github.io/gkit-website/guides/admin-guide/">
+        <link rel="canonical" href="https://owe-s.github.io/gkit-website/guides/security/">
       
       
-        <link rel="prev" href="../user-guide/">
+        <link rel="prev" href="../admin-guide/">
       
-      
-        <link rel="next" href="../security/">
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Administratorhåndbok - GKIT Website Dokumentasjon</title>
+        <title>Sikkerhet & API-nøkler - GKIT Website Dokumentasjon</title>
       
     
     
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#administratorhandbok" class="md-skip">
+        <a href="#sikkerhet-og-api-nkler" class="md-skip">
           Gå til innhold
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Administratorhåndbok
+              Sikkerhet & API-nøkler
             
           </span>
         </div>
@@ -795,6 +793,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administratorhåndbok
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -814,7 +840,7 @@
   <span class="md-ellipsis">
     
   
-    Administratorhåndbok
+    Sikkerhet & API-nøkler
   
 
     
@@ -832,7 +858,7 @@
   <span class="md-ellipsis">
     
   
-    Administratorhåndbok
+    Sikkerhet & API-nøkler
   
 
     
@@ -858,15 +884,304 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tilgang" class="md-nav__link">
+  <a href="#firebase-api-nkler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tilgang
+        Firebase API-nøkler
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tilgang">
+    <nav class="md-nav" aria-label="Firebase API-nøkler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firebase-api-nkler-er-trygge-a-dele-offentlig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Firebase API-nøkler er TRYGGE å dele offentlig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eksempel-fra-var-kode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eksempel fra vår kode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firestore-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firestore Security Rules
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Firestore Security Rules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vare-navrende-regler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Våre nåværende regler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hva-betyr-dette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hva betyr dette?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hva-skal-ikke-committes-til-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hva skal IKKE committes til Git?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hva skal IKKE committes til Git?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aldri-commit-disse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ ALDRI commit disse:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trygt-a-committe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Trygt å committe:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitignore-konfigurasjon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        .gitignore konfigurasjon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-bruk-firebase-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Bruk Firebase Security Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-aldri-stol-pa-client-side-validering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Aldri stol på client-side validering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bruk-miljvariabler-for-hemmeligheter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bruk miljøvariabler for hemmeligheter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-test-security-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Test Security Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-aldri-hardkod-hemmeligheter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Aldri hardkod hemmeligheter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sjekkliste-fr-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sjekkliste før commit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hva-gjre-hvis-hemmelighet-committes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hva gjøre hvis hemmelighet committes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hva gjøre hvis hemmelighet committes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-roter-nkkelen-umiddelbart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Roter nøkkelen umiddelbart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fjern-fra-git-historikk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fjern fra Git-historikk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-bruk-github-secret-scanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Bruk GitHub Secret Scanning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-av-sikkerhet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing av sikkerhet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing av sikkerhet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#firebase-security-rules-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firebase Security Rules testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overvaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overvåking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overvåking">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -881,10 +1196,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roller-og-tilganger" class="md-nav__link">
+  <a href="#github" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Roller og tilganger
+        GitHub
       
     </span>
   </a>
@@ -897,444 +1212,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#administrere-kontakthenvendelser" class="md-nav__link">
+  <a href="#kontakt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Administrere kontakthenvendelser
+        Kontakt
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Administrere kontakthenvendelser">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firestore-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firestore Console
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#felter-i-kontakt-dokumenter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Felter i kontakt-dokumenter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#endre-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endre status
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#administrere-innhold" class="md-nav__link">
+  <a href="#ressurser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Administrere innhold
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Administrere innhold">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mock-cms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mock CMS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#endre-innhold" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Endre innhold
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fremtidig-cms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fremtidig CMS
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firebase-hosting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firebase Hosting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Firebase Hosting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deploy-ny-versjon" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deploy ny versjon
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rollback" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rollback
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-domain" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom domain
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firebase-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firebase Functions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Firebase Functions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#administrere-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Administrere Functions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-miljvariabler" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Function-miljøvariabler
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firestore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firestore
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Firestore">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#indexes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Indexes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#analytics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Analytics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Analytics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#google-analytics-4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Google Analytics 4
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#firebase-analytics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firebase Analytics
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#performance-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance Monitoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-logging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error Logging
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sikkerhet" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sikkerhet
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sikkerhet">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firestore-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firestore Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kostnader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kostnader
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Kostnader">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firebase-pricing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firebase Pricing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spark-plan-gratis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Spark Plan (Gratis)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#blaze-plan-pay-as-you-go" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Blaze Plan (Pay-as-you-go)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Support
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Support">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#teknisk-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Teknisk support
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gkit-intern-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GKIT Intern Support
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#neste-steg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Neste steg
+        Ressurser
       
     </span>
   </a>
@@ -1345,34 +1237,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../security/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sikkerhet & API-nøkler
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1405,244 +1269,221 @@
   
 
 
-<h1 id="administratorhandbok">Administratorhåndbok<a class="headerlink" href="#administratorhandbok" title="Permanent link">&para;</a></h1>
-<p>Guide for administratorer av GKIT Website.</p>
-<h2 id="tilgang">Tilgang<a class="headerlink" href="#tilgang" title="Permanent link">&para;</a></h2>
-<h3 id="firebase-console">Firebase Console<a class="headerlink" href="#firebase-console" title="Permanent link">&para;</a></h3>
-<p>Logg inn på <a href="https://console.firebase.google.com/">Firebase Console</a>:</p>
-<ul>
-<li>Prosjekt: <code>golfklubb-it-website</code></li>
-<li>URL: <code>https://console.firebase.google.com/u/0/project/golfklubb-it-website</code></li>
-</ul>
-<h3 id="roller-og-tilganger">Roller og tilganger<a class="headerlink" href="#roller-og-tilganger" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Owner</strong> - Full tilgang</li>
-<li><strong>Editor</strong> - Kan endre konfigurasjon og data</li>
-<li><strong>Viewer</strong> - Kun lesetilgang</li>
-</ul>
-<h2 id="administrere-kontakthenvendelser">Administrere kontakthenvendelser<a class="headerlink" href="#administrere-kontakthenvendelser" title="Permanent link">&para;</a></h2>
-<h3 id="firestore-console">Firestore Console<a class="headerlink" href="#firestore-console" title="Permanent link">&para;</a></h3>
+<h1 id="sikkerhet-og-api-nkler">Sikkerhet og API-nøkler<a class="headerlink" href="#sikkerhet-og-api-nkler" title="Permanent link">&para;</a></h1>
+<p>Viktig informasjon om sikkerhet i GKIT Website.</p>
+<h2 id="firebase-api-nkler">Firebase API-nøkler<a class="headerlink" href="#firebase-api-nkler" title="Permanent link">&para;</a></h2>
+<h3 id="firebase-api-nkler-er-trygge-a-dele-offentlig">✅ Firebase API-nøkler er TRYGGE å dele offentlig<a class="headerlink" href="#firebase-api-nkler-er-trygge-a-dele-offentlig" title="Permanent link">&para;</a></h3>
+<p>Firebase API-nøkkelen i <code>src/firebase.ts</code> er <strong>designet for å være offentlig</strong> og er trygt å committe til Git.</p>
+<p><strong>Hvorfor?</strong></p>
 <ol>
-<li>Gå til Firebase Console</li>
-<li>Velg "Firestore Database"</li>
-<li>Naviger til <code>contacts</code>-collection</li>
-<li>Se alle henvendelser</li>
+<li><strong>Klient-side nøkler</strong> - Må være tilgjengelige i frontend-koden</li>
+<li><strong>Sikkerhet håndteres av Firestore Security Rules</strong> - Ikke av API-nøkkelen</li>
+<li><strong>Identifiserer kun prosjektet</strong> - Gir ingen tilgang i seg selv</li>
+<li><strong>Google-anbefalt</strong> - Firebase dokumentasjon bekrefter dette er trygt</li>
 </ol>
-<h3 id="felter-i-kontakt-dokumenter">Felter i kontakt-dokumenter<a class="headerlink" href="#felter-i-kontakt-dokumenter" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Kontaktpersonens navn&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;E-postadresse&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Klubb/Bedrift&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;interest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Interesseområde&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Melding&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-12-02T10:30:00Z&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new | contacted | closed&quot;</span>
-<span class="p">}</span>
+<p><strong>Referanse</strong>: <a href="https://firebase.google.com/docs/projects/api-keys">Firebase API Keys Best Practices</a></p>
+<h3 id="eksempel-fra-var-kode">Eksempel fra vår kode<a class="headerlink" href="#eksempel-fra-var-kode" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">firebaseConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AIzaSyA81DXrTztXQz9eYHeSysneh1fwAzC_GRc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">authDomain</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;golfklubb-it-website.firebaseapp.com&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">projectId</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;golfklubb-it-website&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// ... resten av konfigurasjonen</span>
+<span class="p">};</span>
 </code></pre></div>
-<h3 id="endre-status">Endre status<a class="headerlink" href="#endre-status" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Åpne kontakt-dokumentet</li>
-<li>Endre <code>status</code>-feltet:</li>
-<li><code>new</code> - Ny henvendelse</li>
-<li><code>contacted</code> - Kontaktet</li>
-<li><code>closed</code> - Lukket</li>
-</ol>
-<h2 id="administrere-innhold">Administrere innhold<a class="headerlink" href="#administrere-innhold" title="Permanent link">&para;</a></h2>
-<h3 id="mock-cms">Mock CMS<a class="headerlink" href="#mock-cms" title="Permanent link">&para;</a></h3>
-<p>Innhold styres foreløpig av <code>src/mock_cms.json</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;blog&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="endre-innhold">Endre innhold<a class="headerlink" href="#endre-innhold" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Åpne <code>src/mock_cms.json</code></li>
-<li>Endre JSON-data</li>
-<li>Commit og push til GitHub</li>
-<li>Automatisk deployment</li>
-</ol>
-<h3 id="fremtidig-cms">Fremtidig CMS<a class="headerlink" href="#fremtidig-cms" title="Permanent link">&para;</a></h3>
-<p>GKIT Website vil få et fullverdig CMS (ClubsiteCMS):</p>
-<ul>
-<li>Web-basert admin-panel</li>
-<li>WYSIWYG-editor</li>
-<li>Bildehåndtering</li>
-<li>Versjonskontroll</li>
-</ul>
-<h2 id="firebase-hosting">Firebase Hosting<a class="headerlink" href="#firebase-hosting" title="Permanent link">&para;</a></h2>
-<h3 id="deploy-ny-versjon">Deploy ny versjon<a class="headerlink" href="#deploy-ny-versjon" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Build</span>
-npm<span class="w"> </span>run<span class="w"> </span>build
-
-<span class="c1"># Deploy</span>
-firebase<span class="w"> </span>deploy<span class="w"> </span>--only<span class="w"> </span>hosting
-</code></pre></div>
-<h3 id="rollback">Rollback<a class="headerlink" href="#rollback" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Se hosting-historikk</span>
-firebase<span class="w"> </span>hosting:channel:list
-
-<span class="c1"># Rollback til forrige versjon</span>
-firebase<span class="w"> </span>hosting:clone<span class="w"> </span>source:target
-</code></pre></div>
-<h3 id="custom-domain">Custom domain<a class="headerlink" href="#custom-domain" title="Permanent link">&para;</a></h3>
-<p>Sett opp custom domain i Firebase Console:</p>
-<ol>
-<li>Gå til "Hosting"</li>
-<li>Klikk "Add custom domain"</li>
-<li>Følg instruksjonene</li>
-<li>Oppdater DNS-records</li>
-</ol>
-<h2 id="firebase-functions">Firebase Functions<a class="headerlink" href="#firebase-functions" title="Permanent link">&para;</a></h2>
-<h3 id="administrere-functions">Administrere Functions<a class="headerlink" href="#administrere-functions" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Deploy functions</span>
-firebase<span class="w"> </span>deploy<span class="w"> </span>--only<span class="w"> </span>functions
-
-<span class="c1"># Se function logs</span>
-firebase<span class="w"> </span>functions:log
-
-<span class="c1"># Delete function</span>
-firebase<span class="w"> </span>functions:delete<span class="w"> </span>functionName
-</code></pre></div>
-<h3 id="function-miljvariabler">Function-miljøvariabler<a class="headerlink" href="#function-miljvariabler" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Sett miljøvariabel</span>
-firebase<span class="w"> </span>functions:config:set<span class="w"> </span>api.key<span class="o">=</span><span class="s2">&quot;secret-key&quot;</span>
-
-<span class="c1"># Hent konfigurasjon</span>
-firebase<span class="w"> </span>functions:config:get
-
-<span class="c1"># Deploy etter endring</span>
-firebase<span class="w"> </span>deploy<span class="w"> </span>--only<span class="w"> </span>functions
-</code></pre></div>
-<h2 id="firestore">Firestore<a class="headerlink" href="#firestore" title="Permanent link">&para;</a></h2>
-<h3 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h3>
-<p>Manuell backup:</p>
-<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>firestore<span class="w"> </span><span class="nb">export</span><span class="w"> </span>gs://backup-bucket/backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>
-</code></pre></div>
-<p>Automatisk backup (sett opp i Firebase Console):</p>
-<ol>
-<li>Gå til "Firestore Database"</li>
-<li>Klikk "Import/Export"</li>
-<li>Sett opp scheduled export</li>
-</ol>
-<h3 id="indexes">Indexes<a class="headerlink" href="#indexes" title="Permanent link">&para;</a></h3>
-<p>Opprett indexes for queries:</p>
-<ol>
-<li>Kjør query som feiler</li>
-<li>Firebase gir lenke til å opprette index</li>
-<li>Klikk lenken og opprett index</li>
-</ol>
-<p>Eller definer i <code>firestore.indexes.json</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;indexes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;collectionGroup&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;contacts&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;queryScope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;COLLECTION&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;fieldPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;status&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ASCENDING&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;fieldPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DESCENDING&quot;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">      </span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="analytics">Analytics<a class="headerlink" href="#analytics" title="Permanent link">&para;</a></h2>
-<h3 id="google-analytics-4">Google Analytics 4<a class="headerlink" href="#google-analytics-4" title="Permanent link">&para;</a></h3>
-<p>Se statistikk i <a href="https://analytics.google.com/">GA4 Console</a>:</p>
-<ul>
-<li>Sidevisninger</li>
-<li>Brukerflyt</li>
-<li>Konverteringer</li>
-<li>Events</li>
-</ul>
-<h3 id="firebase-analytics">Firebase Analytics<a class="headerlink" href="#firebase-analytics" title="Permanent link">&para;</a></h3>
-<p>Se realtime analytics i Firebase Console:</p>
-<ol>
-<li>Gå til "Analytics"</li>
-<li>Se dashboard med:</li>
-<li>Active users</li>
-<li>Top events</li>
-<li>Top pages</li>
-</ol>
-<h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<h3 id="performance-monitoring">Performance Monitoring<a class="headerlink" href="#performance-monitoring" title="Permanent link">&para;</a></h3>
-<p>Firebase Performance Monitoring:</p>
-<ol>
-<li>Gå til "Performance" i Firebase Console</li>
-<li>Se metrics:</li>
-<li>Page load time</li>
-<li>Network requests</li>
-<li>Custom traces</li>
-</ol>
-<h3 id="error-logging">Error Logging<a class="headerlink" href="#error-logging" title="Permanent link">&para;</a></h3>
-<p>Se feil i Firebase Console:</p>
-<ol>
-<li>Gå til "Functions"</li>
-<li>Klikk "Logs"</li>
-<li>Filtrer på "Error"</li>
-</ol>
-<h2 id="sikkerhet">Sikkerhet<a class="headerlink" href="#sikkerhet" title="Permanent link">&para;</a></h2>
-<h3 id="firestore-rules">Firestore Rules<a class="headerlink" href="#firestore-rules" title="Permanent link">&para;</a></h3>
-<p>Sikkerhet defineres i <code>firestore.rules</code>:</p>
+<p>Dette er <strong>100% trygt</strong> å ha i offentlig repository.</p>
+<h2 id="firestore-security-rules">Firestore Security Rules<a class="headerlink" href="#firestore-security-rules" title="Permanent link">&para;</a></h2>
+<p>All sikkerhet styres av Firestore Security Rules i <code>firestore.rules</code>.</p>
+<h3 id="vare-navrende-regler">Våre nåværende regler<a class="headerlink" href="#vare-navrende-regler" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="nx">rules_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">;</span>
+
 <span class="nx">service</span><span class="w"> </span><span class="nx">cloud</span><span class="p">.</span><span class="nx">firestore</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">match</span><span class="w"> </span><span class="o">/</span><span class="nx">databases</span><span class="o">/</span><span class="p">{</span><span class="nx">database</span><span class="p">}</span><span class="o">/</span><span class="nx">documents</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">match</span><span class="w"> </span><span class="o">/</span><span class="nx">contacts</span><span class="o">/</span><span class="p">{</span><span class="nx">contactId</span><span class="p">}</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// Tillat alle å sende kontaktskjema</span>
+<span class="w">    </span><span class="nx">match</span><span class="w"> </span><span class="o">/</span><span class="nx">leads</span><span class="o">/</span><span class="p">{</span><span class="nx">leadId</span><span class="p">}</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nx">allow</span><span class="w"> </span><span class="nx">create</span><span class="o">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
-<span class="w">      </span><span class="nx">allow</span><span class="w"> </span><span class="nx">read</span><span class="p">,</span><span class="w"> </span><span class="nx">update</span><span class="o">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">auth</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">      </span><span class="nx">allow</span><span class="w"> </span><span class="nx">read</span><span class="p">,</span><span class="w"> </span><span class="nx">update</span><span class="p">,</span><span class="w"> </span><span class="ow">delete</span><span class="o">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Standard: nekt all tilgang</span>
+<span class="w">    </span><span class="nx">match</span><span class="w"> </span><span class="o">/</span><span class="p">{</span><span class="nb">document</span><span class="o">=**</span><span class="p">}</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">allow</span><span class="w"> </span><span class="nx">read</span><span class="p">,</span><span class="w"> </span><span class="nx">write</span><span class="o">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Deploy rules:</p>
-<div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>deploy<span class="w"> </span>--only<span class="w"> </span>firestore:rules
+<h3 id="hva-betyr-dette">Hva betyr dette?<a class="headerlink" href="#hva-betyr-dette" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <strong>Hvem som helst kan sende kontaktskjema</strong> (<code>allow create: if true</code>)</li>
+<li>✅ <strong>Ingen kan lese data</strong> (<code>allow read: if false</code>)</li>
+<li>✅ <strong>Ingen kan oppdatere eller slette</strong> (<code>allow update, delete: if false</code>)</li>
+<li>✅ <strong>Alt annet er blokkert</strong> (default deny)</li>
+<li>✅ <strong>Kun Firebase Admin SDK</strong> (server-side) kan administrere data</li>
+</ul>
+<h2 id="hva-skal-ikke-committes-til-git">Hva skal IKKE committes til Git?<a class="headerlink" href="#hva-skal-ikke-committes-til-git" title="Permanent link">&para;</a></h2>
+<h3 id="aldri-commit-disse">❌ ALDRI commit disse:<a class="headerlink" href="#aldri-commit-disse" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Firebase Service Account Keys</strong> (<code>.json</code> filer)
+   <div class="highlight"><pre><span></span><code>golfklubb-it-website-firebase-adminsdk-xxxxx.json
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Environment variabler med hemmeligheter</strong>
+   <div class="highlight"><pre><span></span><code>.env.local
+.env.production
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Private API nøkler</strong> (tredjepartstjenester)
+   <div class="highlight"><pre><span></span><code>STRIPE_SECRET_KEY=sk_live_xxxxx
+SENDGRID_API_KEY=SG.xxxxx
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>OAuth Client Secrets</strong>
+   <div class="highlight"><pre><span></span><code>GOOGLE_CLIENT_SECRET=xxxxx
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="trygt-a-committe">✅ Trygt å committe:<a class="headerlink" href="#trygt-a-committe" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Firebase client-side konfigurasjon</strong> (<code>src/firebase.ts</code>)</li>
+<li><strong>Firestore Security Rules</strong> (<code>firestore.rules</code>)</li>
+<li><strong>Firebase Functions kode</strong> (uten hemmeligheter)</li>
+<li><strong>Public API endpoints</strong></li>
+</ol>
+<h2 id="gitignore-konfigurasjon">.gitignore konfigurasjon<a class="headerlink" href="#gitignore-konfigurasjon" title="Permanent link">&para;</a></h2>
+<p>Vårt prosjekt har <code>.gitignore</code> som ekskluderer sensitive filer:</p>
+<div class="highlight"><pre><span></span><code># Environment filer
+.env.local
+.env.production
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Service account keys
+*-firebase-adminsdk-*.json
 </code></pre></div>
-<h3 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h3>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="1-bruk-firebase-security-rules">1. Bruk Firebase Security Rules<a class="headerlink" href="#1-bruk-firebase-security-rules" title="Permanent link">&para;</a></h3>
+<p>All tilgangskontroll <strong>må</strong> defineres i Security Rules:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Eksempel: Kun autentiserte brukere</span>
+<span class="nx">match</span><span class="w"> </span><span class="o">/</span><span class="kr">private</span><span class="o">/</span><span class="p">{</span><span class="nb">document</span><span class="p">}</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">allow</span><span class="w"> </span><span class="nx">read</span><span class="p">,</span><span class="w"> </span><span class="nx">write</span><span class="o">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">auth</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Eksempel: Kun admin-brukere</span>
+<span class="nx">match</span><span class="w"> </span><span class="o">/</span><span class="nx">admin</span><span class="o">/</span><span class="p">{</span><span class="nb">document</span><span class="p">}</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">allow</span><span class="w"> </span><span class="nx">read</span><span class="p">,</span><span class="w"> </span><span class="nx">write</span><span class="o">:</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">request</span><span class="p">.</span><span class="nx">auth</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>
+<span class="w">                        </span><span class="nx">request</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">token</span><span class="p">.</span><span class="nx">admin</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="2-aldri-stol-pa-client-side-validering">2. Aldri stol på client-side validering<a class="headerlink" href="#2-aldri-stol-pa-client-side-validering" title="Permanent link">&para;</a></h3>
+<p>Validering i frontend er kun for UX. All sikkerhet <strong>må</strong> håndteres server-side:</p>
+<ul>
+<li>✅ Firestore Security Rules</li>
+<li>✅ Firebase Functions validering</li>
+<li>✅ Backend API validering</li>
+</ul>
+<h3 id="3-bruk-miljvariabler-for-hemmeligheter">3. Bruk miljøvariabler for hemmeligheter<a class="headerlink" href="#3-bruk-miljvariabler-for-hemmeligheter" title="Permanent link">&para;</a></h3>
+<p>Hvis du trenger sensitive nøkler i Firebase Functions:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// functions/src/config.ts</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">functions</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;firebase-functions&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">stripeKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">functions</span><span class="p">.</span><span class="nx">config</span><span class="p">().</span><span class="nx">stripe</span><span class="p">.</span><span class="nx">secret</span><span class="p">;</span>
+</code></pre></div>
+<p>Sett med:
+<div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>functions:config:set<span class="w"> </span>stripe.secret<span class="o">=</span><span class="s2">&quot;sk_live_xxxxx&quot;</span>
+</code></pre></div></p>
+<h3 id="4-test-security-rules">4. Test Security Rules<a class="headerlink" href="#4-test-security-rules" title="Permanent link">&para;</a></h3>
+<p>Test alltid Security Rules før deployment:</p>
+<div class="highlight"><pre><span></span><code>firebase<span class="w"> </span>emulators:start<span class="w"> </span>--only<span class="w"> </span>firestore
+</code></pre></div>
+<h3 id="5-aldri-hardkod-hemmeligheter">5. Aldri hardkod hemmeligheter<a class="headerlink" href="#5-aldri-hardkod-hemmeligheter" title="Permanent link">&para;</a></h3>
+<p>❌ FEIL:
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;sk_live_123456789&quot;</span><span class="p">;</span>
+</code></pre></div></p>
+<p>✅ RIKTIG:
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VITE_API_KEY</span><span class="p">;</span>
+</code></pre></div></p>
+<h2 id="sjekkliste-fr-commit">Sjekkliste før commit<a class="headerlink" href="#sjekkliste-fr-commit" title="Permanent link">&para;</a></h2>
+<p>Før du committer til Git, sjekk:</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Ingen <code>.env</code> filer med hemmeligheter</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Ingen service account <code>.json</code> filer</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Ingen hardkodede API-nøkler (utenom Firebase client config)</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Firestore Security Rules er oppdatert</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <code>.gitignore</code> er konfigurert riktig</li>
+</ul>
+<h2 id="hva-gjre-hvis-hemmelighet-committes">Hva gjøre hvis hemmelighet committes?<a class="headerlink" href="#hva-gjre-hvis-hemmelighet-committes" title="Permanent link">&para;</a></h2>
+<p>Hvis du ved et uhell committer en hemmelighet:</p>
+<h3 id="1-roter-nkkelen-umiddelbart">1. Roter nøkkelen umiddelbart<a class="headerlink" href="#1-roter-nkkelen-umiddelbart" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Firebase: Regenerer API-nøkkelen i Firebase Console</li>
+<li>GitHub: Revoke tokenet i GitHub Settings</li>
+<li>Tredjepartstjenester: Generer ny nøkkel</li>
+</ul>
+<h3 id="2-fjern-fra-git-historikk">2. Fjern fra Git-historikk<a class="headerlink" href="#2-fjern-fra-git-historikk" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># ADVARSEL: Dette omskriver historikk!</span>
+git<span class="w"> </span>filter-branch<span class="w"> </span>--force<span class="w"> </span>--index-filter<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;git rm --cached --ignore-unmatch path/to/secret/file&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--prune-empty<span class="w"> </span>--tag-name-filter<span class="w"> </span>cat<span class="w"> </span>--<span class="w"> </span>--all
+
+<span class="c1"># Force push (kun hvis absolutt nødvendig)</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--force<span class="w"> </span>--all
+</code></pre></div>
+<h3 id="3-bruk-github-secret-scanning">3. Bruk GitHub Secret Scanning<a class="headerlink" href="#3-bruk-github-secret-scanning" title="Permanent link">&para;</a></h3>
+<p>GitHub scanner automatisk for kjente hemmeligheter og varsler deg.</p>
+<h2 id="testing-av-sikkerhet">Testing av sikkerhet<a class="headerlink" href="#testing-av-sikkerhet" title="Permanent link">&para;</a></h2>
+<h3 id="firebase-security-rules-testing">Firebase Security Rules testing<a class="headerlink" href="#firebase-security-rules-testing" title="Permanent link">&para;</a></h3>
+<p>Opprett tester for Security Rules:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// firestore.rules.test.ts</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">assertFails</span><span class="p">,</span><span class="w"> </span><span class="nx">assertSucceeds</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@firebase/rules-unit-testing&#39;</span><span class="p">;</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;anyone can create a contact form&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">assertSucceeds</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">testDb</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;leads&#39;</span><span class="p">).</span><span class="nx">add</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Test&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;no one can read contact forms&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">assertFails</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">testDb</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;leads&#39;</span><span class="p">).</span><span class="nx">doc</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">).</span><span class="nx">get</span><span class="p">()</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="overvaking">Overvåking<a class="headerlink" href="#overvaking" title="Permanent link">&para;</a></h2>
+<h3 id="firebase-console">Firebase Console<a class="headerlink" href="#firebase-console" title="Permanent link">&para;</a></h3>
+<p>Overvåk sikkerhet i Firebase Console:</p>
 <ol>
-<li>✅ Test rules med Firebase Emulator</li>
-<li>✅ Aldri commit hemmeligheter til git</li>
-<li>✅ Bruk miljøvariabler for API-nøkler</li>
-<li>✅ Aktiver 2FA for Firebase-konto</li>
-<li>✅ Review Security-fanen i Firebase Console</li>
+<li><strong>Security Rules</strong> - Se regelovertredelser</li>
+<li><strong>Usage</strong> - Overvåk unormal aktivitet</li>
+<li><strong>Authentication</strong> - Sjekk login-forsøk</li>
 </ol>
-<h2 id="kostnader">Kostnader<a class="headerlink" href="#kostnader" title="Permanent link">&para;</a></h2>
-<h3 id="firebase-pricing">Firebase Pricing<a class="headerlink" href="#firebase-pricing" title="Permanent link">&para;</a></h3>
-<p>Overvåk kostnader i Firebase Console:</p>
-<ol>
-<li>Gå til "Usage and billing"</li>
-<li>Se breakdown:</li>
-<li>Hosting bandwidth</li>
-<li>Firestore reads/writes</li>
-<li>Function invocations</li>
-</ol>
-<h3 id="spark-plan-gratis">Spark Plan (Gratis)<a class="headerlink" href="#spark-plan-gratis" title="Permanent link">&para;</a></h3>
-<p>Nåværende plan har grenser:</p>
+<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<p>Aktiver i repository settings:</p>
 <ul>
-<li>Hosting: 10 GB storage, 360 MB/dag</li>
-<li>Firestore: 1 GB storage, 50K reads/dag</li>
-<li>Functions: 125K invocations/måned</li>
+<li>✅ <strong>Secret scanning</strong> - Finn lekkede hemmeligheter</li>
+<li>✅ <strong>Dependabot alerts</strong> - Sårbare dependencies</li>
+<li>✅ <strong>Code scanning</strong> - Finn sikkerhetsproblemer</li>
 </ul>
-<h3 id="blaze-plan-pay-as-you-go">Blaze Plan (Pay-as-you-go)<a class="headerlink" href="#blaze-plan-pay-as-you-go" title="Permanent link">&para;</a></h3>
-<p>Oppgrader hvis nødvendig for:</p>
+<h2 id="kontakt">Kontakt<a class="headerlink" href="#kontakt" title="Permanent link">&para;</a></h2>
+<p>For sikkerhetsspørsmål eller rapportering av sårbarheter:</p>
 <ul>
-<li>Mer trafikk</li>
-<li>Flere Functions-invocations</li>
-<li>Scheduled Functions</li>
+<li>E-post: <a href="mailto:post@gkit.no">post@gkit.no</a></li>
+<li>Ikke rapporter sikkerhetsproblemer i offentlige Issues</li>
 </ul>
-<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
-<h3 id="teknisk-support">Teknisk support<a class="headerlink" href="#teknisk-support" title="Permanent link">&para;</a></h3>
+<h2 id="ressurser">Ressurser<a class="headerlink" href="#ressurser" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Firebase Support: <a href="https://firebase.google.com/support">Firebase Support</a></li>
-<li>GitHub Issues: Rapporter bugs i repository</li>
+<li><a href="https://firebase.google.com/docs/rules">Firebase Security Rules Guide</a></li>
+<li><a href="https://firebase.google.com/docs/projects/api-keys">Firebase API Keys Documentation</a></li>
+<li><a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a></li>
+<li><a href="https://docs.github.com/en/code-security/secret-scanning">GitHub Secret Scanning</a></li>
 </ul>
-<h3 id="gkit-intern-support">GKIT Intern Support<a class="headerlink" href="#gkit-intern-support" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Teknisk ansvarlig: [kontakt internt]</li>
-<li>Prosjektleder: [kontakt internt]</li>
-</ul>
-<h2 id="neste-steg">Neste steg<a class="headerlink" href="#neste-steg" title="Permanent link">&para;</a></h2>
-<p>Les mer om <a href="../../workflows/overview/">Workflows</a> for deployment og CI/CD.</p>
 
 
 
@@ -1672,7 +1513,7 @@ firebase<span class="w"> </span>deploy<span class="w"> </span>--only<span class=
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../user-guide/" class="md-footer__link md-footer__link--prev" aria-label="Forrige: Brukerhåndbok">
+          <a href="../admin-guide/" class="md-footer__link md-footer__link--prev" aria-label="Forrige: Administratorhåndbok">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1682,27 +1523,11 @@ firebase<span class="w"> </span>deploy<span class="w"> </span>--only<span class=
                 Forrige
               </span>
               <div class="md-ellipsis">
-                Brukerhåndbok
+                Administratorhåndbok
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../security/" class="md-footer__link md-footer__link--next" aria-label="Neste: Sikkerhet &amp; API-nøkler">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Neste
-              </span>
-              <div class="md-ellipsis">
-                Sikkerhet & API-nøkler
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
