@@ -21,8 +21,8 @@ const GolfTeamTime = () => {
                         Enkel tidregistrering og oppgavehåndtering for golfklubbens personale og frivillige team.
                     </p>
                     <div className="hero-cta">
-                        <a href="#kontakt" className="btn btn-primary">Kom i gang</a>
-                        <Link to="/services" className="btn btn-secondary">Alle tjenester</Link>
+                        <a href="https://golfteam-time-eur.web.app" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Åpne appen</a>
+                        <a href="#kontakt" className="btn btn-secondary">Kom i gang</a>
                     </div>
                 </div>
             </section>

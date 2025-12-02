@@ -34,6 +34,28 @@ Denne dokumentasjonen inneholder:
 - **Hosting**: Firebase Hosting
 - **Analytics**: Google Analytics 4
 
+## GKIT Produkter & Apper
+
+### Live Apper
+- **Søknadsportalen**: https://soknadsportalen.web.app/
+- **GolfTeam-Time**: https://golfteam-time-eur.web.app
+- **Digital Signage**: https://loftlogic-display.web.app
+
+### Under Testing
+- Frivillig-kalender
+- AI File Analyzer
+- Golfbilkontroll
+- Booking & Kalender
+
+### Produkter
+- **Google Workspace** - Dokumentasjon: https://owe-s.github.io/workspace-setup-gkit/
+- **Digital Signage** - Dokumentasjon: https://owe-s.github.io/GKIT-DigitalSignage-APP/
+- **ClubsiteCMS** - Scangolf-produkt: https://clubsite.no (GKIT tilbyr integrasjoner)
+
+### Referanser
+- 45+ golfklubber bruker ClubsiteCMS (inkl. Losby, Bærum, Asker, Vestfold)
+- 15+ sentre bruker CS Booking (61 simulatorer, 36 instruktører)
+
 ## Innhold
 
 Dokumentasjonen er strukturert slik:
