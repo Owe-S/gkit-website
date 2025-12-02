@@ -1,7 +1,7 @@
 site_name: "GKIT Website Dokumentasjon"
-site_url: "https://gkit-enk.github.io/gkit-website"
-repo_url: "https://github.com/gkit-enk/gkit-website"
-repo_name: "gkit-enk/gkit-website"
+site_url: "https://owe-s.github.io/gkit-website"
+repo_url: "https://github.com/Owe-S/gkit-website"
+repo_name: "Owe-S/gkit-website"
 
 theme:
   name: material
