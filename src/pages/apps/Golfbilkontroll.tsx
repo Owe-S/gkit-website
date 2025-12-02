@@ -12,7 +12,9 @@ const Golfbilkontroll = () => {
             <section className="hero" style={{ minHeight: '60vh' }}>
                 <div className="hero-content fade-in-up">
                     <h1>
-                        <span className="text-gradient-green">Golfbilkontroll</span><br />
+                        <span className="text-gradient-green">Golfbilkontroll</span>
+                        <span style={{ display: 'inline-block', background: 'rgba(255, 193, 7, 0.2)', color: '#ffc107', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
+                        <br />
                         Oversikt over golfbiler
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
@@ -84,6 +86,32 @@ const Golfbilkontroll = () => {
                             <h4>😊 Fornøyde Spillere</h4>
                             <p>Alltid fungerende biler tilgjengelig når de trengs.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Når lanseres Golfbilkontroll?</h4>
+                        <p>Pilot-testing med utvalgte klubber pågår. Lansering planlagt Q2 2025. Bli med i pilot-programmet!</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Må vi installere GPS på bilene?</h4>
+                        <p>Nei, grunnfunksjoner fungerer uten GPS. GPS er et tilvalg for sanntids-sporing og geofencing.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan medlemmer booke selv?</h4>
+                        <p>Ja! Medlemmer logger inn via app eller nettside og booker ledig bil. Automatisk betaling via Vipps eller kort.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster systemet?</h4>
+                        <p>Kontakt oss for tilbud basert på antall biler og funksjoner. Pilot-klubber får spesielle betingelser.</p>
                     </div>
                 </div>
             </section>

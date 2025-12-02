@@ -12,7 +12,9 @@ const BookingKalender = () => {
             <section className="hero" style={{ minHeight: '60vh' }}>
                 <div className="hero-content fade-in-up">
                     <h1>
-                        <span className="text-gradient-green">Booking & Kalender</span><br />
+                        <span className="text-gradient-green">Booking & Kalender</span>
+                        <span style={{ display: 'inline-block', background: 'rgba(255, 193, 7, 0.2)', color: '#ffc107', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
+                        <br />
                         For simulator og instruktør
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
@@ -84,6 +86,37 @@ const BookingKalender = () => {
                             <h4>💳 Sikker Betaling</h4>
                             <p>Ta betalt ved booking. Reduser "no-shows" og tapte inntekter.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Når kan vi ta i bruk systemet?</h4>
+                        <p>Beta-testing med pilot-klubber pågår. Lansering Q1-Q2 2025. Kontakt oss for tidlig tilgang.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva er forskjellen på GKIT Booking og CS Booking?</h4>
+                        <p>CS Booking fra Scangolf er et etablert system med 15+ sentre. GKIT Booking er vår egen løsning med tettere integrasjon mot våre andre systemer (Søknadsportalen, Display, etc.).</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan vi integrere med betalingssystemer?</h4>
+                        <p>Ja! Vipps, Stripe, og Nets er støttet. Automatisk betaling ved booking eller fakturering til medlemskonto.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Fungerer det med GolfBox?</h4>
+                        <p>Ja, vi integrerer med GolfBox for medlemsdata og automatisk oppdatering av tilganger.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvilken løsning passer best for oss?</h4>
+                        <p>Kontakt oss for en gjennomgang! Vi hjelper deg med å velge mellom GKIT Booking og CS Booking basert på dine behov.</p>
                     </div>
                 </div>
             </section>

@@ -19,8 +19,8 @@ const Soknadsportalen = () => {
                         Nettportal for håndtering av søknader, støtteordninger og medlemskap via brukervennlig webgrensesnitt.
                     </p>
                     <div className="hero-cta">
-                        <a href="#kontakt" className="btn btn-primary">Be om demo</a>
-                        <Link to="/services" className="btn btn-secondary">Alle tjenester</Link>
+                        <a href="https://soknadsportalen.web.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Åpne portalen</a>
+                        <a href="#kontakt" className="btn btn-secondary">Be om demo</a>
                     </div>
                 </div>
             </section>
@@ -89,6 +89,32 @@ const Soknadsportalen = () => {
                             <h4>📈 Full Sporbarhet</h4>
                             <p>Se hvem som har behandlet hva og når. Komplett logg for revisjon og etterlevelse.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvordan kommer medlemmer inn i portalen?</h4>
+                        <p>Medlemmer logger inn via Google-konto eller klubbens SSO-system. Tilgangsstyring håndteres av administratorer.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva slags søknader kan behandles?</h4>
+                        <p>Medlemskap, støtteordninger, junior-stipend, banevedlikehold-tillatelser, turneringspåmelding med mer. Systemet er fleksibelt og tilpasses dine behov.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster Søknadsportalen?</h4>
+                        <p>Kontakt oss for skreddersydd tilbud basert på antall brukere og funksjoner. Vi tilbyr fleksible prismodeller.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Er det GDPR-kompatibelt?</h4>
+                        <p>Ja, all data lagres kryptert i Google Cloud med norsk datalagring. Full sporbarhet og slettemekanismer er på plass.</p>
                     </div>
                 </div>
             </section>

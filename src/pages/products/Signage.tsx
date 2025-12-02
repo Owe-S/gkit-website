@@ -19,8 +19,8 @@ const Signage = () => {
                         Infoskjermer som viser tee-tider, værmelding, resultater og sponsorer. Automatisk oppdatert fra GolfBox og andre kilder.
                     </p>
                     <div className="hero-cta">
-                        <a href="#kontakt" className="btn btn-primary">Se demo</a>
-                        <Link to="/services" className="btn btn-secondary">Alle tjenester</Link>
+                        <a href="https://loftlogic-display.web.app" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Åpne demo</a>
+                        <a href="https://owe-s.github.io/GKIT-DigitalSignage-APP/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Les dokumentasjon</a>
                     </div>
                 </div>
             </section>
@@ -89,6 +89,37 @@ const Signage = () => {
                             <h4>🛠️ Full Support</h4>
                             <p>Vi leverer hardware, installerer, og holder alt oppdatert. Dere slipper tekniske bekymringer.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster Digital Signage?</h4>
+                        <p>Kontakt oss for tilbud basert på antall skjermer og funksjoner. Vi tilbyr både kjøp og leasing.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva slags hardware trenger vi?</h4>
+                        <p>Vi leverer komplett pakke: skjerm, Android TV-boks eller Raspberry Pi, monteringsutstyr og kabler. Alt plug-and-play.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan vi tilpasse innholdet selv?</h4>
+                        <p>Ja! Administrasjonspanel lar dere enkelt endre annonser, meldinger og layout. Ingen teknisk kunnskap nødvendig.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Fungerer det med GolfBox?</h4>
+                        <p>Ja, automatisk integrasjon med GolfBox for tee-tider, resultater og turneringsoversikter.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvor lang tid tar installasjon?</h4>
+                        <p>1 dag for oppsett på klubben. Vi installerer, konfigurerer og lærer opp ditt personale.</p>
                     </div>
                 </div>
             </section>

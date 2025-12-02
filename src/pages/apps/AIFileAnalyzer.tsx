@@ -12,7 +12,9 @@ const AIFileAnalyzer = () => {
             <section className="hero" style={{ minHeight: '60vh' }}>
                 <div className="hero-content fade-in-up">
                     <h1>
-                        <span className="text-gradient-green">Workspace AI File Analyzer</span><br />
+                        <span className="text-gradient-green">Workspace AI File Analyzer</span>
+                        <span style={{ display: 'inline-block', background: 'rgba(255, 193, 7, 0.2)', color: '#ffc107', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
+                        <br />
                         Smart dokumentanalyse
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
@@ -84,6 +86,32 @@ const AIFileAnalyzer = () => {
                             <h4>🔒 Sikkert</h4>
                             <p>Dine data forlater aldri din sikre Google Cloud-sone.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Når kan vi teste AI File Analyzer?</h4>
+                        <p>Beta-testing pågår nå. Kontakt oss for tilgang til test-versjonen.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvilke filtyper støttes?</h4>
+                        <p>PDF, Word (.docx), Excel (.xlsx), PowerPoint (.pptx), og Google Docs/Sheets/Slides. Flere formater kommer.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Er dokumentene mine trygge?</h4>
+                        <p>Ja. All prosessering skjer innenfor din Google Workspace-sone. Data deles aldri med tredjeparter.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster det?</h4>
+                        <p>Prismodellen er under utvikling. Beta-testere får spesialpriser. Kontakt oss for mer info.</p>
                     </div>
                 </div>
             </section>

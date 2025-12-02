@@ -12,7 +12,9 @@ const FrivilligKalender = () => {
             <section className="hero" style={{ minHeight: '60vh' }}>
                 <div className="hero-content fade-in-up">
                     <h1>
-                        <span className="text-gradient-green">Frivillig-kalender</span><br />
+                        <span className="text-gradient-green">Frivillig-kalender</span>
+                        <span style={{ display: 'inline-block', background: 'rgba(255, 193, 7, 0.2)', color: '#ffc107', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
+                        <br />
                         Planlegg frivillig arbeid
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
@@ -84,6 +86,27 @@ const FrivilligKalender = () => {
                             <h4>✅ Bedre Oppmøte</h4>
                             <p>Påminnelser og enkel oversikt sikrer at folk møter opp når de skal.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Når kan vi begynne å bruke Frivillig-kalender?</h4>
+                        <p>Systemet er under testing med pilot-klubber. Forventet lansering Q1 2025. Kontakt oss for tidlig tilgang.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvordan varsles frivillige?</h4>
+                        <p>Automatiske påminnelser via SMS og e-post 24 timer før vakt. Frivillige kan også abonnere på varslinger via app.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan vi se statistikk over frivillig innsats?</h4>
+                        <p>Ja! Dashboard viser hvem som bidrar mest, totalt antall timer, og historikk. Perfekt for å tildele priser og anerkjennelse.</p>
                     </div>
                 </div>
             </section>

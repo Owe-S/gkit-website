@@ -12,7 +12,9 @@ const GolfTeamTime = () => {
             <section className="hero" style={{ minHeight: '60vh' }}>
                 <div className="hero-content fade-in-up">
                     <h1>
-                        <span className="text-gradient-green">GolfTeam-Time</span><br />
+                        <span className="text-gradient-green">GolfTeam-Time</span>
+                        <span style={{ display: 'inline-block', background: 'rgba(255, 193, 7, 0.2)', color: '#ffc107', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
+                        <br />
                         Tidregistrering for klubben
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
@@ -84,6 +86,27 @@ const GolfTeamTime = () => {
                             <h4>📊 Rapportering</h4>
                             <p>Ta ut rapporter til lønnskjøring og styremøter med få klikk.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Når lanseres GolfTeam-Time?</h4>
+                        <p>Appen er under aktiv testing. Vi lanserer i 2025 Q1. Interesserte klubber kan bli med i pilot-programmet.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Fungerer det på mobil?</h4>
+                        <p>Ja, fullt responsiv webapp som fungerer perfekt på mobil, nettbrett og PC. Ingen app-nedlasting nødvendig.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan vi integrere med lønnssystem?</h4>
+                        <p>Ja, vi kan eksportere data til de fleste lønnssystemer. Kontakt oss for detaljer om din leverandør.</p>
                     </div>
                 </div>
             </section>

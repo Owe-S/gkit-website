@@ -19,8 +19,8 @@ const Workspace = () => {
                         Profesjonell e-post (@dinklub.no), delte dokumenter, og videokonferanser. Alt i ett system.
                     </p>
                     <div className="hero-cta">
-                        <a href="#kontakt" className="btn btn-primary">Kom i gang</a>
-                        <Link to="/services" className="btn btn-secondary">Alle tjenester</Link>
+                        <a href="https://owe-s.github.io/workspace-setup-gkit/" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Les dokumentasjon</a>
+                        <a href="#kontakt" className="btn btn-secondary">Kom i gang</a>
                     </div>
                 </div>
             </section>
@@ -89,6 +89,37 @@ const Workspace = () => {
                             <h4>🤝 Vi Leverer Alt</h4>
                             <p>Oppsett, migrering, brukerstøtte, og opplæring. Dere slipper teknisk hodebry.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster Google Workspace?</h4>
+                        <p>Fra 69 kr/bruker/måned for Business Starter. Vi hjelper deg med å velge riktig pakke for klubben.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvor lang tid tar oppsettet?</h4>
+                        <p>1-3 dager fra bestilling til dere kan logge inn. Inkluderer domene-oppsett, brukerkontoer og grunnleggende opplæring.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan vi migrere eksisterende e-poster?</h4>
+                        <p>Ja! Vi migrerer e-post, kontakter og kalender fra Outlook, Gmail eller andre systemer. Ingen e-poster går tapt.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Får vi support etter oppsettet?</h4>
+                        <p>Ja, vi tilbyr løpende support via e-post og telefon. Opplæring av nye brukere inkludert.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Trenger vi egen IT-person?</h4>
+                        <p>Nei! Google Workspace er skybasert og krever minimal administrasjon. Vi hjelper med det dere ikke får til selv.</p>
                     </div>
                 </div>
             </section>

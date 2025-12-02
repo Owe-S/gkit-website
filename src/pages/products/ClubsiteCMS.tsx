@@ -13,14 +13,14 @@ const ClubsiteCMS = () => {
                 <div className="hero-content fade-in-up">
                     <h1>
                         <span className="text-gradient-green">ClubsiteCMS</span><br />
-                        Din klubbs digitale hjemme.
+                        Integrasjoner & Support
                     </h1>
                     <p style={{ fontSize: '1.3rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '2rem auto' }}>
-                        Profesjonell nettside med nyheter, bildegalleri, kalender og medlemsinformasjon. Enkel å oppdatere, kraftig i funksjon.
+                        Vi integrerer med ClubsiteCMS fra Scangolf og tilbyr konsulentbistand for golfklubber. 45+ klubber bruker systemet.
                     </p>
                     <div className="hero-cta">
-                        <a href="#kontakt" className="btn btn-primary">Se demo</a>
-                        <Link to="/services" className="btn btn-secondary">Alle tjenester</Link>
+                        <a href="https://clubsite.no" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Besøk clubsite.no</a>
+                        <a href="#referanser" className="btn btn-secondary">Se referanser</a>
                     </div>
                 </div>
             </section>
@@ -65,6 +65,22 @@ const ClubsiteCMS = () => {
                 </div>
             </section>
 
+            <section className="container section-padding" id="referanser">
+                <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>45+ Norske Golfklubber</h2>
+                <p style={{ textAlign: 'center', color: 'var(--color-gray-light)', maxWidth: '900px', margin: '0 auto 3rem' }}>
+                    Klubber som bruker ClubsiteCMS inkluderer:
+                </p>
+                <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Losby GK • Bærum GK • Asker GK</div>
+                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Vestfold GK • Grimstad GK • Hauger GK</div>
+                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Kristiansand GK • Drøbak GK • Ski GK</div>
+                    <div style={{ padding: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>Grini GK • Haga GK • Kjekstad GK</div>
+                </div>
+                <p style={{ textAlign: 'center', marginTop: '2rem' }}>
+                    <a href="https://clubsite.no/referanser" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gkit-green)' }}>Se alle 45+ referanseklubber →</a>
+                </p>
+            </section>
+
             <section className="container section-padding">
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Fordeler</h2>
 
@@ -93,15 +109,51 @@ const ClubsiteCMS = () => {
                 </div>
             </section>
 
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvem utvikler ClubsiteCMS?</h4>
+                        <p>ClubsiteCMS er utviklet av <strong>Scangolf</strong>. Golfklubb-IT tilbyr integrasjoner og konsulentbistand for klubber som bruker systemet.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hvor mange klubber bruker ClubsiteCMS?</h4>
+                        <p>45+ norske golfklubber bruker ClubsiteCMS, inkludert Losby, Bærum, Asker, Vestfold, Grimstad og mange flere.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva koster ClubsiteCMS?</h4>
+                        <p>For prising, kontakt Scangolf direkte på <a href="tel:+4741520802" style={{ color: 'var(--color-gkit-green)' }}>415 20 802</a> eller <a href="mailto:post@scangolf.no" style={{ color: 'var(--color-gkit-green)' }}>post@scangolf.no</a>.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan GKIT hjelpe oss med ClubsiteCMS?</h4>
+                        <p>Ja! Vi tilbyr integrasjoner mellom ClubsiteCMS og våre egne løsninger som Søknadsportalen, Display/Signage, og booking-systemer.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva er CS Booking?</h4>
+                        <p>CS Booking er Scangolfs spesialtilpassede bookingsystem for simulatorer og instruktører. 15+ sentre bruker systemet med 61 simulatorer og 36 instruktører.</p>
+                    </div>
+                </div>
+            </section>
+
             <section className="contact" id="kontakt" style={{ background: 'var(--color-bg-dark)', padding: '4rem 0' }}>
                 <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 style={{ marginBottom: '1rem' }}>Klar for ny nettside?</h2>
+                    <h2 style={{ marginBottom: '1rem' }}>Trenger dere integrasjoner?</h2>
                     <p style={{ fontSize: '1.2rem', color: 'var(--color-gray-light)', marginBottom: '2rem' }}>
-                        Vi setter opp og tilpasser ClubsiteCMS for din klubb.
+                        Vi hjelper klubber med ClubsiteCMS-integrasjoner og konsulentbistand.
                     </p>
-                    <Link to="/#kontakt" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
-                        Kontakt oss
-                    </Link>
+                    <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        <Link to="/#kontakt" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
+                            Kontakt GKIT
+                        </Link>
+                        <a href="https://clubsite.no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
+                            Besøk clubsite.no
+                        </a>
+                    </div>
                 </div>
             </section>
 
