@@ -51,6 +51,7 @@ nav:
   - Guider:
       - Brukerhåndbok: guides/user-guide.md
       - Administratorhåndbok: guides/admin-guide.md
+      - Sikkerhet & API-nøkler: guides/security.md
 
 plugins:
   - search
