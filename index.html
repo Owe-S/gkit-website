@@ -404,17 +404,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#stor-refactoring-modularisering-og-forbedringer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stor Refactoring - Modularisering og Forbedringer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#uiux-forbedringer-hybrid-interaktiv-design" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1107,34 +1096,6 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/config-management/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Konfigurasjonshåndtering
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="guides/security/" class="md-nav__link">
         
   
@@ -1242,83 +1203,40 @@
 <li>15+ sentre bruker CS Booking (61 simulatorer, 36 instruktører)</li>
 </ul>
 <h2 id="nylige-oppdateringer-desember-2025">Nylige Oppdateringer (Desember 2025)<a class="headerlink" href="#nylige-oppdateringer-desember-2025" title="Permanent link">&para;</a></h2>
-<h3 id="stor-refactoring-modularisering-og-forbedringer">Stor Refactoring - Modularisering og Forbedringer<a class="headerlink" href="#stor-refactoring-modularisering-og-forbedringer" title="Permanent link">&para;</a></h3>
-<p><strong>Dato:</strong> 5. desember 2025</p>
-<p><strong>Implementert:</strong></p>
-<ul>
-<li>✅ <strong>Ny Contact side</strong> (<code>/contact</code>) - Dedikert kontaktside med form, info-bokser og FAQ</li>
-<li>✅ <strong>Ny Blog side</strong> (<code>/blog</code>) - Blogg med kategori-filtrering og responsive grid</li>
-<li>✅ <strong>ContactForm validering</strong> - Per-field validering, email regex, real-time error feedback</li>
-<li>✅ <strong>Footer-komponent</strong> - Reusable footer erstatter 13+ inline footers</li>
-<li>✅ <strong>Sentralisert config</strong> - <code>companyConfig.ts</code> og <code>gkit-config.ts</code> for firma-info</li>
-<li>✅ <strong>Forenklet Home.tsx</strong> - Redusert fra 337 til ~200 linjer (blog/contact flyttet ut)</li>
-<li>✅ <strong>Oppdatert routing</strong> - Nye routes: <code>/contact</code>, <code>/blog</code></li>
-<li>✅ <strong>Navbar oppdatering</strong> - "Kontakt" nå proper route istedenfor fragment-link</li>
-</ul>
-<p><strong>Fordeler:</strong></p>
-<ul>
-<li>70% redusert vedlikeholdsarbeid (1 footer vs 13 kopier)</li>
-<li>Konsistent firma-informasjon på tvers av alle sider</li>
-<li>Bedre UX med dedikerte sider for kontakt og blogg</li>
-<li>Enklere for ikke-tekniske å forstå prosjektstruktur</li>
-</ul>
-<p><strong>Filer opprettet:</strong></p>
-<ul>
-<li><code>src/pages/Contact.tsx</code> (380+ linjer)</li>
-<li><code>src/pages/Blog.tsx</code> (250+ linjer)</li>
-<li><code>src/components/Footer.tsx</code> (reusable)</li>
-<li><code>src/config/companyConfig.ts</code> (React config)</li>
-<li><code>gkit-config.ts</code> (sharable config)</li>
-<li><code>FIRMA-INFO-IMPLEMENTASJON.md</code> (guide)</li>
-</ul>
-<p><strong>Sider oppdatert:</strong></p>
-<ul>
-<li>5 hovedsider: Home, About, Services, Projects, Club2026</li>
-<li>6 app-sider: AIFileAnalyzer, BookingKalender, FrivilligKalender, GolfTeamTime, Golfbilkontroll, Soknadsportalen</li>
-<li>4 produkt-sider: GolfBox, Signage, Workspace, ClubsiteCMS</li>
-</ul>
 <h3 id="uiux-forbedringer-hybrid-interaktiv-design">UI/UX Forbedringer - Hybrid Interaktiv Design<a class="headerlink" href="#uiux-forbedringer-hybrid-interaktiv-design" title="Permanent link">&para;</a></h3>
 <p><strong>Dato:</strong> 3. desember 2025</p>
-<p><strong>Implementert:</strong></p>
-<ul>
-<li>✅ <strong>Interaktive kort</strong> med hover-ekspansjon på forsiden</li>
-<li>✅ <strong>Status badges</strong>: 🟢 Live / 🟡 Testing på alle prosjekter</li>
-<li>✅ <strong>Klikbare elementer</strong>: Alle prosjekt- og tjeneste-kort navigerer til riktige sider</li>
-<li>✅ <strong>Eksterne lenker</strong>: "Åpne app" knapper for live apper</li>
-<li>✅ <strong>Smooth animasjoner</strong>: cubic-bezier transitions (0.4s)</li>
-<li>✅ <strong>Mobile touch support</strong>: Fungerer perfekt på touch-enheter</li>
-<li>✅ <strong>Feature chips</strong>: Vises ved hover på tjeneste-kort</li>
-<li>✅ <strong>Hero padding fix</strong>: Økt til 120px for bedre synlighet</li>
-</ul>
-<p><strong>Tekniske detaljer:</strong></p>
-<ul>
-<li>CSS klasser: <code>.interactive-card</code>, <code>.status-badge</code>, <code>.card-hover-info</code>, <code>.feature-chips</code></li>
-<li>Ingen visuelle endringer i design/farger - kun funksjonalitet</li>
-<li>Backup lagret i: <code>src/_old/Home.tsx.backup</code> og <code>src/_old/App.css.backup</code></li>
-</ul>
+<p><strong>Implementert:</strong>
+- ✅ <strong>Interaktive kort</strong> med hover-ekspansjon på forsiden
+- ✅ <strong>Status badges</strong>: 🟢 Live / 🟡 Testing på alle prosjekter
+- ✅ <strong>Klikbare elementer</strong>: Alle prosjekt- og tjeneste-kort navigerer til riktige sider
+- ✅ <strong>Eksterne lenker</strong>: "Åpne app" knapper for live apper
+- ✅ <strong>Smooth animasjoner</strong>: cubic-bezier transitions (0.4s)
+- ✅ <strong>Mobile touch support</strong>: Fungerer perfekt på touch-enheter
+- ✅ <strong>Feature chips</strong>: Vises ved hover på tjeneste-kort
+- ✅ <strong>Hero padding fix</strong>: Økt til 120px for bedre synlighet</p>
+<p><strong>Tekniske detaljer:</strong>
+- CSS klasser: <code>.interactive-card</code>, <code>.status-badge</code>, <code>.card-hover-info</code>, <code>.feature-chips</code>
+- Ingen visuelle endringer i design/farger - kun funksjonalitet
+- Backup lagret i: <code>src/_old/Home.tsx.backup</code> og <code>src/_old/App.css.backup</code></p>
 <h3 id="content-oppdateringer">Content Oppdateringer<a class="headerlink" href="#content-oppdateringer" title="Permanent link">&para;</a></h3>
 <p><strong>Dato:</strong> 2. desember 2025</p>
-<p><strong>Lagt til:</strong></p>
-<ul>
-<li>FAQ-seksjoner på alle 9 produkt/app-sider</li>
-<li>Eksterne lenker til live apper og dokumentasjon</li>
-<li>ClubsiteCMS tydeliggjort som Scangolf-produkt med GKIT-integrasjoner</li>
-<li>45+ referanseklubber listet</li>
-<li>CS Booking info (15+ sentre, 61 simulatorer, 36 instruktører)</li>
-<li>"Under testing" badges på apper under utvikling</li>
-</ul>
-<p><strong>Sider oppdatert:</strong></p>
-<ul>
-<li><code>/products/clubsite</code> - FAQ + referanser + Scangolf-info</li>
-<li><code>/apps/soknadsportalen</code> - Ekstern lenke + FAQ</li>
-<li><code>/apps/golfteam-time</code> - Live lenke + FAQ</li>
-<li><code>/apps/frivillig-kalender</code> - Testing badge + FAQ</li>
-<li><code>/apps/ai-file-analyzer</code> - Testing badge + FAQ</li>
-<li><code>/apps/golfbilkontroll</code> - Testing badge + FAQ</li>
-<li><code>/apps/booking-kalender</code> - Testing badge + FAQ + CS Booking info</li>
-<li><code>/products/workspace</code> - Dokumentasjonslenke + FAQ + prising</li>
-<li><code>/products/signage</code> - Demo-lenke + dokumentasjon + FAQ</li>
-</ul>
+<p><strong>Lagt til:</strong>
+- FAQ-seksjoner på alle 9 produkt/app-sider
+- Eksterne lenker til live apper og dokumentasjon
+- ClubsiteCMS tydeliggjort som Scangolf-produkt med GKIT-integrasjoner
+- 45+ referanseklubber listet
+- CS Booking info (15+ sentre, 61 simulatorer, 36 instruktører)
+- "Under testing" badges på apper under utvikling</p>
+<p><strong>Sider oppdatert:</strong>
+- <code>/products/clubsite</code> - FAQ + referanser + Scangolf-info
+- <code>/apps/soknadsportalen</code> - Ekstern lenke + FAQ
+- <code>/apps/golfteam-time</code> - Live lenke + FAQ
+- <code>/apps/frivillig-kalender</code> - Testing badge + FAQ
+- <code>/apps/ai-file-analyzer</code> - Testing badge + FAQ
+- <code>/apps/golfbilkontroll</code> - Testing badge + FAQ
+- <code>/apps/booking-kalender</code> - Testing badge + FAQ + CS Booking info
+- <code>/products/workspace</code> - Dokumentasjonslenke + FAQ + prising
+- <code>/products/signage</code> - Demo-lenke + dokumentasjon + FAQ</p>
 <h2 id="innhold">Innhold<a class="headerlink" href="#innhold" title="Permanent link">&para;</a></h2>
 <p>Dokumentasjonen er strukturert slik:</p>
 <h3 id="komme-i-gang">Komme i gang<a class="headerlink" href="#komme-i-gang" title="Permanent link">&para;</a></h3>
