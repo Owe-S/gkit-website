@@ -3,7 +3,7 @@ import * as admin from "firebase-admin";
 
 admin.initializeApp();
 
-export const submitContactForm = functions.https.onCall(async (data, context) => {
+export const submitContactForm = functions.https.onCall(async (data, _context) /* eslint-disable-line @typescript-eslint/no-unused-vars */ => {
     // 1. Validate Input
     const { name, email, club, subject, message } = data;
 
@@ -37,3 +37,5 @@ export const submitContactForm = functions.https.onCall(async (data, context) =>
         );
     }
 });
+
+
