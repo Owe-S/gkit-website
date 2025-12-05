@@ -9,6 +9,9 @@ export const companyConfig = {
   shortName: 'GKIT',
   tagline: 'Stabil drift. Smarte systemer.',
   
+  // Organisasjonsnummer
+  organizationNumber: '936 634 966 NO',
+  
   // Kontaktinformasjon
   email: 'kontakt-oss@golfklubb-it.com',
   phone: '472 65 100',

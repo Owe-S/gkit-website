@@ -15,6 +15,7 @@ export const GKIT_CONFIG = {
     shortName: 'GKIT',
     tagline: 'Stabil drift. Smarte systemer.',
     slogan: 'Golfklubbens IT-partner',
+    organizationNumber: '936 634 966 NO',
   },
 
   // Kontaktinformasjon

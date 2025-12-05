@@ -7,6 +7,7 @@ Vi har sentralisert all firma-informasjon for GKIT slik at du bare trenger å op
 ## 📂 Filer
 
 ### 1. **`src/config/companyConfig.ts`** (Lokal bruk)
+
 Brukes internt i denne React-applikasjonen.
 
 ```typescript
@@ -17,6 +18,7 @@ import companyConfig from '../config/companyConfig'
 ```
 
 ### 2. **`gkit-config.ts`** (Deling til andre apps)
+
 Plasser denne filen i **root** av alle dine andre GKIT-applikasjoner.
 
 ```typescript
@@ -27,6 +29,7 @@ import GKIT_CONFIG from './gkit-config'
 ```
 
 ### 3. **`src/components/Footer.tsx`** (Reusable Footer-komponent)
+
 En universell footer som automatisk bruker firma-informasjonen.
 
 ```typescript
@@ -43,6 +46,7 @@ import Footer from './components/Footer'
 Hvis du trenger å endre adresse, telefon, e-post, osv., gjør du det **ett sted**:
 
 ### Alternatif 1: Lokal React-app
+
 Rediger `src/config/companyConfig.ts`:
 
 ```typescript
@@ -56,6 +60,7 @@ export const companyConfig = {
 ```
 
 ### Alternatif 2: Andre GKIT-apper
+
 Rediger `gkit-config.ts` i **root** av appen:
 
 ```typescript
@@ -77,11 +82,13 @@ export const GKIT_CONFIG = {
 ## ✅ Hva er allerede implementert
 
 ### `gkit-website` (denne appen)
+
 - ✅ `ContactForm.tsx` - bruker `companyConfig.email`
 - ✅ `Home.tsx` - bruker `companyConfig.email` og footer-info
 - ✅ Ny `Footer.tsx`-komponent er tilgjengelig
 
 ### Andre apper
+
 Kopier `gkit-config.ts` til root av hver app og importer den.
 
 ---
@@ -101,6 +108,7 @@ Når du starter en ny GKIT-app:
 ## 🎯 Eksempler
 
 ### E-post-lenke
+
 ```typescript
 import GKIT_CONFIG from './gkit-config'
 
@@ -110,6 +118,7 @@ import GKIT_CONFIG from './gkit-config'
 ```
 
 ### Footer
+
 ```typescript
 import GKIT_CONFIG from './gkit-config'
 
@@ -121,6 +130,7 @@ import GKIT_CONFIG from './gkit-config'
 ```
 
 ### Kontakt-informasjon
+
 ```typescript
 import GKIT_CONFIG from './gkit-config'
 
@@ -138,7 +148,8 @@ import GKIT_CONFIG from './gkit-config'
 | Felt | Hvor | Verdi |
 |------|------|-------|
 | **Firma** | `company.name` | Golfklubb IT ENK |
-| **E-post** | `contact.email` | kontakt-oss@golfklubb-it.com |
+| **Org.nr** | `company.organizationNumber` | 936 634 966 NO |
+| **E-post** | `contact.email` | `kontakt-oss@golfklubb-it.com` |
 | **Telefon** | `contact.phone` | 472 65 100 |
 | **Adresse** | `contact.address` | Sloraveien 10, 1405 Langhus |
 | **Support** | `support.hours` | E.A. |
@@ -154,4 +165,7 @@ import GKIT_CONFIG from './gkit-config'
 
 ---
 
-*Last updated: December 5, 2025*
+## 📅 Versjon
+
+Last updated: December 5, 2025
+

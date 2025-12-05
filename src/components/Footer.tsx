@@ -29,8 +29,11 @@ const Footer = () => {
                   {companyConfig.phone}
                 </a>
               </li>
-              <li style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem' }}>
+              <li style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
                 {companyConfig.address}
+              </li>
+              <li style={{ color: 'var(--color-gray-light)', fontSize: '0.9rem' }}>
+                Org.nr: {companyConfig.organizationNumber}
               </li>
             </ul>
           </div>
