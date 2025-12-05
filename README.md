@@ -1,6 +1,6 @@
-# GKIT - GolfKlubb IT Website & Marketing Ecosystem
+# Golfklubbens IT - Website & Marketing Ecosystem
 
-Welcome to the official repository for the GKIT website and marketing ecosystem. This project combines a modern React website with a "Google Native" backend and sales automation system.
+Welcome to the official repository for the Golfklubbens IT website and marketing ecosystem. This project combines a modern React website with a "Google Native" backend and sales automation system.
 
 ## 🚀 Quick Start
 

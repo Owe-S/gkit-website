@@ -129,7 +129,7 @@ const ClubsiteCMS = () => {
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
-                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan GKIT hjelpe oss med ClubsiteCMS?</h4>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan Golfklubbens IT hjelpe oss med ClubsiteCMS?</h4>
                         <p>Ja! Vi tilbyr integrasjoner mellom ClubsiteCMS og våre egne løsninger som Søknadsportalen, Display/Signage, og booking-systemer.</p>
                     </div>
 
@@ -148,7 +148,7 @@ const ClubsiteCMS = () => {
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                         <Link to="/#kontakt" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
-                            Kontakt GKIT
+                            Kontakt oss
                         </Link>
                         <a href="https://clubsite.no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
                             Besøk clubsite.no
@@ -159,7 +159,7 @@ const ClubsiteCMS = () => {
 
             <footer className="footer">
                 <div className="container">
-                    <p>© 2025 GKIT. Stabil drift. Smarte systemer.</p>
+                    <p>© 2025 Golfklubbens IT. Stabil drift. Smarte systemer.</p>
                 </div>
             </footer>
         </div>

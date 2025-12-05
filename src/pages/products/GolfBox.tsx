@@ -112,7 +112,7 @@ const GolfBox = () => {
 
             <footer className="footer">
                 <div className="container">
-                    <p>© 2025 GKIT. Stabil drift. Smarte systemer.</p>
+                    <p>© 2025 Golfklubbens IT. Stabil drift. Smarte systemer.</p>
                 </div>
             </footer>
         </div>

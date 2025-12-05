@@ -1,6 +1,6 @@
-# GKIT Website
+# Golfklubbens IT Website
 
-Dokumentasjon for GKIT Website - en moderne webløsning bygget med React, TypeScript, Vite og Firebase.
+Dokumentasjon for Golfklubbens IT Website - en moderne webløsning bygget med React, TypeScript, Vite og Firebase.
 
 ## Formål
 
@@ -124,4 +124,4 @@ Brukerhåndbøker og administratorhåndbøker for drift av løsningen.
 
 ## Kontakt
 
-For spørsmål eller support, kontakt GKIT på [post@gkit.no](mailto:post@gkit.no)
+For spørsmål eller support, kontakt Golfklubbens IT på [post@gkit.no](mailto:post@gkit.no)

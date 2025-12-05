@@ -6,18 +6,18 @@ import companyConfig from '../config/companyConfig'
 import '../App.css'
 
 interface FormData {
-    name: string
+    firstName: string
+    lastName: string
+    mobile: string
     email: string
-    club: string
-    interest: string
-    message: string
+    golfboxId: string
 }
 
 interface FormErrors {
-    name?: string
+    firstName?: string
+    lastName?: string
+    mobile?: string
     email?: string
-    club?: string
-    interest?: string
 }
 
 const validateEmail = (email: string): boolean => {
@@ -25,42 +25,39 @@ const validateEmail = (email: string): boolean => {
     return re.test(email)
 }
 
+const validateMobile = (mobile: string): boolean => {
+    const re = /^(\+47)?[4-9]\d{7}$/
+    return re.test(mobile.replace(/\s/g, ''))
+}
+
 const validateForm = (data: FormData): FormErrors => {
     const errors: FormErrors = {}
-    if (!data.name.trim() || data.name.length < 2) {
-        errors.name = 'Navn må være minst 2 tegn'
+    if (!data.firstName.trim() || data.firstName.length < 2) {
+        errors.firstName = 'Fornavn må være minst 2 tegn'
+    }
+    if (!data.lastName.trim() || data.lastName.length < 2) {
+        errors.lastName = 'Etternavn må være minst 2 tegn'
+    }
+    if (!data.mobile.trim()) {
+        errors.mobile = 'Mobilnummer er påkrevd'
+    } else if (!validateMobile(data.mobile)) {
+        errors.mobile = 'Ugyldig mobilnummer'
     }
     if (!data.email.trim()) {
         errors.email = 'E-post er påkrevd'
     } else if (!validateEmail(data.email)) {
         errors.email = 'Ugyldig e-postadresse'
     }
-    if (!data.club.trim()) {
-        errors.club = 'Klubb/Bedrift er påkrevd'
-    }
-    if (!data.interest) {
-        errors.interest = 'Vennligst velg et interesseområde'
-    }
     return errors
 }
 
 const ContactForm = () => {
-    const interests = [
-        'GolfBox Automatisering',
-        'Google Workspace',
-        'ClubsiteCMS drift',
-        'Digital Signage',
-        'Golfbilkontroll',
-        'Booking & Kalender',
-        'Annet'
-    ]
-
     const [formData, setFormData] = useState<FormData>({
-        name: '',
+        firstName: '',
+        lastName: '',
+        mobile: '',
         email: '',
-        club: '',
-        interest: 'GolfBox Automatisering',
-        message: ''
+        golfboxId: ''
     })
 
     const [loading, setLoading] = useState(false)
@@ -88,22 +85,22 @@ const ContactForm = () => {
 
         try {
             await addDoc(collection(db, 'leads'), {
-                name: formData.name,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                mobile: formData.mobile,
                 email: formData.email,
-                club: formData.club,
-                interest: formData.interest,
-                message: formData.message,
+                golfboxId: formData.golfboxId || null,
                 status: 'new',
                 createdAt: serverTimestamp()
             })
 
             setSubmitted(true)
             setFormData({
-                name: '',
+                firstName: '',
+                lastName: '',
+                mobile: '',
                 email: '',
-                club: '',
-                interest: 'GolfBox Automatisering',
-                message: ''
+                golfboxId: ''
             })
             setErrors({})
         } catch (err: unknown) {
@@ -119,9 +116,10 @@ const ContactForm = () => {
 
     if (submitted) {
         return (
-            <div className="glass" style={{ padding: '3rem', textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-                <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>✅ Takk!</h3>
-                <p style={{ marginBottom: '2rem' }}>Vi har mottatt din henvendelse og kontakter deg snart.</p>
+            <div className="glass" style={{ padding: '3rem', textAlign: 'center', maxWidth: '600px', margin: '0 auto', borderRadius: '12px' }}>
+                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
+                <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem', fontSize: '1.5rem' }}>Takk for din henvendelse!</h3>
+                <p style={{ marginBottom: '2rem', color: 'var(--color-gray-light)' }}>Vi har mottatt din melding og kontakter deg snart.</p>
                 <button onClick={() => setSubmitted(false)} className="btn btn-secondary">
                     Send ny henvendelse
                 </button>
@@ -130,28 +128,94 @@ const ContactForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="contact-form glass">
-            <div className="form-group">
-                <label htmlFor="name">Navn *</label>
+        <form onSubmit={handleSubmit} className="contact-form glass" style={{ padding: '2rem', borderRadius: '12px' }}>
+            {/* Name Row - Side by side on web, stacked on mobile */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                    <label htmlFor="firstName" style={{ fontWeight: 600, marginBottom: '0.5rem', display: 'block', color: '#fff' }}>
+                        Fornavn <span style={{ color: '#ff6b6b' }}>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="Fornavn"
+                        disabled={loading}
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: errors.firstName ? '2px solid #ff6b6b' : '1px solid rgba(76, 175, 80, 0.3)',
+                            borderRadius: '8px',
+                            color: '#fff',
+                            fontSize: '0.95rem',
+                            cursor: loading ? 'not-allowed' : 'auto'
+                        }}
+                    />
+                    {errors.firstName && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.firstName}</span>}
+                </div>
+
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                    <label htmlFor="lastName" style={{ fontWeight: 600, marginBottom: '0.5rem', display: 'block', color: '#fff' }}>
+                        Etternavn <span style={{ color: '#ff6b6b' }}>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        placeholder="Etternavn"
+                        disabled={loading}
+                        style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            border: errors.lastName ? '2px solid #ff6b6b' : '1px solid rgba(76, 175, 80, 0.3)',
+                            borderRadius: '8px',
+                            color: '#fff',
+                            fontSize: '0.95rem',
+                            cursor: loading ? 'not-allowed' : 'auto'
+                        }}
+                    />
+                    {errors.lastName && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.lastName}</span>}
+                </div>
+            </div>
+
+            {/* Mobile */}
+            <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+                <label htmlFor="mobile" style={{ fontWeight: 600, marginBottom: '0.5rem', display: 'block', color: '#fff' }}>
+                    Mobilnummer <span style={{ color: '#ff6b6b' }}>*</span>
+                </label>
                 <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    value={formData.mobile}
                     onChange={handleChange}
-                    placeholder="Ditt navn"
+                    placeholder="+47 xxx xx xxx"
                     disabled={loading}
                     style={{
-                        borderColor: errors.name ? '#ff6b6b' : undefined,
-                        backgroundColor: errors.name ? 'rgba(255, 107, 107, 0.05)' : undefined,
+                        width: '100%',
+                        padding: '0.75rem',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: errors.mobile ? '2px solid #ff6b6b' : '1px solid rgba(76, 175, 80, 0.3)',
+                        borderRadius: '8px',
+                        color: '#fff',
+                        fontSize: '0.95rem',
                         cursor: loading ? 'not-allowed' : 'auto'
                     }}
                 />
-                {errors.name && <span style={{ color: '#ff6b6b', fontSize: '0.85rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.name}</span>}
+                {errors.mobile && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.mobile}</span>}
             </div>
 
-            <div className="form-group">
-                <label htmlFor="email">E-post *</label>
+            {/* Email */}
+            <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+                <label htmlFor="email" style={{ fontWeight: 600, marginBottom: '0.5rem', display: 'block', color: '#fff' }}>
+                    E-postadresse <span style={{ color: '#ff6b6b' }}>*</span>
+                </label>
                 <input
                     type="email"
                     id="email"
@@ -161,84 +225,67 @@ const ContactForm = () => {
                     placeholder="din@email.no"
                     disabled={loading}
                     style={{
-                        borderColor: errors.email ? '#ff6b6b' : undefined,
-                        backgroundColor: errors.email ? 'rgba(255, 107, 107, 0.05)' : undefined,
+                        width: '100%',
+                        padding: '0.75rem',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: errors.email ? '2px solid #ff6b6b' : '1px solid rgba(76, 175, 80, 0.3)',
+                        borderRadius: '8px',
+                        color: '#fff',
+                        fontSize: '0.95rem',
                         cursor: loading ? 'not-allowed' : 'auto'
                     }}
                 />
-                {errors.email && <span style={{ color: '#ff6b6b', fontSize: '0.85rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.email}</span>}
+                {errors.email && <span style={{ color: '#ff6b6b', fontSize: '0.8rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.email}</span>}
             </div>
 
-            <div className="form-group">
-                <label htmlFor="club">Klubb / Bedrift *</label>
+            {/* GolfBox ID (Optional) */}
+            <div className="form-group" style={{ marginBottom: '2rem' }}>
+                <label htmlFor="golfboxId" style={{ fontWeight: 600, marginBottom: '0.5rem', display: 'block', color: '#fff' }}>
+                    GolfBox ID <span style={{ color: '#888', fontWeight: 400, fontSize: '0.85rem' }}>(valgfritt)</span>
+                </label>
                 <input
                     type="text"
-                    id="club"
-                    name="club"
-                    value={formData.club}
+                    id="golfboxId"
+                    name="golfboxId"
+                    value={formData.golfboxId}
                     onChange={handleChange}
-                    placeholder="Din golfklubb eller bedrift"
+                    placeholder="Din GolfBox ID (hvis aktuelt)"
                     disabled={loading}
                     style={{
-                        borderColor: errors.club ? '#ff6b6b' : undefined,
-                        backgroundColor: errors.club ? 'rgba(255, 107, 107, 0.05)' : undefined,
+                        width: '100%',
+                        padding: '0.75rem',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(76, 175, 80, 0.3)',
+                        borderRadius: '8px',
+                        color: '#fff',
+                        fontSize: '0.95rem',
                         cursor: loading ? 'not-allowed' : 'auto'
                     }}
                 />
-                {errors.club && <span style={{ color: '#ff6b6b', fontSize: '0.85rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.club}</span>}
             </div>
 
-            <div className="form-group">
-                <label htmlFor="interest">Hva er du interessert i? *</label>
-                <select
-                    id="interest"
-                    name="interest"
-                    value={formData.interest}
-                    onChange={handleChange}
-                    disabled={loading}
-                    style={{
-                        borderColor: errors.interest ? '#ff6b6b' : undefined,
-                        backgroundColor: errors.interest ? 'rgba(255, 107, 107, 0.05)' : undefined,
-                        cursor: loading ? 'not-allowed' : 'pointer'
-                    }}
-                >
-                    {interests.map((int) => (
-                        <option key={int} value={int}>
-                            {int}
-                        </option>
-                    ))}
-                </select>
-                {errors.interest && <span style={{ color: '#ff6b6b', fontSize: '0.85rem', marginTop: '0.25rem', display: 'block' }}>⚠️ {errors.interest}</span>}
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="message">Melding (valgfritt)</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Fortell oss mer om dine behov..."
-                    rows={4}
-                    disabled={loading}
-                    style={{ cursor: loading ? 'not-allowed' : 'auto' }}
-                />
-            </div>
-
+            {/* Submit Button */}
             <button
                 type="submit"
                 className="btn btn-primary"
                 disabled={loading}
                 style={{
                     width: '100%',
-                    opacity: loading ? 0.6 : 1,
-                    cursor: loading ? 'not-allowed' : 'pointer'
+                    padding: '1rem',
+                    background: loading ? '#666' : 'linear-gradient(90deg, #4CAF50 0%, #66BB6A 100%)',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    transition: 'all 0.3s ease'
                 }}
             >
-                {loading ? '📤 Sender...' : 'Send henvendelse'}
+                {loading ? '📤 Sender...' : 'Send'}
             </button>
 
-            <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-light)', marginTop: '1rem', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.8rem', color: '#888', marginTop: '1rem', textAlign: 'center' }}>
                 * Påkrevde felt
             </p>
         </form>

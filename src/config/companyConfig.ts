@@ -6,7 +6,7 @@
 export const companyConfig = {
   // Navn
   name: 'Golfklubb IT ENK',
-  shortName: 'GKIT',
+  shortName: 'Golfklubbens IT',
   tagline: 'Stabil drift. Smarte systemer.',
   
   // Organisasjonsnummer

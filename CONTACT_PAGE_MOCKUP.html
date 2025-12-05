@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GKIT - Ta Kontakt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header {
+            background: rgba(26, 26, 26, 0.95);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4CAF50;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
+            border-bottom: 2px solid rgba(76, 175, 80, 0.3);
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ffffff 0%, #4CAF50 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Form Section */
+        .form-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #888;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.08);
+        }
+
+        .required {
+            color: #ff6b6b;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #4CAF50 0%, #66BB6A 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+        }
+
+        .required-note {
+            font-size: 0.85rem;
+            color: #999;
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+
+        /* Info Section */
+        .info-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .info-box {
+            background: rgba(76, 175, 80, 0.05);
+            border-left: 4px solid #4CAF50;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box h3 {
+            color: #4CAF50;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            color: #e0e0e0;
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-box a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+
+        .info-box .sub-info {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            margin-top: 0.5rem;
+        }
+
+        /* Support Section */
+        .support-box {
+            background: linear-gradient(135deg, rgba(255, 212, 59, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            border: 1px solid rgba(255, 212, 59, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .support-box h3 {
+            color: #FFD43B;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-box p {
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .faq-items {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid #4CAF50;
+        }
+
+        .faq-item h4 {
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(26, 26, 26, 0.95);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links a {
+                margin: 0 0.75rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">GKIT</div>
+        <nav class="nav-links">
+            <a href="#hjem">Hjem</a>
+            <a href="#tjenester">Tjenester</a>
+            <a href="#prosjekter">Prosjekter</a>
+            <a href="#om">Om oss</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Ta <span style="color: #4CAF50;">Kontakt</span></h1>
+        <p>Har dere spørsmål eller ønsker en demo? Vi er her for å hjelpe din golfklubb med digital modernisering.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Form Section -->
+            <div class="form-section">
+                <h2>Send oss en melding</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Navn <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Ditt navn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-post <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="din@email.no" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="club">Klubb / Bedrift <span class="required">*</span></label>
+                        <input type="text" id="club" name="club" placeholder="Din golfklubb eller bedrift" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">Hva er du interessert i? <span class="required">*</span></label>
+                        <select id="interest" name="interest" required>
+                            <option value="">Velg et emne</option>
+                            <option value="golfbox">GolfBox Automatisering</option>
+                            <option value="workspace">Google Workspace</option>
+                            <option value="clubsite">ClubsiteCMS</option>
+                            <option value="signage">Digital skilting</option>
+                            <option value="api">API-utvikling</option>
+                            <option value="other">Annet</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Melding (valgfritt)</label>
+                        <textarea id="message" name="message" placeholder="Fortell oss mer om dine behov..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send henvendelse</button>
+                    <p class="required-note">* Påkrevde felt</p>
+                </form>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <h2>Kontaktinformasjon</h2>
+
+                <!-- Email -->
+                <div class="info-box">
+                    <h3>📧 E-post</h3>
+                    <p><a href="mailto:kontakt-oss@golfklubb-it.com">kontakt-oss@golfklubb-it.com</a></p>
+                    <p class="sub-info">For generelle henvendelser</p>
+                </div>
+
+                <!-- Phone -->
+                <div class="info-box">
+                    <h3>📞 Telefon</h3>
+                    <p><a href="tel:+4722651000">472 65 100</a></p>
+                    <p class="sub-info">Support: Hverdager 08:00 - 17:00</p>
+                </div>
+
+                <!-- Address -->
+                <div class="info-box">
+                    <h3>📍 Besøksadresse</h3>
+                    <p>Sloravelen 10, 1405 Langhus</p>
+                    <p class="sub-info">Org.nr: 936 634 966 NO</p>
+                </div>
+
+                <!-- Support -->
+                <div class="support-box">
+                    <h3>⚡ Kundesupport</h3>
+                    <p>Vi hjelper deg med alt fra setup, teknisk support, til langsiktig vedlikehold.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #b0b0b0;">Vi svarer normalt innen 24 timer på hverdager</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Ofte stilte spørsmål</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <h4>❓ Hvor lang tid tar det å få svar?</h4>
+                    <p>Vi svarer på alle henvendelser innen 24 timer på hverdager. For hastesaker, ring oss direkte på 472 65 100.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Tilbyr dere gratis konsultasjon?</h4>
+                    <p>Ja! Vi tilbyr en uforpliktende 30-minutters konsultasjon for å forstå din klubbs behov. Fyll ut skjemaet, så tar vi kontakt.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Kan dere hjelpe oss selv om vi bruker annen plattform?</h4>
+                    <p>Absolutt! Vi har erfaring med GolfBox, ClubsiteCMS, Google Workspace og mange andre systemer. Vi kan hjelpe deg uansett hvor du er i dag.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Hva er prisen?</h4>
+                    <p>Prisene varierer basert på dine behov. Ring oss for et konkret tilbud, eller fyll ut skjemaet med så mye informasjon som mulig.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>GKIT</strong> – Golfklubb IT ENK</p>
+        <p>© 2025 GKIT. Stabil drift. Smarte systemer.</p>
+    </footer>
+</body>
+</html>

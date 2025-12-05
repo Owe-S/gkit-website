@@ -101,7 +101,7 @@ const Services = () => {
                         <p className="lead">Få mer ut av systemet du bruker mest.</p>
                         <p>
                             GolfBox er hjertet i norske golfklubber, men mange bruker mye tid på manuelle prosesser.
-                            GKIT er eksperter på GolfBox-APIet og kan automatisere dataflyten din.
+                            Golfklubbens IT er eksperter på GolfBox-APIet og kan automatisere dataflyten din.
                         </p>
                         <ul className="feature-list">
                             <li><strong>Automatisk synkronisering:</strong> Hold medlemslister oppdatert i nyhetsbrevsystemer (MailChimp, etc.) og regnskapssystemer helt automatisk.</li>

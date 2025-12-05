@@ -92,7 +92,7 @@ function Home() {
                 <div className="container">
                     <div className="about-content">
                         <div className="section-title fade-in">
-                            <h2>Hvorfor <span className="text-gradient-green">GKIT?</span></h2>
+                            <h2>Hvorfor <span className="text-gradient-green">Golfklubbens IT?</span></h2>
                         </div>
                         <p style={{ fontSize: '1.2rem', color: 'var(--color-gray-light)', textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem' }}>
                             Vi er spesialisert IT-partner for norske golfklubber med dyp erfaring innen bransjen.

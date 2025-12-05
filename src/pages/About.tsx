@@ -12,7 +12,7 @@ const About = () => {
 
             <section className="hero" style={{ minHeight: '60vh' }}>
                 <div className="hero-content fade-in-up">
-                    <h1>Om <span className="text-gradient-green">GKIT</span></h1>
+                    <h1>Om <span className="text-gradient-green">Golfklubbens IT</span></h1>
                     <p style={{ fontSize: '1.5rem', color: 'var(--color-gray-light)', maxWidth: '800px', margin: '0 auto' }}>
                         Vi er bindeleddet mellom golfen og teknologien.
                     </p>
@@ -23,7 +23,7 @@ const About = () => {
                 <div className="fade-in">
                     <h2 style={{ marginBottom: '2rem' }}>Hvem er vi?</h2>
                     <p style={{ fontSize: '1.2rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                        GKIT ble etablert med en enkel visjon: Å profesjonalisere IT-hverdagen til norske golfklubber.
+                        Golfklubbens IT ble etablert med en enkel visjon: Å profesjonalisere IT-hverdagen til norske golfklubber.
                         Vi så at mange klubber satt på enorme mengder data og gode systemer, men manglet tid og kompetanse
                         til å få dem til å snakke sammen.
                     </p>
@@ -34,7 +34,7 @@ const About = () => {
                     </p>
 
                     <div style={{ marginTop: '4rem' }}>
-                        <h2>Hvorfor velge <span className="text-gradient-green">GKIT?</span></h2>
+                        <h2>Hvorfor velge <span className="text-gradient-green">Golfklubbens IT?</span></h2>
                         <ul className="why-list" style={{ maxWidth: '800px', margin: '2rem auto', textAlign: 'left' }}>
                             <li style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
                                 <strong>Spisskompetanse på norske golfklubber</strong> – Vi kjenner bransjen innenfra og vet hva som fungerer.

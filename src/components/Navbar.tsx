@@ -18,7 +18,7 @@ const Navbar = () => {
         <nav className="nav container">
             <div className="logo">
                 <Link to="/" onClick={closeMenu}>
-                    <img src={mainLogo} alt="GKIT Logo" style={{ height: '60px', width: 'auto' }} />
+                    <img src={mainLogo} alt="Golfklubbens IT Logo" style={{ height: '60px', width: 'auto' }} />
                 </Link>
             </div>
 
