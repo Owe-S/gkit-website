@@ -1221,9 +1221,16 @@
 - ✅ <strong>GDPR-compliant</strong> - Distribuert i europe-west1 (Belgia)
 - ✅ <strong>HTML-formatert e-post</strong> med alle skjemafelt
 - ✅ <strong>Lead-lagring</strong> i Firestore med tidsstempel og ID
-- ✅ <strong>Firebase Cloud Functions</strong> som utløser ved ny lead</p>
+- ✅ <strong>Firebase Cloud Functions</strong> som utløser ved ny lead
+- ✅ <strong>Auto-responder</strong> på distribusjionslisten for kvittering til avsender</p>
+<p><strong>E-post Flyt:</strong>
+1. Kunde fyller ut kontaktskjema
+2. Lead lagres i Firestore
+3. E-post sendes til <code>kontakt-oss@golfklubb-it.com</code>
+4. Google Groups sender AUTOMATISK kvittering til avsender
+5. Distribusjonslistens medlemmer mottar orignal e-post</p>
 <p><strong>E-post Format &amp; Tilpasning:</strong></p>
-<p>E-posten som sendes har følgende struktur:</p>
+<p>E-posten til distribusjionslisten har følgende struktur:</p>
 <div class="highlight"><pre><span></span><code>Avsender: owe-admin@golfklubb-it.com (via Golfklubbens IT Website)
 Mottaker: kontakt-oss@golfklubb-it.com (distribusjonsliste)
 Subject: 🔔 Ny henvendelse fra [Fornavn] [Etternavn]
@@ -1246,11 +1253,13 @@ Innhold:
 <span class="sb">    &lt;!-- Legg til flere felt etter behov --&gt;</span>
 <span class="sb">`</span>
 </code></pre></div></p>
-<p><strong>⏳ Planlagt - Avsender-Notifikasjoner:</strong>
-- [ ] Send automatisk bekreftelse til avsender (via Cloud Function)
-- [ ] Tilpassbar malkalkul for avsender-e-posten
-- [ ] Opsjonal "Vi tar kontakt snart"-melding
-- [ ] Avsender-notifikasjoner basert på checkbox i skjema</p>
+<p><strong>Auto-responder til avsender (Google Groups):</strong></p>
+<p>For å endre kvitteringsmeldingen som sendes til kunden:
+1. Gå til <a href="https://groups.google.com/a/golfklubb-it.com/g/kontakt">https://groups.google.com/a/golfklubb-it.com/g/kontakt</a>
+2. Klikk <strong>⚙️ Innstillinger</strong>
+3. Velg <strong>Innstillinger</strong> → søk etter <strong>"Automatiske svar"</strong> eller <strong>"Auto-responder"</strong>
+4. Rediger meldingen etter behov
+5. Lagre</p>
 <h3 id="uiux-forbedringer-hybrid-interaktiv-design">UI/UX Forbedringer - Hybrid Interaktiv Design<a class="headerlink" href="#uiux-forbedringer-hybrid-interaktiv-design" title="Permanent link">&para;</a></h3>
 <p><strong>Dato:</strong> 3. desember 2025</p>
 <p><strong>Implementert:</strong>
