@@ -5,6 +5,7 @@ import * as nodemailer from "nodemailer";
 admin.initializeApp();
 
 // Firestore trigger: Send email when new lead is created (GDPR: europe-west1)
+// Fixed: Corrected Gmail password (removed spaces) - 2025-12-07 18:30
 export const sendLeadNotification = functions.region("europe-west1").firestore
     .document("leads/{leadId}")
     .onCreate(async (snap, context) => {
@@ -14,6 +15,8 @@ export const sendLeadNotification = functions.region("europe-west1").firestore
         // Email configuration (using Gmail SMTP)
         const gmailUser = functions.config().gmail?.user || process.env.GMAIL_USER;
         const gmailPassword = functions.config().gmail?.password || process.env.GMAIL_APP_PASSWORD;
+
+        console.log("📧 Attempting to send email from:", gmailUser);
 
         if (!gmailUser || !gmailPassword) {
             console.error("Gmail credentials not configured. Set with: firebase functions:config:set gmail.user=... gmail.password=...");

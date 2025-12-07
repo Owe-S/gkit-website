@@ -67,10 +67,18 @@ Denne dokumentasjonen inneholder:
 - ✅ **HTML-formatert e-post** med alle skjemafelt
 - ✅ **Lead-lagring** i Firestore med tidsstempel og ID
 - ✅ **Firebase Cloud Functions** som utløser ved ny lead
+- ✅ **Auto-responder** på distribusjionslisten for kvittering til avsender
+
+**E-post Flyt:**
+1. Kunde fyller ut kontaktskjema
+2. Lead lagres i Firestore
+3. E-post sendes til `kontakt-oss@golfklubb-it.com`
+4. Google Groups sender AUTOMATISK kvittering til avsender
+5. Distribusjonslistens medlemmer mottar orignal e-post
 
 **E-post Format & Tilpasning:**
 
-E-posten som sendes har følgende struktur:
+E-posten til distribusjionslisten har følgende struktur:
 
 ```
 Avsender: owe-admin@golfklubb-it.com (via Golfklubbens IT Website)
@@ -99,11 +107,14 @@ html: `
 `
 ```
 
-**⏳ Planlagt - Avsender-Notifikasjoner:**
-- [ ] Send automatisk bekreftelse til avsender (via Cloud Function)
-- [ ] Tilpassbar malkalkul for avsender-e-posten
-- [ ] Opsjonal "Vi tar kontakt snart"-melding
-- [ ] Avsender-notifikasjoner basert på checkbox i skjema
+**Auto-responder til avsender (Google Groups):**
+
+For å endre kvitteringsmeldingen som sendes til kunden:
+1. Gå til https://groups.google.com/a/golfklubb-it.com/g/kontakt
+2. Klikk **⚙️ Innstillinger**
+3. Velg **Innstillinger** → søk etter **"Automatiske svar"** eller **"Auto-responder"**
+4. Rediger meldingen etter behov
+5. Lagre
 
 ### UI/UX Forbedringer - Hybrid Interaktiv Design
 **Dato:** 3. desember 2025
