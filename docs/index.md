@@ -58,6 +58,53 @@ Denne dokumentasjonen inneholder:
 
 ## Nylige Oppdateringer (Desember 2025)
 
+### E-post Notifikasjoner - Kontaktskjema
+**Dato:** 7. desember 2025
+
+**✅ Implementert:**
+- ✅ **Automatiske notifikasjoner** til `kontakt-oss@golfklubb-it.com` distribusjonsliste
+- ✅ **GDPR-compliant** - Distribuert i europe-west1 (Belgia)
+- ✅ **HTML-formatert e-post** med alle skjemafelt
+- ✅ **Lead-lagring** i Firestore med tidsstempel og ID
+- ✅ **Firebase Cloud Functions** som utløser ved ny lead
+
+**E-post Format & Tilpasning:**
+
+E-posten som sendes har følgende struktur:
+
+```
+Avsender: owe-admin@golfklubb-it.com (via Golfklubbens IT Website)
+Mottaker: kontakt-oss@golfklubb-it.com (distribusjonsliste)
+Subject: 🔔 Ny henvendelse fra [Fornavn] [Etternavn]
+
+Innhold:
+- Navn, mobilnummer, e-post
+- GolfBox ID (hvis oppgitt)
+- Lead ID (auto-generert)
+- Tidsstempel
+```
+
+**Å endre e-postmalen:**
+1. Rediger `functions/src/index.ts`
+2. Finn seksjonen `const mailOptions = { ... html: ... }`
+3. Endre HTML-innholdet etter ønske
+4. Kjør: `firebase deploy --only functions`
+
+**Eksempel på HTML-endring:**
+```typescript
+html: `
+    <h2 style="color: #4CAF50;">Din egen tittel her</h2>
+    <p><strong>Navn:</strong> ${leadData.firstName} ${leadData.lastName}</p>
+    <!-- Legg til flere felt etter behov -->
+`
+```
+
+**⏳ Planlagt - Avsender-Notifikasjoner:**
+- [ ] Send automatisk bekreftelse til avsender (via Cloud Function)
+- [ ] Tilpassbar malkalkul for avsender-e-posten
+- [ ] Opsjonal "Vi tar kontakt snart"-melding
+- [ ] Avsender-notifikasjoner basert på checkbox i skjema
+
 ### UI/UX Forbedringer - Hybrid Interaktiv Design
 **Dato:** 3. desember 2025
 
