@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Archive folder (local documentation not synced to git)
+_old/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
