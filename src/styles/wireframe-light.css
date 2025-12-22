@@ -1,0 +1,75 @@
+/* Light Theme Override for Wireframe */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+}
+
+body {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    font-family: Inter, Arial, sans-serif !important;
+}
+
+#root {
+    background-color: #FFFFFF !important;
+}
+
+/* Remove dark theme from App.css */
+:root {
+    --color-bg-light: #FFFFFF !important;
+    --color-text-dark: #111827 !important;
+    --color-border: #E5E7EB !important;
+}
+
+/* Override any dark backgrounds */
+.app,
+.app > * {
+    background-color: #FFFFFF !important;
+}
+
+section {
+    color: #111827 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #111827 !important;
+}
+
+p {
+    color: #4B5563 !important;
+}
+
+a {
+    color: #0057D9 !important;
+}
+
+button {
+    font-family: Inter, Arial, sans-serif !important;
+}
+
+/* Ensure header is light */
+header {
+    background-color: #FFFFFF !important;
+    border-bottom: 1px solid #E5E7EB !important;
+}
+
+/* Hide navbar if present */
+.navbar,
+.header.dark {
+    display: none !important;
+}
+
+/* Light theme text */
+.text-dark {
+    color: #111827 !important;
+}
+
+.text-gray {
+    color: #4B5563 !important;
+}

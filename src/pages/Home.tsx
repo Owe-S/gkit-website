@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import '../styles/wireframe-light.css'
 
 function Home() {
     useEffect(() => {
