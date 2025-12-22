@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
+import '../App.css'
 
 function Home() {
     const [scrolled, setScrolled] = useState(false)
@@ -13,7 +14,17 @@ function Home() {
     }, [])
 
     return (
-        <div style={{ minHeight: '100vh', backgroundColor: '#FFFFFF' }}>
+        <div style={{ 
+            minHeight: '100vh', 
+            backgroundColor: '#FFFFFF',
+            color: '#111827'
+        }}>
+            <style>{`
+                body { background-color: #FFFFFF !important; }
+                .app { background-color: #FFFFFF !important; }
+                section { background-color: #FFFFFF !important; }
+                .header { background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.9)) !important; border-bottom: 1px solid #E5E7EB !important; }
+            `}</style>
             {/* Header */}
             <header style={{
                 position: 'sticky',
