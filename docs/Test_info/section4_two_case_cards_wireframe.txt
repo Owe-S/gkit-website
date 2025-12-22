@@ -1,0 +1,41 @@
+<!-- SECTION 4: TWO HORIZONTAL CASE / PROJECT CARDS -->
+<section class="bg-white px-6 py-16">
+  <div class="max-w-5xl mx-auto">
+    <header class="text-center mb-10">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+        [SECTION HEADING PLACEHOLDER]
+      </h2>
+      <p class="text-sm md:text-base text-gray-600">
+        [BRIEF SECTION DESCRIPTION PLACEHOLDER]
+      </p>
+    </header>
+
+    <div class="space-y-6 md:space-y-0 md:grid md:grid-cols-2 md:gap-6">
+      <!-- Case 1 -->
+      <article class="p-6 rounded-xl border border-gray-200 shadow-sm bg-white flex flex-col gap-3">
+        <div class="w-full h-28 rounded-lg bg-gray-100 mb-2 flex items-center justify-center text-gray-400 text-xs">
+          [THUMBNAIL / ILLUSTRATION PLACEHOLDER]
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">
+          [CASE TITLE PLACEHOLDER 1]
+        </h3>
+        <p class="text-sm text-gray-600">
+          [SHORT CASE DESCRIPTION PLACEHOLDER – 2–3 LINES]
+        </p>
+      </article>
+
+      <!-- Case 2 -->
+      <article class="p-6 rounded-xl border border-gray-200 shadow-sm bg-white flex flex-col gap-3">
+        <div class="w-full h-28 rounded-lg bg-gray-100 mb-2 flex items-center justify-center text-gray-400 text-xs">
+          [THUMBNAIL / ILLUSTRATION PLACEHOLDER]
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900">
+          [CASE TITLE PLACEHOLDER 2]
+        </h3>
+        <p class="text-sm text-gray-600">
+          [SHORT CASE DESCRIPTION PLACEHOLDER – 2–3 LINES]
+        </p>
+      </article>
+    </div>
+  </div>
+</section>

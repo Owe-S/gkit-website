@@ -1,0 +1,75 @@
+<!-- SECTION 3: SHORT PROBLEM / BENEFIT LIST WITH ICON ROWS -->
+<section class="bg-[#F7F9FC] px-6 py-16">
+  <div class="max-w-4xl mx-auto">
+    <header class="text-center mb-10">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+        [SECTION HEADING PLACEHOLDER]
+      </h2>
+      <p class="text-sm md:text-base text-gray-600">
+        [OPTIONAL SUBTEXT PLACEHOLDER – MAX 1–2 LINES]
+      </p>
+    </header>
+
+    <div class="space-y-4">
+      <!-- Row 1 -->
+      <div class="flex items-start gap-3">
+        <div class="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900">
+            [ROW TITLE PLACEHOLDER 1]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [ROW DESCRIPTION PLACEHOLDER 1 – 1–2 LINES]
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="flex items-start gap-3">
+        <div class="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900">
+            [ROW TITLE PLACEHOLDER 2]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [ROW DESCRIPTION PLACEHOLDER 2 – 1–2 LINES]
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="flex items-start gap-3">
+        <div class="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900">
+            [ROW TITLE PLACEHOLDER 3]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [ROW DESCRIPTION PLACEHOLDER 3 – 1–2 LINES]
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 4 (optional) -->
+      <div class="flex items-start gap-3">
+        <div class="mt-1 w-8 h-8 rounded-full bg-white border flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900">
+            [ROW TITLE PLACEHOLDER 4]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [ROW DESCRIPTION PLACEHOLDER 4 – 1–2 LINES]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

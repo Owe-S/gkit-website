@@ -1,0 +1,54 @@
+<!-- SECTION 2: SERVICE / FEATURE CARDS (3 COLUMNS ON DESKTOP, 1 ON MOBILE) -->
+<section class="bg-white px-6 py-16">
+  <div class="max-w-5xl mx-auto">
+    <header class="text-center mb-10">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+        [SECTION HEADING PLACEHOLDER]
+      </h2>
+      <p class="text-sm md:text-base text-gray-600">
+        [SHORT INTRO TEXT PLACEHOLDER – OPTIONAL]
+      </p>
+    </header>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="p-6 rounded-xl border border-gray-200 shadow-sm bg-white">
+        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          [CARD 1 TITLE PLACEHOLDER]
+        </h3>
+        <p class="text-sm text-gray-600">
+          [CARD 1 DESCRIPTION PLACEHOLDER – 2–3 LINES]
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="p-6 rounded-xl border border-gray-200 shadow-sm bg-white">
+        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          [CARD 2 TITLE PLACEHOLDER]
+        </h3>
+        <p class="text-sm text-gray-600">
+          [CARD 2 DESCRIPTION PLACEHOLDER – 2–3 LINES]
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="p-6 rounded-xl border border-gray-200 shadow-sm bg-white">
+        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mb-4">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          [CARD 3 TITLE PLACEHOLDER]
+        </h3>
+        <p class="text-sm text-gray-600">
+          [CARD 3 DESCRIPTION PLACEHOLDER – 2–3 LINES]
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
