@@ -1,0 +1,26 @@
+<!-- SECTION 1: HERO (LIGHT THEME, CLEAN PRO) -->
+<section class="bg-white px-6 py-20 text-center">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-4">
+      [TAGLINE PLACEHOLDER]
+    </p>
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      [HERO HEADING PLACEHOLDER]
+    </h1>
+    <p class="text-base md:text-lg text-gray-600 mb-8">
+      [SHORT SUBTEXT PLACEHOLDER – 1–2 LINES]
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+      <a href="#"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium
+                bg-blue-600 text-white hover:bg-blue-700 transition">
+        [PRIMARY CTA PLACEHOLDER]
+      </a>
+      <a href="#"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-lg text-sm font-medium
+                border border-blue-600 text-blue-600 hover:bg-blue-50 transition">
+        [SECONDARY CTA PLACEHOLDER]
+      </a>
+    </div>
+  </div>
+</section>

@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://owe-s.github.io/gkit-website/architecture/diagrams/">
+        <link rel="canonical" href="https://owe-s.github.io/gkit-website/AI/WIREFRAME_MODE/">
       
       
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../../api/endpoints/">
       
       
         
@@ -25,7 +21,7 @@
     
     
       
-        <title>Diagrammer - GKIT Website Dokumentasjon</title>
+        <title>WIREFRAME MODE – TEMPORARY DESIGN-ONLY RULESET - GKIT Website Dokumentasjon</title>
       
     
     
@@ -66,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arkitektur-diagrammer" class="md-skip">
+        <a href="#wireframe-mode-temporary-design-only-ruleset" class="md-skip">
           Gå til innhold
         </a>
       
@@ -102,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Diagrammer
+              WIREFRAME MODE – TEMPORARY DESIGN-ONLY RULESET
             
           </span>
         </div>
@@ -368,8 +364,6 @@
       
   
   
-    
-  
   
   
     
@@ -382,11 +376,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -407,7 +401,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -425,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../architecture/" class="md-nav__link">
         
   
   
@@ -450,37 +444,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Diagrammer
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../architecture/diagrams/" class="md-nav__link">
         
   
   
@@ -496,92 +463,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Innholdsliste">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Innholdsliste
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#systemdiagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Systemdiagram
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#komponent-hierarki" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Komponent-hierarki
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-flyt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment-flyt
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dataflyt-kontaktskjema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dataflyt - Kontaktskjema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firebase-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firebase Services
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#neste-steg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Neste steg
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -987,135 +868,79 @@
   
 
 
-<h1 id="arkitektur-diagrammer">Arkitektur Diagrammer<a class="headerlink" href="#arkitektur-diagrammer" title="Permanent link">&para;</a></h1>
-<p>Visuelle representasjoner av GKIT Website arkitekturen.</p>
-<h2 id="systemdiagram">Systemdiagram<a class="headerlink" href="#systemdiagram" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────┐
-│   Bruker    │
-└──────┬──────┘
-       │
-       │ HTTPS
-       ▼
-┌─────────────────────┐
-│  Firebase Hosting   │
-│   (React SPA)       │
-└──────┬──────────────┘
-       │
-       ├────────────┐
-       │            │
-       ▼            ▼
-┌──────────┐  ┌──────────────┐
-│Firestore │  │   Firebase   │
-│          │  │   Functions  │
-└──────────┘  └──────────────┘
-       │            │
-       └────────────┘
-            │
-            ▼
-     ┌──────────────┐
-     │ Google       │
-     │ Analytics 4  │
-     └──────────────┘
-</code></pre></div>
-<h2 id="komponent-hierarki">Komponent-hierarki<a class="headerlink" href="#komponent-hierarki" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>App
-├── Navbar
-└── Routes
-    ├── Home
-    ├── Services
-    ├── Projects
-    ├── About
-    ├── Club2026
-    ├── Products
-    │   ├── ClubsiteCMS
-    │   ├── GolfBox
-    │   ├── Signage
-    │   └── Workspace
-    └── Apps
-        ├── AIFileAnalyzer
-        ├── BookingKalender
-        ├── FrivilligKalender
-        ├── Golfbilkontroll
-        ├── GolfTeamTime
-        └── Soknadsportalen
-</code></pre></div>
-<h2 id="deployment-flyt">Deployment-flyt<a class="headerlink" href="#deployment-flyt" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>┌──────────────┐
-│ Developer    │
-│ (npm run     │
-│  build)      │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│   Vite       │
-│   Build      │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│  dist/       │
-│  folder      │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│  firebase    │
-│  deploy      │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│  Firebase    │
-│  Hosting     │
-│  (Live)      │
-└──────────────┘
-</code></pre></div>
-<h2 id="dataflyt-kontaktskjema">Dataflyt - Kontaktskjema<a class="headerlink" href="#dataflyt-kontaktskjema" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────┐
-│   Bruker    │
-│ (fyller ut  │
-│  skjema)    │
-└──────┬──────┘
-       │
-       ▼
-┌──────────────┐
-│ ContactForm  │
-│ (validering) │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│  Firebase    │
-│  Function    │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│  Firestore   │
-│  (lagring)   │
-└──────────────┘
-</code></pre></div>
-<h2 id="firebase-services">Firebase Services<a class="headerlink" href="#firebase-services" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>Firebase Project: golfklubb-it-website
-│
-├── Hosting
-│   └── dist/ (React build)
-│
-├── Firestore
-│   └── Collections
-│       ├── contacts
-│       └── analytics
-│
-├── Functions
-│   ├── handleContactForm
-│   └── sendNotification
-│
-└── Analytics
-    └── GA4 Integration
-</code></pre></div>
-<h2 id="neste-steg">Neste steg<a class="headerlink" href="#neste-steg" title="Permanent link">&para;</a></h2>
-<p>Les mer om <a href="../../api/endpoints/">API-endepunkter</a> for detaljert API-dokumentasjon.</p>
+<h1 id="wireframe-mode-temporary-design-only-ruleset">WIREFRAME MODE – TEMPORARY DESIGN-ONLY RULESET<a class="headerlink" href="#wireframe-mode-temporary-design-only-ruleset" title="Permanent link">&para;</a></h1>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<p>This ruleset applies ONLY during the initial wireframe and layout setup phase.</p>
+<p>Once the wireframe structure is approved or marked as complete,
+ALL restrictions defined in this document are automatically lifted.</p>
+<hr />
+<h2 id="active-phase-wireframe-mode-temporary">ACTIVE PHASE: WIREFRAME MODE (TEMPORARY)<a class="headerlink" href="#active-phase-wireframe-mode-temporary" title="Permanent link">&para;</a></h2>
+<p>While WIREFRAME MODE is active, the AI must follow these rules:</p>
+<h3 id="1-purpose">1. Purpose<a class="headerlink" href="#1-purpose" title="Permanent link">&para;</a></h3>
+<p>The goal is to define <strong>visual structure only</strong>:
+- Layout
+- Spacing
+- Sections
+- Grids
+- Component hierarchy
+- Light-mode visual expression (Clean Pro)</p>
+<p>Content meaning is NOT part of this phase.</p>
+<hr />
+<h3 id="2-content-handling-strict-temporary">2. Content Handling (STRICT – TEMPORARY)<a class="headerlink" href="#2-content-handling-strict-temporary" title="Permanent link">&para;</a></h3>
+<p>During WIREFRAME MODE:</p>
+<ul>
+<li>Do NOT rewrite, improve, analyze, or optimize real content</li>
+<li>Do NOT infer meaning or business logic</li>
+<li>Do NOT introduce real product names, services, or data</li>
+<li>Use placeholders ONLY:</li>
+<li>Title Placeholder</li>
+<li>Subtitle Placeholder</li>
+<li>Text Placeholder</li>
+<li>Button Placeholder</li>
+<li>Image Placeholder</li>
+<li>Icon Placeholder</li>
+</ul>
+<p>Content is considered <strong>locked</strong>, layout is <strong>modifiable</strong>.</p>
+<hr />
+<h3 id="3-design-constraints">3. Design Constraints<a class="headerlink" href="#3-design-constraints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Light mode only</li>
+<li>Minimalist / Clean Pro style</li>
+<li>Mobile-first structure</li>
+<li>Short vertical sections</li>
+<li>Neutral colors (white / gray / soft blue)</li>
+<li>Cards, grids, and simple components</li>
+</ul>
+<hr />
+<h3 id="4-code-generation-rules">4. Code Generation Rules<a class="headerlink" href="#4-code-generation-rules" title="Permanent link">&para;</a></h3>
+<p>If code is generated during WIREFRAME MODE:
+- Preserve existing real content exactly as-is
+- Only placeholders may be added where content is required
+- Focus on HTML/CSS/layout structure, not wording</p>
+<hr />
+<h3 id="5-decision-rule">5. Decision Rule<a class="headerlink" href="#5-decision-rule" title="Permanent link">&para;</a></h3>
+<p>If there is uncertainty:
+→ Always modify layout<br />
+→ Never modify content</p>
+<hr />
+<h2 id="exit-condition-important">EXIT CONDITION – IMPORTANT<a class="headerlink" href="#exit-condition-important" title="Permanent link">&para;</a></h2>
+<h3 id="6-wireframe-completion">6. Wireframe Completion<a class="headerlink" href="#6-wireframe-completion" title="Permanent link">&para;</a></h3>
+<p>When the user indicates any of the following:
+- "Wireframe approved"</p>
+<ul>
+<li>"Wireframe done"</li>
+<li>"Exit wireframe mode"</li>
+<li>"Proceed with content"</li>
+<li>Or starts asking for copy/content changes</li>
+</ul>
+<p>Then:</p>
+<p>▶ WIREFRAME MODE IS DISABLED<br />
+▶ ALL CONTENT RESTRICTIONS ARE REMOVED<br />
+▶ Normal content generation, rewriting, optimization and expansion is fully allowed</p>
+<p>No further limitations apply unless explicitly re-enabled.</p>
+<hr />
+<h2 id="re-entry">Re-entry<a class="headerlink" href="#re-entry" title="Permanent link">&para;</a></h2>
+<p>Wireframe Mode can ONLY be re-enabled by explicit user instruction.</p>
 
 
 
@@ -1140,44 +965,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Forrige: Oversikt">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Forrige
-              </span>
-              <div class="md-ellipsis">
-                Oversikt
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../api/endpoints/" class="md-footer__link md-footer__link--next" aria-label="Neste: Endepunkter">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Neste
-              </span>
-              <div class="md-ellipsis">
-                Endepunkter
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

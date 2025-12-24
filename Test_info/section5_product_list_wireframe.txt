@@ -1,0 +1,60 @@
+<!-- SECTION 5: PRODUCT / MODULE LIST (STACKED ITEMS) -->
+<section class="bg-white px-6 py-16">
+  <div class="max-w-4xl mx-auto">
+    <header class="text-center mb-10">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-2">
+        [SECTION HEADING PLACEHOLDER]
+      </h2>
+      <p class="text-sm md:text-base text-gray-600">
+        [OPTIONAL SECTION SUBTEXT PLACEHOLDER]
+      </p>
+    </header>
+
+    <div class="space-y-4">
+      <!-- Item 1 -->
+      <article class="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm md:text-base font-semibold text-gray-900">
+            [PRODUCT / MODULE NAME PLACEHOLDER 1]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [SHORT DESCRIPTION PLACEHOLDER 1 – 1–2 LINES]
+          </p>
+        </div>
+      </article>
+
+      <!-- Item 2 -->
+      <article class="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm md:text-base font-semibold text-gray-900">
+            [PRODUCT / MODULE NAME PLACEHOLDER 2]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [SHORT DESCRIPTION PLACEHOLDER 2 – 1–2 LINES]
+          </p>
+        </div>
+      </article>
+
+      <!-- Item 3 -->
+      <article class="flex items-start gap-3 p-4 rounded-lg border border-gray-200 bg-white">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center">
+          <span class="text-xs text-blue-600">[ICON]</span>
+        </div>
+        <div>
+          <h3 class="text-sm md:text-base font-semibold text-gray-900">
+            [PRODUCT / MODULE NAME PLACEHOLDER 3]
+          </h3>
+          <p class="text-sm text-gray-600">
+            [SHORT DESCRIPTION PLACEHOLDER 3 – 1–2 LINES]
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

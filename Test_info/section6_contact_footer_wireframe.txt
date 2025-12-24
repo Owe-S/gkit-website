@@ -1,0 +1,39 @@
+<!-- SECTION 6: CONTACT / FOOTER (LIGHT THEME) -->
+<footer class="bg-[#F7F9FC] px-6 py-12 border-t border-gray-200">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+      <!-- Left block -->
+      <div>
+        <h2 class="text-lg font-semibold text-gray-900 mb-1">
+          [CONTACT HEADING PLACEHOLDER]
+        </h2>
+        <p class="text-sm text-gray-600">
+          [SHORT CONTACT OR CALL-TO-ACTION TEXT PLACEHOLDER]
+        </p>
+      </div>
+
+      <!-- Right block -->
+      <div class="flex flex-col sm:flex-row gap-3 sm:items-center">
+        <a href="#"
+           class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
+          [PRIMARY CONTACT CTA PLACEHOLDER]
+        </a>
+        <a href="#"
+           class="text-sm text-gray-600 hover:text-gray-900 underline underline-offset-4">
+          [SECONDARY CONTACT LINK PLACEHOLDER]
+        </a>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-6 border-t border-gray-200">
+      <p class="text-xs text-gray-500">
+        [FOOTER SMALL PRINT PLACEHOLDER – E.G. COPYRIGHT / ORG INFO]
+      </p>
+      <div class="flex gap-4 text-xs text-gray-500">
+        <a href="#" class="hover:text-gray-900">[LINK 1]</a>
+        <a href="#" class="hover:text-gray-900">[LINK 2]</a>
+        <a href="#" class="hover:text-gray-900">[LINK 3]</a>
+      </div>
+    </div>
+  </div>
+</footer>
