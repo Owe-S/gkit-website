@@ -58,6 +58,15 @@ Denne dokumentasjonen inneholder:
 
 ## Nylige Oppdateringer (Desember 2025)
 
+### Nytt "Card Stack" Design & Mobiloptimalisering
+**Dato:** 24. desember 2025
+
+**✅ Implementert:**
+- ✅ **Horisontal Card Stack**: Ny landingsside med horisontal scrolling (snap-scroll) for en mer engasjerende brukeropplevelse.
+- ✅ **Mobiloptimalisering**: Full responsivitet med 1-kolonne layout på mobil, redusert padding og tilpassede fontstørrelser.
+- ✅ **Brand Audit**: Gjennomført fargerevisjon for å sikre konsistent bruk av Grønn (#4CAF50), Svart (#111827) og Hvit (#FFFFFF).
+- ✅ **Branch Strategi**: Flyttet til `main` som standard produksjonsbranch og `dev-v3` som aktiv arbeidsbranch.
+
 ### E-post Notifikasjoner - Kontaktskjema
 **Dato:** 7. desember 2025
 

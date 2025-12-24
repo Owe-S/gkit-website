@@ -1,7 +1,7 @@
 site_name: "GKIT Website Dokumentasjon"
-site_url: "https://owe-s.github.io/gkit-website"
-repo_url: "https://github.com/Owe-S/gkit-website"
-repo_name: "Owe-S/gkit-website"
+site_url: "https://golfklubb-it.github.io/gkit-website"
+repo_url: "https://github.com/Golfklubb-IT/gkit-website"
+repo_name: "Golfklubb-IT/gkit-website"
 
 theme:
   name: material

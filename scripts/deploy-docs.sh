@@ -36,5 +36,5 @@ fi
 echo "✅ Deploy OK!"
 echo ""
 echo "📍 Dokumentasjonen er nå live på:"
-echo "   https://owe-s.github.io/gkit-website/"
+echo "   https://golfklubb-it.github.io/gkit-website/"
 echo ""
