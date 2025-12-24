@@ -1,15 +1,33 @@
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/wireframe-light.css'
+import { homeContent as localHomeContent } from '../config/homeContent'
+import { db } from '../firebase'
+import { doc, getDoc } from 'firebase/firestore'
 
 function Home() {
     const [activeIndex, setActiveIndex] = useState(0)
     const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' })
+    const [content, setContent] = useState(localHomeContent)
     const scrollContainerRef = useRef(null)
 
     useEffect(() => {
         document.documentElement.style.backgroundColor = '#FFFFFF'
         document.body.style.backgroundColor = '#FFFFFF'
+
+        // Fetch dynamic content from Firestore
+        const fetchContent = async () => {
+            try {
+                const docRef = doc(db, 'content', 'home');
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    setContent(docSnap.data() as typeof localHomeContent);
+                }
+            } catch (error) {
+                console.error("Error fetching remote content, using local fallback:", error);
+            }
+        };
+        fetchContent();
     }, [])
 
     const handleScroll = (e) => {
@@ -133,25 +151,23 @@ function Home() {
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', maxWidth: '72rem', width: '100%' }}>
                         <div>
-                            <p style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem', color: '#4CAF50', fontWeight: '700' }}>DIGITALE LØSNINGER FOR GOLF</p>
+                            <p style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem', color: '#4CAF50', fontWeight: '700' }}>{content.hero.tagline}</p>
                             <h1 className="hero-title" style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: 1.1, color: '#111827' }}>
-                                Moderniser Klubbdriften Din
+                                {content.hero.title}
                             </h1>
                             <p className="hero-desc" style={{ fontSize: '1.125rem', marginBottom: '2rem', color: '#333333', lineHeight: 1.8, marginRight: '2rem' }}>
-                                Reduser driftskostnader med 40%, automatiser medlemsadministrasjon, og integrer alle systemene dine på én moderne plattform brukt av 50+ golfklubber i Norge.
+                                {content.hero.description}
                             </p>
                             <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
                                 <button onClick={() => scrollToCard(4)} style={{ padding: '0.75rem 2rem', backgroundColor: '#4CAF50', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 12px rgba(76,175,80,0.2)' }}>
-                                    Bestill Demo
+                                    {content.hero.primaryCta}
                                 </button>
                                 <button onClick={() => scrollToCard(3)} style={{ padding: '0.75rem 2rem', backgroundColor: '#FFFFFF', color: '#4CAF50', borderRadius: '0.5rem', border: '2px solid #4CAF50', fontSize: '1rem', fontWeight: '600', cursor: 'pointer' }}>
-                                    Utforsk Apper
+                                    {content.hero.secondaryCta}
                                 </button>
                             </div>
                             <div className="hero-stats" style={{ display: 'flex', gap: '2rem', fontSize: '0.9rem', color: '#333333', fontWeight: '500' }}>
-                                <div>✓ 50+ klubber stoler på oss</div>
-                                <div>✓ Norsk support 24/7</div>
-                                <div>✓ Enterprise sikkerhet</div>
+                                {content.hero.stats.map((stat, i) => <div key={i}>{stat}</div>)}
                             </div>
                         </div>
                         <div className="hero-image" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)', borderRadius: '1rem', padding: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', color: '#FFFFFF', fontSize: '4rem' }}>
@@ -167,32 +183,19 @@ function Home() {
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '56rem', width: '100%' }}>
                         <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
-                            Utfordringene
+                            {content.challenges.title}
                         </h2>
                         <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center', maxWidth: '42rem', margin: '0 auto 3rem' }}>
-                            Golfklubber sløser tid og penger på fragmenterte systemer. Vi undersøkte 100+ klubber og fant disse kritiske problemene:
+                            {content.challenges.description}
                         </p>
                         <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
-                                <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>40% Tidslekkasje</h3>
-                                <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Gamle systemer drener operasjonell tid</p>
-                                <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Les casestudie →</a>
-                            </div>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
-                                <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>Datasisloer</h3>
-                                <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Frakoplede plattformer skaper fragmentering</p>
-                                <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Les mer →</a>
-                            </div>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
-                                <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>Manuelle Prosesser</h3>
-                                <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Trege arbeidsflyten begrenser klubbveksten</p>
-                                <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Se løsninger →</a>
-                            </div>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
-                                <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>Dårlig UX</h3>
-                                <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Ingen enhetlig administrasjonsdashboard</p>
-                                <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Se demo →</a>
-                            </div>
+                            {content.challenges.items.map((item, i) => (
+                                <div key={i} style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
+                                    <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>{item.title}</h3>
+                                    <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>{item.desc}</p>
+                                    <a href={item.link} style={{ fontSize: '0.85rem', fontWeight: '600' }}>{item.linkText}</a>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -201,36 +204,20 @@ function Home() {
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '56rem', width: '100%' }}>
                         <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
-                            Vår Integrerte Løsning
+                            {content.solutions.title}
                         </h2>
                         <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center' }}>
-                            GKIT leverer IT-drift, integrasjoner og teknologiutvikling for norske golfklubber – alt fra GolfBox til ClubsiteCMS og Google Workspace.
+                            {content.solutions.description}
                         </p>
                         <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚙️</div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>GolfBox-automatisering</h3>
-                                <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Sømløs integrasjon og automatisering av klubbens GolfBox-system for effektiv drift (f.eks. turneringsdata, starttider, resultater).</p>
-                                <a href="/products/golfbox" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Integreringsveiledning →</a>
-                            </div>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☁️</div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>Google Workspace</h3>
-                                <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Komplett oppsett og forvaltning av Google Workspace skreddersydd for golfklubber med profeshedell e-post og sikkerhet.</p>
-                                <a href="/products/workspace" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Oppsettveiledning →</a>
-                            </div>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌐</div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>ClubsiteCMS Drift</h3>
-                                <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Drift av klubbens nettside gjennom ClubsiteCMS, Norges ledende golfplattform, i partnerskap med Scangolf.</p>
-                                <a href="/products/clubsite" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Bla gjennom apper →</a>
-                            </div>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
-                                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔌</div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>API & Automasjon</h3>
-                                <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Skreddersydde API-er og automatiserte arbeidsflyter som binder sammen ulike systemer og eliminerer manuelle rutiner.</p>
-                                <a href="/services" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Supportinfo →</a>
-                            </div>
+                            {content.solutions.items.map((item, i) => (
+                                <div key={i} style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
+                                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{item.icon}</div>
+                                    <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>{item.title}</h3>
+                                    <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>{item.desc}</p>
+                                    <Link to={item.link} style={{ fontSize: '0.9rem', fontWeight: '600' }}>Les mer →</Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -239,20 +226,13 @@ function Home() {
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '60rem', width: '100%' }}>
                         <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
-                            Live Applikasjoner
+                            {content.apps.title}
                         </h2>
                         <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '3rem', textAlign: 'center' }}>
-                            6 produksjonsklar systemer i bruk på ledende golfklubber
+                            {content.apps.description}
                         </p>
                         <div className="grid-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
-                            {[
-                                { icon: '📝', name: 'Søknadsportalen', status: '✅ Live', url: '/apps/soknadsportalen', desc: 'Digitaliser innsending, behandling og oppfølging av søknader.' },
-                                { icon: '⏱️', name: 'GolfTeam-Time', status: '✅ Live', url: '/apps/golfteam-time', desc: 'Personalplanlegging og timeføring for klubbansatte.' },
-                                { icon: '📺', name: 'Loftlogic Display', status: '✅ Live', url: '/products/signage', desc: 'Sanntidsoppdaterte infoskjermer for klubbhus og range.' },
-                                { icon: '🤝', name: 'Sponsor Dugnad', status: '✅ Live', url: '/apps/sponsor-dugnad', desc: 'Organiser sponsoravtaler og dugnader med påmelding.' },
-                                { icon: '📊', name: 'GolfChart MultiClub', status: '✅ Live', url: '/apps/golfchart', desc: 'Deling av golfdata på tvers av klubber for medlemmer.' },
-                                { icon: '☁️', name: 'Workspace Setup', status: '🟡 Beta', url: '/products/workspace', desc: 'Oppsettverktøy og guide for Google Workspace i golfklubber.' }
-                            ].map((app, idx) => (
+                            {content.apps.items.map((app, idx) => (
                                 <Link key={idx} to={app.url} style={{ textDecoration: 'none' }}>
                                     <div style={{ padding: '1.5rem', borderRadius: '0.75rem', border: '1px solid #CCCCCC', backgroundColor: '#F5F5F5', textAlign: 'center', height: '100%', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#4CAF50'} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#CCCCCC'}>
                                         <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{app.icon}</div>
@@ -270,18 +250,13 @@ function Home() {
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ maxWidth: '56rem', width: '100%' }}>
                         <h2 className="section-title" style={{ fontSize: '2.5rem', fontWeight: '800', color: '#111827', marginBottom: '1rem', textAlign: 'center' }}>
-                            Hvorfor Velge Golfklubbens IT
+                            {content.benefits.title}
                         </h2>
                         <p className="section-desc" style={{ fontSize: '1.125rem', color: '#333333', marginBottom: '2rem', textAlign: 'center' }}>
-                            Bli med 50+ klubber som stoler på oss
+                            {content.benefits.description}
                         </p>
                         <div className="grid-2col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
-                            {[
-                                { icon: '⛳', title: 'Golfekspertise', desc: 'Bygget av golffolk som forstår klubboperasjoner' },
-                                { icon: '🔐', title: 'Enterprise Sikkerhet', desc: 'SOC2 sertifisert, GDPR godkjent, datakryptering' },
-                                { icon: '💰', title: '40% Kostnadsreduksjon', desc: 'Reduser overhead gjennom automatisering og integrering' },
-                                { icon: '🇳🇴', title: 'Norsk Support', desc: 'Norsktalende eksperter, åpningstidssvar, din tidssone' }
-                            ].map((benefit, idx) => (
+                            {content.benefits.items.map((benefit, idx) => (
                                 <div key={idx} style={{ padding: '1.5rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF' }}>
                                     <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{benefit.icon}</div>
                                     <h3 style={{ fontSize: '1rem', fontWeight: '700', color: '#111827', marginBottom: '0.5rem' }}>{benefit.title}</h3>

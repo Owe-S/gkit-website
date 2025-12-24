@@ -50,33 +50,26 @@ Logg inn på [Firebase Console](https://console.firebase.google.com/):
 
 ## Administrere innhold
 
-### Mock CMS
+### Firestore CMS (Nytt i Desember 2025)
 
-Innhold styres foreløpig av `src/mock_cms.json`:
+Nettsiden henter nå innholdet sitt dynamisk fra **Firebase Firestore**. Dette betyr at du kan endre tekst, ikoner og lenker uten å skrive kode.
 
-```json
-{
-  "services": [...],
-  "projects": [...],
-  "blog": [...]
-}
-```
+#### Slik endrer du innholdet:
 
-### Endre innhold
+1. Logg inn på [Firebase Console](https://console.firebase.google.com/).
+2. Gå til **Firestore Database**.
+3. Finn samlingen (Collection) `content`.
+4. Velg dokumentet `home`.
+5. Her ser du alle feltene som styrer forsiden:
+    - `hero`: Overskrift, tagline, beskrivelse og knapper.
+    - `challenges`: Liste over utfordringer.
+    - `solutions`: Liste over løsninger med ikoner.
+    - `apps`: Oversikt over live applikasjoner.
+    - `benefits`: Fordeler ved å velge GKIT.
 
-1. Åpne `src/mock_cms.json`
-2. Endre JSON-data
-3. Commit og push til GitHub
-4. Automatisk deployment
+### Mock CMS (Gammelt oppsett)
 
-### Fremtidig CMS
-
-GKIT Website vil få et fullverdig CMS (ClubsiteCMS):
-
-- Web-basert admin-panel
-- WYSIWYG-editor
-- Bildehåndtering
-- Versjonskontroll
+Innhold for blogg og visse tjenester styres fortsatt av `src/mock_cms.json`:
 
 ## Firebase Hosting
 

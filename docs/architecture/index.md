@@ -91,10 +91,10 @@ Egne sider for apps i `src/pages/apps/`:
 
 ## Dataflyt
 
-1. Bruker navigerer til siden
-2. React Router laster riktig side-komponent
-3. Komponenter henter data fra Firestore (hvis nødvendig)
-4. Firebase Functions håndterer server-side logikk
+1. Bruker navigerer til siden.
+2. React Router laster riktig side-komponent.
+3. **Firestore CMS**: Forsiden (`Home.tsx`) henter dynamisk innhold fra Firestore-samlingen `content/home`. Hvis Firestore er utilgjengelig, brukes lokale fallback-filer (`src/config/homeContent.ts`).
+4. Firebase Functions håndterer server-side logikk (f.eks. e-postvarsling ved nye leads).
 5. Google Analytics tracker brukeraktivitet
 
 ## Deployment
