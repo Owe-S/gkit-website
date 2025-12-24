@@ -26,7 +26,7 @@ function Club2026() {
                 <div className="hero-content fade-in-up">
                     <span style={{
                         background: 'rgba(255, 212, 59, 0.1)',
-                        color: 'var(--color-accent-yellow)',
+                        color: 'var(--color-gkit-green)',
                         padding: '0.5rem 1rem',
                         borderRadius: '2rem',
                         fontWeight: '600',
@@ -121,9 +121,9 @@ function Club2026() {
                 <div className="container">
                     <div className="about-content">
                         <div className="section-title fade-in">
-                            <h2>We don't just talk. <span className="text-gradient-yellow">We do.</span></h2>
+                            <h2>We don't just talk. <span className="text-gradient-green">We do.</span></h2>
                         </div>
-                        <div className="card" style={{ padding: '2rem', marginTop: '2rem', borderLeft: '4px solid var(--color-accent-yellow)' }}>
+                        <div className="card" style={{ padding: '2rem', marginTop: '2rem', borderLeft: '4px solid var(--color-gkit-green)' }}>
                             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>The Ski GK Blueprint</h3>
                             <p style={{ fontSize: '1.125rem', color: 'var(--color-gray-light)', marginBottom: '1.5rem' }}>
                                 "Look at Ski Golfklubb. They saved 200 admin hours in one season. They automated their golf cart fleet.

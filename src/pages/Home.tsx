@@ -43,10 +43,10 @@ function Home() {
                 * { margin: 0; padding: 0; box-sizing: border-box; }
                 html, body { background-color: #FFFFFF !important; color: #111827 !important; }
                 body { font-family: Inter, Arial, sans-serif; }
-                a { color: #0057D9; text-decoration: none; transition: color 0.2s; }
-                a:hover { color: #003BA3; text-decoration: underline; }
+                a { color: #4CAF50; text-decoration: none; transition: color 0.2s; }
+                a:hover { color: #388E3C; text-decoration: underline; }
                 button { transition: all 0.2s; }
-                button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,87,217,0.3) !important; }
+                button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(76,175,80,0.3) !important; }
                 input, textarea { font-family: Inter, Arial, sans-serif; }
                 .card-stack-container {
                     flex: 1;
@@ -89,17 +89,17 @@ function Home() {
                     border-top: 1px solid #E5E7EB;
                 }
                 .footer a { color: #FFFFFF; }
-                .footer a:hover { color: #0057D9; }
+                .footer a:hover { color: #4CAF50; }
             `}</style>
 
             {/* HEADER */}
             <div className="header">
-                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#0057D9' }}>Golfklubbens IT</div>
+                <div style={{ fontSize: '1.5rem', fontWeight: '700', color: '#4CAF50' }}>Golfklubbens IT</div>
                 <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                    <button onClick={() => scrollToCard(0)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#0057D9', fontWeight: '600', fontSize: '0.9rem' }}>Hjem</button>
+                    <button onClick={() => scrollToCard(0)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#4CAF50', fontWeight: '600', fontSize: '0.9rem' }}>Hjem</button>
                     <button onClick={() => scrollToCard(2)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#111827', fontWeight: '600', fontSize: '0.9rem' }}>Løsninger</button>
                     <button onClick={() => scrollToCard(3)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#111827', fontWeight: '600', fontSize: '0.9rem' }}>Apper</button>
-                    <button onClick={() => scrollToCard(4)} style={{ padding: '0.5rem 1rem', backgroundColor: '#0057D9', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', fontWeight: '600', fontSize: '0.9rem' }}>Kontakt</button>
+                    <button onClick={() => scrollToCard(4)} style={{ padding: '0.5rem 1rem', backgroundColor: '#4CAF50', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', cursor: 'pointer', fontWeight: '600', fontSize: '0.9rem' }}>Kontakt</button>
                 </div>
             </div>
 
@@ -114,7 +114,7 @@ function Home() {
                 <div className="card-slide" style={{ backgroundColor: '#FFFFFF' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', maxWidth: '72rem', width: '100%' }}>
                         <div>
-                            <p style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem', color: '#0057D9', fontWeight: '700' }}>DIGITALE LØSNINGER FOR GOLF</p>
+                            <p style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.25em', marginBottom: '1rem', color: '#4CAF50', fontWeight: '700' }}>DIGITALE LØSNINGER FOR GOLF</p>
                             <h1 style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: 1.1, color: '#111827' }}>
                                 Moderniser Klubbdriften Din
                             </h1>
@@ -122,10 +122,10 @@ function Home() {
                                 Reduser driftskostnader med 40%, automatiser medlemsadministrasjon, og integrer alle systemene dine på én moderne plattform brukt av 50+ golfklubber i Norge.
                             </p>
                             <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-                                <button onClick={() => scrollToCard(4)} style={{ padding: '0.75rem 2rem', backgroundColor: '#0057D9', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,87,217,0.2)' }}>
+                                <button onClick={() => scrollToCard(4)} style={{ padding: '0.75rem 2rem', backgroundColor: '#4CAF50', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 12px rgba(76,175,80,0.2)' }}>
                                     Bestill Demo
                                 </button>
-                                <button onClick={() => scrollToCard(3)} style={{ padding: '0.75rem 2rem', backgroundColor: '#FFFFFF', color: '#0057D9', borderRadius: '0.5rem', border: '2px solid #0057D9', fontSize: '1rem', fontWeight: '600', cursor: 'pointer' }}>
+                                <button onClick={() => scrollToCard(3)} style={{ padding: '0.75rem 2rem', backgroundColor: '#FFFFFF', color: '#4CAF50', borderRadius: '0.5rem', border: '2px solid #4CAF50', fontSize: '1rem', fontWeight: '600', cursor: 'pointer' }}>
                                     Utforsk Apper
                                 </button>
                             </div>
@@ -135,11 +135,11 @@ function Home() {
                                 <div>✓ Enterprise sikkerhet</div>
                             </div>
                         </div>
-                        <div style={{ background: 'linear-gradient(135deg, #0057D9 0%, #003BA3 100%)', borderRadius: '1rem', padding: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', color: '#FFFFFF', fontSize: '4rem' }}>
+                        <div style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #388E3C 100%)', borderRadius: '1rem', padding: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', color: '#FFFFFF', fontSize: '4rem' }}>
                             ⛳
                         </div>
                     </div>
-                    <div style={{ position: 'absolute', bottom: '1rem', left: '50%', transform: 'translateX(-50%)', fontSize: '0.75rem', color: '#0057D9', opacity: 0.6, fontWeight: '500' }}>
+                    <div style={{ position: 'absolute', bottom: '1rem', left: '50%', transform: 'translateX(-50%)', fontSize: '0.75rem', color: '#4CAF50', opacity: 0.6, fontWeight: '500' }}>
                         ← Bla for mer →
                     </div>
                 </div>
@@ -154,22 +154,22 @@ function Home() {
                             Golfklubber sløser tid og penger på fragmenterte systemer. Vi undersøkte 100+ klubber og fant disse kritiske problemene:
                         </p>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #0057D9' }}>
+                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
                                 <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>40% Tidslekkasje</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Gamle systemer drener operasjonell tid</p>
                                 <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Les casestudie →</a>
                             </div>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #0057D9' }}>
+                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
                                 <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>Datasisloer</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Frakoplede plattformer skaper fragmentering</p>
                                 <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Les mer →</a>
                             </div>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #0057D9' }}>
+                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
                                 <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>Manuelle Prosesser</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Trege arbeidsflyten begrenser klubbveksten</p>
                                 <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Se løsninger →</a>
                             </div>
-                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #0057D9' }}>
+                            <div style={{ padding: '1.5rem', borderRadius: '0.75rem', backgroundColor: '#F5F5F5', borderLeft: '4px solid #4CAF50' }}>
                                 <h3 style={{ fontWeight: '700', marginBottom: '0.5rem', color: '#111827' }}>Dårlig UX</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#333333', marginBottom: '1rem' }}>Ingen enhetlig administrasjonsdashboard</p>
                                 <a href="#" style={{ fontSize: '0.85rem', fontWeight: '600' }}>Se demo →</a>
@@ -188,25 +188,25 @@ function Home() {
                             GKIT leverer IT-drift, integrasjoner og teknologiutvikling for norske golfklubber – alt fra GolfBox til ClubsiteCMS og Google Workspace.
                         </p>
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #0057D9', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
+                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚙️</div>
                                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>GolfBox-automatisering</h3>
                                 <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Sømløs integrasjon og automatisering av klubbens GolfBox-system for effektiv drift (f.eks. turneringsdata, starttider, resultater).</p>
                                 <a href="/products/golfbox" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Integreringsveiledning →</a>
                             </div>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #0057D9', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
+                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☁️</div>
                                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>Google Workspace</h3>
                                 <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Komplett oppsett og forvaltning av Google Workspace skreddersydd for golfklubber med profesjonell e-post og sikkerhet.</p>
                                 <a href="/products/workspace" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Oppsettveiledning →</a>
                             </div>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #0057D9', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
+                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌐</div>
                                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>ClubsiteCMS Drift</h3>
                                 <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Drift av klubbens nettside gjennom ClubsiteCMS, Norges ledende golfplattform, i partnerskap med Scangolf.</p>
                                 <a href="/products/clubsite" style={{ fontSize: '0.9rem', fontWeight: '600' }}>Bla gjennom apper →</a>
                             </div>
-                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #0057D9', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
+                            <div style={{ padding: '2rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF', textAlign: 'center' }}>
                                 <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔌</div>
                                 <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#111827', marginBottom: '0.75rem' }}>API & Automasjon</h3>
                                 <p style={{ fontSize: '0.95rem', color: '#333333', marginBottom: '1.5rem', lineHeight: 1.6 }}>Skreddersydde API-er og automatiserte arbeidsflyter som binder sammen ulike systemer og eliminerer manuelle rutiner.</p>
@@ -235,10 +235,10 @@ function Home() {
                                 { icon: '☁️', name: 'Workspace Setup', status: '🟡 Beta', url: '/products/workspace', desc: 'Oppsettverktøy og guide for Google Workspace i golfklubber.' }
                             ].map((app, idx) => (
                                 <Link key={idx} to={app.url} style={{ textDecoration: 'none' }}>
-                                    <div style={{ padding: '1.5rem', borderRadius: '0.75rem', border: '1px solid #CCCCCC', backgroundColor: '#F5F5F5', textAlign: 'center', height: '100%', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#0057D9'} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#CCCCCC'}>
+                                    <div style={{ padding: '1.5rem', borderRadius: '0.75rem', border: '1px solid #CCCCCC', backgroundColor: '#F5F5F5', textAlign: 'center', height: '100%', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#4CAF50'} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#CCCCCC'}>
                                         <div style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>{app.icon}</div>
                                         <h3 style={{ fontSize: '0.9rem', fontWeight: '700', color: '#111827', marginBottom: '0.25rem' }}>{app.name}</h3>
-                                        <p style={{ fontSize: '0.75rem', color: '#0057D9', fontWeight: '600', marginBottom: '0.5rem' }}>{app.status}</p>
+                                        <p style={{ fontSize: '0.75rem', color: '#4CAF50', fontWeight: '600', marginBottom: '0.5rem' }}>{app.status}</p>
                                         <p style={{ fontSize: '0.8rem', color: '#333333' }}>{app.desc}</p>
                                     </div>
                                 </Link>
@@ -263,7 +263,7 @@ function Home() {
                                 { icon: '💰', title: '40% Kostnadsreduksjon', desc: 'Reduser overhead gjennom automatisering og integrering' },
                                 { icon: '🇳🇴', title: 'Norsk Support', desc: 'Norsktalende eksperter, åpningstidssvar, din tidssone' }
                             ].map((benefit, idx) => (
-                                <div key={idx} style={{ padding: '1.5rem', borderRadius: '0.75rem', border: '2px solid #0057D9', backgroundColor: '#FFFFFF' }}>
+                                <div key={idx} style={{ padding: '1.5rem', borderRadius: '0.75rem', border: '2px solid #4CAF50', backgroundColor: '#FFFFFF' }}>
                                     <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>{benefit.icon}</div>
                                     <h3 style={{ fontSize: '1rem', fontWeight: '700', color: '#111827', marginBottom: '0.5rem' }}>{benefit.title}</h3>
                                     <p style={{ fontSize: '0.9rem', color: '#333333' }}>{benefit.desc}</p>
@@ -271,7 +271,7 @@ function Home() {
                             ))}
                         </div>
 
-                        <div style={{ backgroundColor: '#F0F6FF', padding: '2.5rem', borderRadius: '1rem', border: '2px solid #0057D9' }}>
+                        <div style={{ backgroundColor: '#F1F8E9', padding: '2.5rem', borderRadius: '1rem', border: '2px solid #4CAF50' }}>
                             <h3 style={{ fontSize: '1.3rem', fontWeight: '700', color: '#111827', marginBottom: '1.5rem', textAlign: 'center' }}>Bestill Din Gratis Demo</h3>
                             <form onSubmit={handleContactSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                 <input
@@ -299,7 +299,7 @@ function Home() {
                                 />
                                 <button
                                     type="submit"
-                                    style={{ padding: '0.75rem 2rem', backgroundColor: '#0057D9', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 12px rgba(0,87,217,0.2)' }}
+                                    style={{ padding: '0.75rem 2rem', backgroundColor: '#4CAF50', color: '#FFFFFF', borderRadius: '0.5rem', border: 'none', fontSize: '1rem', fontWeight: '600', cursor: 'pointer', boxShadow: '0 4px 12px rgba(76,175,80,0.2)' }}
                                 >
                                     Send Henvendelse
                                 </button>
@@ -332,7 +332,7 @@ function Home() {
                             height: '0.75rem',
                             borderRadius: '0.5rem',
                             border: 'none',
-                            backgroundColor: idx === activeIndex ? '#0057D9' : 'rgba(255,255,255,0.5)',
+                            backgroundColor: idx === activeIndex ? '#4CAF50' : 'rgba(255,255,255,0.5)',
                             cursor: 'pointer',
                             transition: 'all 0.3s'
                         }}

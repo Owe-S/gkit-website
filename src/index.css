@@ -2,9 +2,9 @@
 
 :root {
   /* GKIT Brand Colors */
-  --color-bg-dark: #1A1A1A;
+  --color-bg-dark: #111827;
   --color-gkit-green: #4CAF50;
-  --color-accent-yellow: #FFD43B;
+  --color-accent-green: #388E3C;
   --color-white: #FFFFFF;
   --color-gray-light: #E0E0E0;
   --color-gray-medium: #9E9E9E;
@@ -12,7 +12,7 @@
   
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--color-gkit-green) 0%, #45a049 100%);
-  --gradient-accent: linear-gradient(135deg, var(--color-accent-yellow) 0%, #ffc107 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-green) 0%, #2E7D32 100%);
   --gradient-dark: linear-gradient(180deg, rgba(26, 26, 26, 0.95) 0%, rgba(26, 26, 26, 1) 100%);
   
   /* Spacing */
@@ -37,7 +37,7 @@
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
   --shadow-glow-green: 0 0 20px rgba(76, 175, 80, 0.3);
-  --shadow-glow-yellow: 0 0 20px rgba(255, 212, 59, 0.3);
+  --shadow-glow-accent: 0 0 20px rgba(56, 142, 60, 0.3);
   
   /* Border Radius */
   --radius-sm: 8px;
@@ -107,7 +107,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent-yellow);
+  color: var(--color-accent-green);
 }
 
 /* Utility Classes */
@@ -128,7 +128,7 @@ a:hover {
   background-clip: text;
 }
 
-.text-gradient-yellow {
+.text-gradient-accent {
   background: var(--gradient-accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

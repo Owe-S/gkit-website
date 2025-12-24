@@ -74,7 +74,7 @@ const About = () => {
                                 <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Sertifisert Utvikler</p>
                             </div>
                             <div className="partner-card glass" style={{ padding: '2rem' }}>
-                                <h3 style={{ color: '#FFD43B' }}>NextJS / React</h3>
+                                <h3 style={{ color: 'var(--color-gkit-green)' }}>NextJS / React</h3>
                                 <p style={{ fontSize: '0.9rem', color: '#aaa' }}>Moderne Webteknologi</p>
                             </div>
                         </div>

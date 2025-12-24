@@ -76,7 +76,7 @@ const Projects = () => {
 
             <section className="hero" style={{ minHeight: '50vh' }}>
                 <div className="hero-content fade-in-up">
-                    <h1>Våre <span className="text-gradient-yellow">Prosjekter</span></h1>
+                    <h1>Våre <span className="text-gradient-green">Prosjekter</span></h1>
                     <p style={{ fontSize: '1.2rem', color: 'var(--color-gray-light)', maxWidth: '700px', margin: '0 auto' }}>
                         Vi utvikler og drifter innovative løsninger for effektiv klubbadministrasjon
                     </p>

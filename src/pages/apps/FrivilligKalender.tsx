@@ -13,7 +13,7 @@ const FrivilligKalender = () => {
                 <div className="hero-content fade-in-up">
                     <h1>
                         <span className="text-gradient-green">Frivillig-kalender</span>
-                        <span style={{ display: 'inline-block', background: 'rgba(255, 193, 7, 0.2)', color: '#ffc107', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
+                        <span style={{ display: 'inline-block', background: 'rgba(158, 158, 158, 0.2)', color: '#9E9E9E', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', marginLeft: '1rem', verticalAlign: 'middle' }}>Under testing</span>
                         <br />
                         Planlegg frivillig arbeid
                     </h1>
