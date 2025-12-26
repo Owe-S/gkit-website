@@ -1,10 +1,32 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 
 const GolfBox = () => {
+    const breadcrumbs = [
+        { name: 'Hjem', url: 'https://golfklubb-it-website.web.app/' },
+        { name: 'Produkter', url: 'https://golfklubb-it-website.web.app/products' },
+        { name: 'GolfBox', url: 'https://golfklubb-it-website.web.app/products/golfbox' },
+    ]
+
     return (
         <div className="app">
+            <SEOMeta
+                title="GolfBox Automatisering - Automatiser oppgaver for golfklubber"
+                description="Automatiser repeterende oppgaver i GolfBox. Synkroniser data feilfritt, øk medlemstilfredshet og spar tid. Integrasjon med Workspace, ClubsiteCMS og mer."
+                keywords="GolfBox automatisering, golf system, golfklubb automatisering, Norwegisch golf software"
+                url="https://golfklubb-it-website.web.app/products/golfbox"
+                schema={softwareApplicationSchema(
+                    'GolfBox Automatisering',
+                    'Automatiser repeterende oppgaver i GolfBox. Synkroniser data og øk medlemstilfredshet.',
+                    'https://golfklubb-it-website.web.app/products/golfbox',
+                    'BusinessApplication',
+                    'https://golfklubb-it-website.web.app/golfbox-image.png'
+                )}
+                breadcrumbs={breadcrumbs}
+            />
             <header className="header">
                 <Navbar />
             </header>

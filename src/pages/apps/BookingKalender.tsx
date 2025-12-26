@@ -91,6 +91,77 @@ const BookingKalender = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>GKIT Booking vs CS Booking</h2>
+                <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem', fontSize: '1.1rem', color: 'var(--color-gray-light)' }}>
+                    Begge løsninger er gode, men har ulike fordeler:
+                </p>
+
+                <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+                        <div style={{ padding: '2rem', background: 'var(--color-bg-dark)', borderRadius: '12px', border: '1px solid rgba(76, 175, 80, 0.2)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '1.5rem' }}>GKIT Booking</h4>
+                            <ul style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)', lineHeight: '1.8', listStyle: 'none', padding: 0 }}>
+                                <li>✅ Tett integrasjon med GKIT-løsninger</li>
+                                <li>✅ Turneringer og arrangementer</li>
+                                <li>✅ Frivillig-planlegging</li>
+                                <li>✅ Elektronisk display/signage</li>
+                                <li>✅ Google Calendar-synk</li>
+                                <li>✅ Skreddersøm og custom-funksjoner</li>
+                                <li>📅 Lansering Q1-Q2 2025</li>
+                            </ul>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'var(--color-bg-dark)', borderRadius: '12px', border: '1px solid rgba(76, 175, 80, 0.2)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '1.5rem' }}>CS Booking (Scangolf)</h4>
+                            <ul style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)', lineHeight: '1.8', listStyle: 'none', padding: 0 }}>
+                                <li>✅ Etablert løsning (15+ sentre)</li>
+                                <li>✅ Simulator-spesialisering</li>
+                                <li>✅ Instruktør-matching</li>
+                                <li>✅ Dedikert support</li>
+                                <li>✅ Prøveresultater-integrasjon</li>
+                                <li>✅ Høyt tilpasset golfsenteret</li>
+                                <li>📱 Tilgjengelig nå</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div style={{ marginTop: '2rem', padding: '2rem', background: 'rgba(76, 175, 80, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
+                        <p style={{ marginBottom: '0.5rem' }}>
+                            <strong>💡 Usikker?</strong> Vi hjelper deg velge riktig løsning basert på din klubbs behov!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Typiske Brukstilfeller</h2>
+
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🏌️ Turneringer</h4>
+                            <p>Opprett turnering, håndter påmelding, synkroniser resultat, send meldinger til deltakere.</p>
+                        </div>
+
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>📚 Kurs & Undervisning</h4>
+                            <p>Profil booker timer, medlemmer registrerer seg, priser varierer per instruktør.</p>
+                        </div>
+
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🎉 Arrangementer</h4>
+                            <p>Nyttår-fest, sommerseminar, juniorcamp. Enkel påmelding og betaling.</p>
+                        </div>
+
+                        <div style={{ padding: '1.5rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '8px' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>🤝 Møterom</h4>
+                            <p>Styre-møter, sommermøter, klubbhuskurs. Kalender synkroniseres til Google.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
 
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -101,7 +172,7 @@ const BookingKalender = () => {
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
                         <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Hva er forskjellen på GKIT Booking og CS Booking?</h4>
-                        <p>CS Booking fra Scangolf er et etablert system med 15+ sentre. GKIT Booking er vår egen løsning med tettere integrasjon mot våre andre systemer (Søknadsportalen, Display, etc.).</p>
+                        <p>CS Booking fra Scangolf er spesialisert på simulator og instruktør-booking. GKIT Booking er mer fleksibel for turneringer, arrangementer og frivillig-planlegging. Vi hjelper deg velge!</p>
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
@@ -112,6 +183,11 @@ const BookingKalender = () => {
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
                         <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Fungerer det med GolfBox?</h4>
                         <p>Ja, vi integrerer med GolfBox for medlemsdata og automatisk oppdatering av tilganger.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan resultater vises på display-tavler?</h4>
+                        <p>Ja! Integrasjon med Digital Signage gjør at turnering-resultater vises på storskjermer i klubbhuset i sanntid.</p>
                     </div>
 
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>

@@ -4,6 +4,8 @@ import '../styles/wireframe-light.css'
 import { homeContent as localHomeContent } from '../config/homeContent'
 import { db } from '../firebase'
 import { doc, getDoc } from 'firebase/firestore'
+import SEOMeta from '../components/SEOMeta'
+import { organizationSchema, serviceSchema } from '../utils/seoSchemas'
 
 function Home() {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -57,6 +59,13 @@ function Home() {
 
     return (
         <div style={{ backgroundColor: '#FFFFFF', color: '#111827', fontFamily: 'Inter, Arial, sans-serif', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <SEOMeta
+                title="Golfklubbens IT"
+                description="Din partner for digital modernisering av norske golfklubber. Vi leverer GolfBox automatisering, Google Workspace, ClubsiteCMS, og smarte digitale løsninger."
+                keywords="golfklubb, IT løsninger, GolfBox, Workspace, ClubsiteCMS, digitalisering, golf system"
+                url="https://golfklubb-it-website.web.app/"
+                schema={organizationSchema}
+            />
             <style>{`
                 * { margin: 0; padding: 0; box-sizing: border-box; }
                 html, body { background-color: #FFFFFF !important; color: #111827 !important; }

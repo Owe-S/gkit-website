@@ -3,8 +3,35 @@ import Navbar from '../components/Navbar'
 import GraphicFiller from '../components/GraphicFiller'
 import Footer from '../components/Footer'
 import '../App.css'
+import SEOMeta from '../components/SEOMeta'
+import { serviceSchema } from '../utils/seoSchemas'
 
 const Services = () => {
+    const breadcrumbs = [
+        { name: 'Hjem', url: 'https://golfklubb-it-website.web.app/' },
+        { name: 'Tjenester', url: 'https://golfklubb-it-website.web.app/services' },
+    ]
+
+    return (
+        <>
+            <SEOMeta
+                title="Tjenester - IT løsninger for golfklubber | Golfklubbens IT"
+                description="Vi tilbyr komplette IT tjenester for golfklubber: GolfBox automatisering, Google Workspace, ClubsiteCMS implementering, integrasjoner og digital modernisering."
+                keywords="IT tjenester, golfklubb IT, GolfBox integrasjon, Google Workspace, ClubsiteCMS, IT konsultasjon"
+                url="https://golfklubb-it-website.web.app/services"
+                schema={serviceSchema(
+                    'IT Tjenester for Golfklubber',
+                    'Komplette IT løsninger og konsulentbistand for norske golfklubber',
+                    'https://golfklubb-it-website.web.app/services',
+                    '$$$'
+                )}
+                breadcrumbs={breadcrumbs}
+            />
+        </>
+    )
+}
+
+function ServicesContent() {
     const services = [
         {
             icon: '⚙️',

@@ -1,10 +1,32 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import '../../App.css'
+import SEOMeta from '../../components/SEOMeta'
+import { softwareApplicationSchema, breadcrumbSchema } from '../../utils/seoSchemas'
 
 const Workspace = () => {
+    const breadcrumbs = [
+        { name: 'Hjem', url: 'https://golfklubb-it-website.web.app/' },
+        { name: 'Produkter', url: 'https://golfklubb-it-website.web.app/products' },
+        { name: 'Google Workspace', url: 'https://golfklubb-it-website.web.app/products/workspace' },
+    ]
+
     return (
         <div className="app">
+            <SEOMeta
+                title="Google Workspace for Golfklubber - E-post, Drive, Meet"
+                description="Profesjonell e-post, ubegrenset lagring, videomøter for 250+ deltakere. Gratis for norske golfklubber som non-profit. Oppsett, migrering og support inkludert."
+                keywords="Google Workspace, Gmail, Google Drive, Google Meet, golfklubb e-post, cloud løsning"
+                url="https://golfklubb-it-website.web.app/products/workspace"
+                schema={softwareApplicationSchema(
+                    'Google Workspace',
+                    'Profesjonell e-post, Drive, Meet og samarbeidsverktøy for golfklubber',
+                    'https://golfklubb-it-website.web.app/products/workspace',
+                    'BusinessApplication',
+                    'https://golfklubb-it-website.web.app/workspace-image.png'
+                )}
+                breadcrumbs={breadcrumbs}
+            />
             <header className="header">
                 <Navbar />
             </header>
@@ -207,6 +229,96 @@ const Workspace = () => {
                 </div>
             </section>
 
+            {/* Goodstack Verification Support */}
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Verifisering med Goodstack</h2>
+                <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem', fontSize: '1.1rem', color: 'var(--color-gray-light)' }}>
+                    For å få gratis Google Workspace må klubben verifiseres som godkjent non-profit. Vi hjelper deg gjennom hele prosessen.
+                </p>
+
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px' }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📋</div>
+                            <h4>1. Dokumentasjon</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Vi sjekker at klubben har korrekt dokumentasjon og skattemyndighetenes ID.
+                            </p>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px' }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🔐</div>
+                            <h4>2. Goodstack-verifisering</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Vi søker gjennom Goodstack-plattformen (2-4 uker).
+                            </p>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px' }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>✅</div>
+                            <h4>3. Godkjenning</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Når klubben er godkjent får dere non-profit status hos Google.
+                            </p>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px' }}>
+                            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🚀</div>
+                            <h4>4. Aktivering</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Vi setter opp gratis Workspace og migrerer eksisterende data.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style={{ marginTop: '2rem', padding: '2rem', background: 'var(--color-bg-light)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                        <p style={{ marginBottom: '0.5rem' }}>
+                            <strong>💡 Viktig:</strong> Alle norske idretts- og frivillighetsklubber kvalifiserer automatisk som non-profit! Du trenger bare riktig dokumentasjon.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Integration Examples */}
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Integrasjon med GKIT</h2>
+                <p style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2rem', fontSize: '1.1rem', color: 'var(--color-gray-light)' }}>
+                    Google Workspace fungerer perfekt sammen med andre GKIT-løsninger:
+                </p>
+
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px', borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>ClubsiteCMS + Workspace</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Delte Google Drives for klubbwebsiten innhold. Administrasjon gjennom Google Docs og Sheets.
+                            </p>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px', borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>GolfBox + Workspace</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Automatisk e-post fra GolfBox, delte spreadsheets for rapporter, Google Sheets integrasjoner.
+                            </p>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px', borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Booking + Workspace</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Automatisk kalender-synkronisering, avtaler i Google Calendar, e-post varsler.
+                            </p>
+                        </div>
+
+                        <div style={{ padding: '2rem', background: 'rgba(76, 175, 80, 0.05)', borderRadius: '12px', borderTop: '4px solid var(--color-gkit-green)' }}>
+                            <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Søknadsportal + Workspace</h4>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--color-gray-light)' }}>
+                                Automatiserte e-poster, Google Forms for søknader, Google Sheets for rapporter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Why Choose Us */}
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Hvorfor velge oss?</h2>
@@ -216,6 +328,11 @@ const Workspace = () => {
                         <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
                             <h4>✅ Komplett oppsett</h4>
                             <p>Domenekonfigurasjon, brukeropprettelse, sikkerhet. Vi setter opp alt.</p>
+                        </div>
+
+                        <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>
+                            <h4>✅ Non-profit verifisering</h4>
+                            <p>Vi hjelper med hele Goodstack-prosessen for å få gratis Google Workspace.</p>
                         </div>
 
                         <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'rgba(76, 175, 80, 0.05)', borderLeft: '4px solid var(--color-gkit-green)', borderRadius: '8px' }}>

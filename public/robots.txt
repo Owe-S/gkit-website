@@ -1,0 +1,34 @@
+# Robots.txt for Golfklubbens IT Website
+# This file tells search engines how to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /products/
+Allow: /apps/
+Allow: /integrations/
+Allow: /services/
+Allow: /about/
+Allow: /contact/
+
+# Disallow paths
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /dist/
+
+# Sitemap location
+Sitemap: https://golfklubb-it-website.web.app/sitemap.xml
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

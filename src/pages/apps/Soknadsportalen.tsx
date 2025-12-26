@@ -94,6 +94,41 @@ const Soknadsportalen = () => {
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Eksempel: Søknadsflyt for Medlemskap</h2>
+
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <p style={{ textAlign: 'center', color: 'var(--color-gray-light)', marginBottom: '2rem' }}>
+                        Slik fungerer medlemskapsøknaden fra start til slutt:
+                    </p>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)' }}>1. Søker Fyller ut Skjema</h4>
+                        <p>Ny søker besøker portalen og fyller ut medlemskapsformularen med navn, kontakt og betalingsinformasjon.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)' }}>2. Admin Mottar Varsel</h4>
+                        <p>Administratoren får e-post med varsel om ny søknad. Alle søknader samles i ett sted i admin-panelet.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)' }}>3. Admin Gjennomgår og Godkjenner</h4>
+                        <p>Admin vurderer søknaden, godkjenner eller avviser den, og skriver eventuelle merknader.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)' }}>4. Søker Notifiseres</h4>
+                        <p>Søker mottar e-post med resultat. Godkjente søkere får instruksjoner for å fullføre registreringen.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)' }}>5. Fullstendig Sporbarhet</h4>
+                        <p>Admin-panel viser full historikk: hvem som behandlet søknaden, når den ble behandlet, og alle merknadene som ble gjort.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>
                 <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Ofte Stilte Spørsmål</h2>
 
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -115,6 +150,11 @@ const Soknadsportalen = () => {
                     <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
                         <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Er det GDPR-kompatibelt?</h4>
                         <p>Ja, all data lagres kryptert i Google Cloud med norsk datalagring. Full sporbarhet og slettemekanismer er på plass.</p>
+                    </div>
+
+                    <div style={{ padding: '1.5rem', marginBottom: '1rem', background: 'var(--color-bg-dark)', borderRadius: '8px' }}>
+                        <h4 style={{ color: 'var(--color-gkit-green)', marginBottom: '0.5rem' }}>Kan vi tilpasse skjemaene?</h4>
+                        <p>Ja! Admin-panelet lar deg lage egne skjemaer med egne felter og spørsmål. Ingen kodingskompetanse nødvendig.</p>
                     </div>
                 </div>
             </section>

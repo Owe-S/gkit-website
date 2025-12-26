@@ -2,10 +2,25 @@ import Navbar from '../components/Navbar'
 import GraphicFiller from '../components/GraphicFiller'
 import Footer from '../components/Footer'
 import '../App.css'
+import SEOMeta from '../components/SEOMeta'
+import { organizationSchema } from '../utils/seoSchemas'
 
 const About = () => {
+    const breadcrumbs = [
+        { name: 'Hjem', url: 'https://golfklubb-it-website.web.app/' },
+        { name: 'Om oss', url: 'https://golfklubb-it-website.web.app/about' },
+    ]
+
     return (
         <div className="app">
+            <SEOMeta
+                title="Om Golfklubbens IT - Din partner for digitalisering"
+                description="Lær om Golfklubbens IT. Vi er spesialister på digital modernisering av norske golfklubber med GolfBox, Google Workspace, ClubsiteCMS og smarte løsninger."
+                keywords="Golfklubbens IT, om oss, golf IT løsninger, norske golfklubber, digital modernisering"
+                url="https://golfklubb-it-website.web.app/about"
+                schema={organizationSchema}
+                breadcrumbs={breadcrumbs}
+            />
             <header className="header">
                 <Navbar />
             </header>

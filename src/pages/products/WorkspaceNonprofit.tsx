@@ -233,6 +233,85 @@ const WorkspaceNonprofit = () => {
                             Ja, f.eks. gratis for tillitsvalgte og rabattert Business Standard for ansatte.
                         </p>
                     </div>
+
+                    <div style={{ marginBottom: '2rem', padding: '2rem', background: 'var(--color-bg-light)', borderRadius: '12px' }}>
+                        <h4 style={{ marginBottom: '1rem', color: 'var(--color-gkit-green)' }}>
+                            Hva hvis vi mister non-profit status?
+                        </h4>
+                        <p style={{ color: 'var(--color-gray-light)' }}>
+                            Google vil varsle dere 30 dager før rabattene fjernes. Dere kan da konvertere til ordinær betaling.
+                        </p>
+                    </div>
+
+                    <div style={{ marginBottom: '2rem', padding: '2rem', background: 'var(--color-bg-light)', borderRadius: '12px' }}>
+                        <h4 style={{ marginBottom: '1rem', color: 'var(--color-gkit-green)' }}>
+                            Finnes det andre Google-tjenester vi kan få rabatt på?
+                        </h4>
+                        <p style={{ color: 'var(--color-gray-light)' }}>
+                            Ja! Google for Nonprofits gir også rabatt på Google Cloud, Analytics, Ad Grants, og flere tjenester.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Useful Links */}
+            <section className="container section-padding">
+                <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Nyttige Ressurser</h2>
+
+                <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Google for Nonprofits - Offisiell Info</h3>
+                        <div style={{ display: 'grid', gap: '0.75rem' }}>
+                            <a href="https://www.google.com/nonprofits/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                📌 Google Nonprofits Hovedportal (engelsk)
+                            </a>
+                            <a href="https://support.google.com/nonprofits/?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                📌 Google Nonprofits Hjelpesenter (norsk)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Søknad & Kvalifikasjon</h3>
+                        <div style={{ display: 'grid', gap: '0.75rem' }}>
+                            <a href="https://support.google.com/nonprofits/answer/3215869?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                ✅ Kvalifikasjonskrav for norske organisasjoner
+                            </a>
+                            <a href="https://support.google.com/nonprofits/answer/12172927?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                📊 Hvordan finne skattemyndighetenes ID
+                            </a>
+                            <a href="https://support.google.com/nonprofits/answer/3367223?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                📝 Steg-for-steg søknadsprosess
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Verifisering (Goodstack)</h3>
+                        <div style={{ display: 'grid', gap: '0.75rem' }}>
+                            <a href="https://support.google.com/nonprofits/answer/12016036?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                🔐 Goodstack-verifiseringsprosess
+                            </a>
+                            <a href="https://support.google.com/nonprofits/answer/1614637?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                ⏳ Sjekk søknadsstatus
+                            </a>
+                            <a href="https://goodstack.org/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                🌐 Goodstack - Verifiseringsteknologi
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style={{ marginBottom: '2rem' }}>
+                        <h3 style={{ color: 'var(--color-gkit-green)', marginBottom: '1rem' }}>Workspace Aktivering & Guider</h3>
+                        <div style={{ display: 'grid', gap: '0.75rem' }}>
+                            <a href="https://support.google.com/nonprofits/answer/3367631?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                📚 Offisiell 5-stegs aktiveringsveiledning
+                            </a>
+                            <a href="https://support.google.com/workspace/answer/11340911?hl=no" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textAlign: 'left', textDecoration: 'none' }}>
+                                🎓 Google Workspace Læringssenter
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
