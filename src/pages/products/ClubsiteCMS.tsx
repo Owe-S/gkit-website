@@ -48,13 +48,7 @@ const ClubsiteCMS = () => {
             </section>
 
             <section className="container section-padding">
-                <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <img
-                        src="/path/to/clubsite_cms.png"
-                        alt="ClubsiteCMS Dashboard"
-                        style={{ maxWidth: '100%', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)' }}
-                    />
-                </div>
+                <img src="/images/products/clubsite_cms.png" alt="ClubsiteCMS" loading="lazy" style={{ maxWidth: '90%', height: 'auto', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)', maxHeight: '500px', display: 'block', margin: '0 auto 4rem' }} />
             </section>
 
             <section className="container section-padding" style={{ background: 'rgba(76, 175, 80, 0.02)' }}>

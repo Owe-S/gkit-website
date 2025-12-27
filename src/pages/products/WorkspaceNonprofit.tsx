@@ -49,6 +49,8 @@ const WorkspaceNonprofit = () => {
                 </div>
             </section>
 
+            <img src="/images/products/google_workspace.png" alt="Google Workspace" loading="lazy" style={{ maxWidth: '90%', height: 'auto', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)', maxHeight: '500px', display: 'block', margin: '2rem auto 4rem' }} />
+
             {/* What is Google for Nonprofits */}
             <section className="container section-padding">
                 <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
