@@ -234,6 +234,34 @@ Se `src/config/companyConfig.ts` for:
 - **Framtidig:** Invitation system for tilleggsadmins
 - Sign-in ved besøk på `/admin` URL
 
+### OAuth 2.0 Setup
+**Status:** Scripts ready, manual configuration required
+
+**Automated setup:**
+```bash
+# Display configuration guide
+node scripts/configure-oauth.mjs
+
+# Advanced setup with gcloud detection
+node scripts/setup-oauth-auto.mjs
+```
+
+**Manual configuration required:**
+1. Go to: https://console.cloud.google.com/apis/credentials?project=golfklubb-it-website
+2. Add 3 redirect URIs to OAuth client:
+   - `https://golfklubb-it-website.web.app/__/auth/handler`
+   - `https://golfklubb-it-website.web.app/`
+   - `http://localhost:5173/`
+3. Go to: https://console.cloud.google.com/apis/consent/screen?project=golfklubb-it-website
+4. Add test user: `owe-admin@golfklubb-it.com`
+5. Wait 5-10 minutes for propagation
+6. Test login at admin panel
+
+**Reference files:**
+- `OAUTH_CONFIGURATION_STEPS.md` - Full step-by-step guide
+- `scripts/configure-oauth.mjs` - Configuration display script
+- `scripts/setup-oauth-auto.mjs` - Advanced setup with gcloud detection
+
 ### Collections (Firestore)
 ```
 home/          - Forside data (hero, tagline, features)
