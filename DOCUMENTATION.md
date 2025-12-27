@@ -219,6 +219,31 @@ Se `src/config/companyConfig.ts` for:
 - Test kontaktskjema
 - Verify Firebase deployment
 
+## Admin Panel (Innholdsstyring)
+
+**URL:** https://golfklubb-it-website.web.app/admin
+
+### Teknologi
+- Custom React admin panel (ingen external CMS)
+- Firebase Authentication (Google Sign-in)
+- Firestore for data storage
+- Serverless - ingen backend
+
+### Autentisering
+- **Primær admin:** `owe-admin@golfklubb-it.com` (via Google Sign-in)
+- **Framtidig:** Invitation system for tilleggsadmins
+- Sign-in ved besøk på `/admin` URL
+
+### Collections (Firestore)
+```
+home/          - Forside data (hero, tagline, features)
+solutions/     - Produkter og løsninger
+apps/          - App-katalog og integrasjoner
+blog/          - Nyheter og artikler
+admins/        - Admin brukerdata
+invitations/   - Invite tokens for nye admins (kommende)
+```
+
 ## Kontakt & Support
 
 **GitHub Org:** https://github.com/Golfklubb-IT  
@@ -227,4 +252,4 @@ Se `src/config/companyConfig.ts` for:
 
 ---
 
-*Sist oppdatert: December 8, 2025*
+*Sist oppdatert: December 27, 2025*

@@ -1,5 +1,4 @@
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
     
@@ -8,11 +7,10 @@ service cloud.firestore {
       return request.auth != null;
     }
     
-    // Helper function: Check if user is admin (owe-admin@golfklubb-it.com or registered admin)
+    // Helper function: Check if user is admin
     function isAdmin() {
       return isAuthenticated() && 
-             (request.auth.token.email == 'owe-admin@golfklubb-it.com' ||
-              exists(/databases/$(database)/documents/admins/$(request.auth.uid)));
+             exists(/databases/$(database)/documents/admins/$(request.auth.uid));
     }
     
     // Admin user profiles
@@ -42,24 +40,13 @@ service cloud.firestore {
       allow write: if isAdmin();
     }
     
-    // Allow anyone to submit a lead (contact form)
-    match /leads/{leadId} {
-      allow create: if true;
-      allow read, update, delete: if false;
-    }
-
-    // Allow public read access to site content
-    match /content/{document=**} {
-      allow read: if true;
-      allow write: if false; // Only via Firebase Console or Admin SDK
-    }
-    
-    // Invitation tokens (created by admins, read by unauthenticated users)
+    // Invitation tokens (created by admins, read/used by unauthenticated users)
     match /invitations/{document=**} {
       allow read, write: if isAdmin();
+      allow read: if request.query.limit <= 1 && document == null;
     }
     
-    // Default deny all other access
+    // Deny all by default
     match /{document=**} {
       allow read, write: if false;
     }
