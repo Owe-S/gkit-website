@@ -1,18 +1,26 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut, User } from 'firebase/auth'
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore'
 import '../styles/Admin.css'
+
+interface DocData {
+  id: string
+  [key: string]: any
+}
 
 export default function Admin() {
   const navigate = useNavigate()
   const auth = getAuth()
   const db = getFirestore()
   const [user, setUser] = useState<User | null>(null)
-  const [collections, setCollections] = useState<{ [key: string]: any[] }>({})
+  const [collections, setCollections] = useState<{ [key: string]: DocData[] }>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [activeCollection, setActiveCollection] = useState<string | null>(null)
+  const [selectedDoc, setSelectedDoc] = useState<DocData | null>(null)
+  const [editedDoc, setEditedDoc] = useState<DocData | null>(null)
+  const [saving, setSaving] = useState(false)
 
   // Check authentication
   useEffect(() => {
@@ -33,7 +41,7 @@ export default function Admin() {
     try {
       setLoading(true)
       const collectionsToLoad = ['home', 'solutions', 'apps']
-      const newCollections: { [key: string]: any[] } = {}
+      const newCollections: { [key: string]: DocData[] } = {}
 
       for (const collName of collectionsToLoad) {
         const snapshot = await getDocs(collection(db, collName))
@@ -61,6 +69,67 @@ export default function Admin() {
     } catch (err) {
       console.error('Logout error:', err)
     }
+  }
+
+  const handleSelectDoc = (doc: DocData) => {
+    setSelectedDoc(doc)
+    setEditedDoc(JSON.parse(JSON.stringify(doc)))
+  }
+
+  const handleInputChange = (key: string, value: any) => {
+    if (editedDoc) {
+      setEditedDoc({
+        ...editedDoc,
+        [key]: value
+      })
+    }
+  }
+
+  const handleSave = async () => {
+    if (!editedDoc || !activeCollection) return
+
+    try {
+      setSaving(true)
+      const docRef = doc(db, activeCollection, editedDoc.id)
+      const { id, ...dataToSave } = editedDoc
+      await updateDoc(docRef, dataToSave)
+      
+      // Reload collections
+      await loadCollections()
+      setSelectedDoc(null)
+      setEditedDoc(null)
+    } catch (err) {
+      console.error('Error saving document:', err)
+      setError('Failed to save document')
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const handleDelete = async () => {
+    if (!selectedDoc || !activeCollection) return
+    if (!window.confirm('Are you sure you want to delete this document?')) return
+
+    try {
+      setSaving(true)
+      const docRef = doc(db, activeCollection, selectedDoc.id)
+      await deleteDoc(docRef)
+      
+      // Reload collections
+      await loadCollections()
+      setSelectedDoc(null)
+      setEditedDoc(null)
+    } catch (err) {
+      console.error('Error deleting document:', err)
+      setError('Failed to delete document')
+    } finally {
+      setSaving(false)
+    }
+  }
+
+  const handleCancel = () => {
+    setSelectedDoc(null)
+    setEditedDoc(null)
   }
 
   if (loading) {
@@ -101,7 +170,11 @@ export default function Admin() {
               <button
                 key={collName}
                 className={`admin-nav-item ${activeCollection === collName ? 'active' : ''}`}
-                onClick={() => setActiveCollection(collName)}
+                onClick={() => {
+                  setActiveCollection(collName)
+                  setSelectedDoc(null)
+                  setEditedDoc(null)
+                }}
               >
                 {collName}
                 <span className="admin-nav-count">
@@ -123,36 +196,150 @@ export default function Admin() {
 
           {activeCollection && collections[activeCollection] && (
             <div className="admin-collection">
-              <h2>{activeCollection} Collection</h2>
-              <div className="admin-documents">
-                {collections[activeCollection].length === 0 ? (
-                  <p className="admin-empty">No documents in this collection</p>
-                ) : (
-                  <table className="admin-table">
-                    <thead>
-                      <tr>
-                        <th>Document ID</th>
-                        <th>Data</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {collections[activeCollection].map(doc => (
-                        <tr key={doc.id}>
-                          <td className="admin-doc-id">{doc.id}</td>
-                          <td>
-                            <details>
-                              <summary>View</summary>
-                              <pre className="admin-json">
-                                {JSON.stringify(doc, null, 2)}
-                              </pre>
-                            </details>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                )}
-              </div>
+              {!selectedDoc ? (
+                <>
+                  <h2>{activeCollection} Collection</h2>
+                  <div className="admin-documents">
+                    {collections[activeCollection].length === 0 ? (
+                      <p className="admin-empty">No documents in this collection</p>
+                    ) : (
+                      <div className="admin-doc-list">
+                        {collections[activeCollection].map(doc => (
+                          <div
+                            key={doc.id}
+                            className="admin-doc-card"
+                            onClick={() => handleSelectDoc(doc)}
+                          >
+                            <h3>{doc.id}</h3>
+                            <p className="admin-doc-preview">
+                              {Object.keys(doc).length} fields
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </>
+              ) : editedDoc ? (
+                <>
+                  <div className="admin-editor-header">
+                    <h2>Edit: {selectedDoc.id}</h2>
+                    <div className="admin-editor-actions">
+                      <button
+                        onClick={handleCancel}
+                        className="admin-btn-secondary"
+                        disabled={saving}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={handleDelete}
+                        className="admin-btn-danger"
+                        disabled={saving}
+                      >
+                        Delete
+                      </button>
+                      <button
+                        onClick={handleSave}
+                        className="admin-btn-primary"
+                        disabled={saving}
+                      >
+                        {saving ? 'Saving...' : 'Save'}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="admin-editor-form">
+                    {Object.keys(editedDoc).map(key => {
+                      if (key === 'id') return null
+                      const value = editedDoc[key]
+                      const type = typeof value
+
+                      return (
+                        <div key={key} className="admin-form-group">
+                          <label htmlFor={key}>
+                            {key}
+                            <span className="admin-field-type">({type})</span>
+                          </label>
+
+                          {type === 'string' && value.length > 100 ? (
+                            <textarea
+                              id={key}
+                              value={value}
+                              onChange={e =>
+                                handleInputChange(key, e.target.value)
+                              }
+                              rows={4}
+                              className="admin-input admin-textarea"
+                            />
+                          ) : type === 'string' ? (
+                            <input
+                              id={key}
+                              type="text"
+                              value={value}
+                              onChange={e =>
+                                handleInputChange(key, e.target.value)
+                              }
+                              className="admin-input"
+                            />
+                          ) : type === 'number' ? (
+                            <input
+                              id={key}
+                              type="number"
+                              value={value}
+                              onChange={e =>
+                                handleInputChange(key, Number(e.target.value))
+                              }
+                              className="admin-input"
+                            />
+                          ) : type === 'boolean' ? (
+                            <div className="admin-checkbox-group">
+                              <input
+                                id={key}
+                                type="checkbox"
+                                checked={value}
+                                onChange={e =>
+                                  handleInputChange(key, e.target.checked)
+                                }
+                                className="admin-checkbox"
+                              />
+                              <label htmlFor={key} className="admin-checkbox-label">
+                                {value ? 'Yes' : 'No'}
+                              </label>
+                            </div>
+                          ) : type === 'object' ? (
+                            <textarea
+                              id={key}
+                              value={JSON.stringify(value, null, 2)}
+                              onChange={e => {
+                                try {
+                                  const parsed = JSON.parse(e.target.value)
+                                  handleInputChange(key, parsed)
+                                } catch {
+                                  // Invalid JSON, update raw
+                                  handleInputChange(key, e.target.value)
+                                }
+                              }}
+                              rows={4}
+                              className="admin-input admin-textarea admin-json-input"
+                            />
+                          ) : (
+                            <input
+                              id={key}
+                              type="text"
+                              value={String(value)}
+                              onChange={e =>
+                                handleInputChange(key, e.target.value)
+                              }
+                              className="admin-input"
+                            />
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </>
+              ) : null}
             </div>
           )}
         </main>
