@@ -13,6 +13,68 @@ interface DocData {
   [key: string]: any
 }
 
+// Helper function to format database field names to human-readable labels
+const formatFieldName = (fieldName: string): string => {
+  // Map of database field names to human-readable labels
+  const fieldLabelMap: { [key: string]: string } = {
+    id: 'ID',
+    ctaPrimary: 'CTA Primary',
+    ctaSecondary: 'CTA Secondary',
+    tagline: 'Tagline',
+    title: 'Title',
+    description: 'Description',
+    details: 'Details',
+    features: 'Features',
+    imageUrl: 'Image URL',
+    category: 'Category',
+    icon: 'Icon',
+    url: 'URL',
+    slug: 'Slug',
+    updatedAt: 'Last Updated',
+    createdAt: 'Created',
+    price: 'Price',
+    discount: 'Discount',
+    active: 'Active',
+    published: 'Published',
+    featured: 'Featured',
+  }
+
+  // Return mapped label or convert camelCase to Title Case
+  if (fieldLabelMap[fieldName]) {
+    return fieldLabelMap[fieldName]
+  }
+
+  // Convert camelCase to Title Case: ctaPrimary -> CTA Primary
+  return fieldName
+    .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+    .replace(/^./, (str) => str.toUpperCase()) // Capitalize first letter
+    .replace(/([A-Z])\s([A-Z])/g, '$1$2') // Remove spaces in acronyms like "C T A"
+    .trim()
+}
+
+// Helper function to format Firestore Timestamp
+const formatTimestamp = (value: any): string => {
+  try {
+    // Check if it's a Firestore Timestamp object
+    if (value && typeof value === 'object' && 'toDate' in value) {
+      return value.toDate().toLocaleString()
+    }
+    // Check if it's a JavaScript Date
+    if (value instanceof Date) {
+      return value.toLocaleString()
+    }
+    // Check if it's a plain object with timestamp-like structure
+    if (value && typeof value === 'object' && ('_seconds' in value || 'seconds' in value)) {
+      const seconds = value._seconds || value.seconds || 0
+      return new Date(seconds * 1000).toLocaleString()
+    }
+    // Fallback
+    return 'Not set'
+  } catch (e) {
+    return 'Invalid timestamp'
+  }
+}
+
 export default function Admin() {
   const navigate = useNavigate()
   const auth = getAuth()
@@ -269,7 +331,7 @@ export default function Admin() {
                       return (
                         <div key={key} className={`admin-form-group ${(['features', 'details', 'description'].includes(key)) ? 'admin-form-group-full' : ''}`}>
                           <label htmlFor={key}>
-                            {key}
+                            {formatFieldName(key)}
                             <span className="admin-field-type">({type})</span>
                             {key === 'updatedAt' && <span className="admin-field-locked">🔒 Auto-set</span>}
                           </label>
@@ -277,7 +339,7 @@ export default function Admin() {
                           {/* Read-only timestamp field */}
                           {key === 'updatedAt' ? (
                             <div className="admin-timestamp-display">
-                              <p>{value instanceof Date ? value.toLocaleString() : 'Not set'}</p>
+                              <p>{formatTimestamp(value)}</p>
                             </div>
                           ) : /* Array Editor for features */
                           type === 'object' && Array.isArray(value) && key === 'features' ? (
@@ -422,21 +484,28 @@ export default function Admin() {
                               </span>
                             </div>
                           ) : type === 'object' ? (
-                            <textarea
-                              id={key}
-                              value={JSON.stringify(value, null, 2)}
-                              onChange={e => {
-                                try {
-                                  const parsed = JSON.parse(e.target.value)
-                                  handleInputChange(key, parsed)
-                                } catch {
-                                  // Invalid JSON, update raw
-                                  handleInputChange(key, e.target.value)
-                                }
-                              }}
-                              rows={4}
-                              className="admin-input admin-textarea admin-json-input"
-                            />
+                            // For objects like updatedAt timestamps, show read-only formatted display
+                            (key === 'updatedAt' || key === 'createdAt') ? (
+                              <div className="admin-json-display">
+                                <pre className="admin-json-code">{JSON.stringify(value, null, 2)}</pre>
+                              </div>
+                            ) : (
+                              <textarea
+                                id={key}
+                                value={JSON.stringify(value, null, 2)}
+                                onChange={e => {
+                                  try {
+                                    const parsed = JSON.parse(e.target.value)
+                                    handleInputChange(key, parsed)
+                                  } catch {
+                                    // Invalid JSON, update raw
+                                    handleInputChange(key, e.target.value)
+                                  }
+                                }}
+                                rows={4}
+                                className="admin-input admin-textarea admin-json-input"
+                              />
+                            )
                           ) : (
                             <input
                               id={key}
