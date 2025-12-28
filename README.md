@@ -43,7 +43,87 @@ See `.github/DOCS-UPDATE-CHECKLIST.md` for documentation workflow.
 
 ---
 
-## 📂 Project Structure
+## �‍💼 Admin CMS
+
+The website includes an advanced Firebase-based CMS for managing content without code changes.
+
+### Access Admin Panel
+Visit `/admin` and sign in with your Firebase email address.
+
+### Features ✨
+
+#### Smart Form Editors
+- **Rich Text Editor** - Markdown support for long content
+  - Formatting: **bold**, *italic*, `code`
+  - Headers: H1, H2, H3
+  - Lists with bullet points
+  - Live preview toggle
+
+- **Category Dropdown** - Pre-defined categories
+  - Options: Produkter, Apps, Integrasjoner, Verktøy
+  - Customizable per field
+
+- **Icon Picker** - Visual emoji/icon selection
+  - Quick lookup by category
+  - Copy icon to clipboard
+
+- **Array Editor** - Manage lists of items
+  - Add/remove items
+  - Drag to reorder
+  - Nested field support
+
+- **Image Preview** - Visual confirmation
+  - Shows image thumbnail
+  - Validates image URLs
+
+- **URL Validation** - Smart link handling
+  - Clickable preview (🔗 Open Link)
+  - Opens in new tab
+  - Slug auto-formatting for URL-safe values
+
+- **Auto-Managed Timestamps** - Automatic updatedAt
+  - Sets on save (no manual entry)
+  - Read-only display
+  - Visual lock indicator (🔒)
+
+- **Toggle Switches** - Boolean fields
+  - Clear active/inactive states
+  - Color-coded (🟢 Active / 🔴 Inactive)
+
+- **Number Spinners** - Numeric input
+  - Up/down buttons
+  - Direct input support
+
+#### Collections
+Manage these Firestore collections:
+- **products** - Product descriptions and features
+- **apps** - Application information
+- **integrations** - Integration details
+- **blog** - Blog post content
+
+### Workflow Example
+
+1. Navigate to `/admin`
+2. Select a collection (e.g., "products")
+3. Click a document to edit
+4. Update fields using specialized editors:
+   - Long descriptions → Rich Text Editor
+   - Categories → Dropdown selector
+   - Features list → Array Editor
+   - Icon field → Icon Picker
+5. Click **Save** → `updatedAt` auto-updates
+
+### Technical Details
+- **Database**: Firebase Firestore
+- **Authentication**: Firebase Auth
+- **Components**: `RichTextEditor`, `CategoryDropdown`, `ArrayEditor`, `IconPicker`
+- **Data Types**: Auto-detected (string, number, boolean, array, object)
+
+For detailed documentation, see [PHASE_3_IMPLEMENTATION.md](PHASE_3_IMPLEMENTATION.md).
+
+---
+
+## �📂 Project Structure
 
 - `/src` - React source code
   - `/pages` - Page components (`Home.tsx`, `Club2026.tsx`)

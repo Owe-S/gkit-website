@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut, User } from 'firebase/auth'
-import { getFirestore, collection, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore'
+import { getFirestore, collection, getDocs, updateDoc, deleteDoc, doc, Timestamp } from 'firebase/firestore'
 import ArrayEditor from '../components/ArrayEditor'
 import IconPicker from '../components/IconPicker'
+import RichTextEditor from '../components/RichTextEditor'
+import CategoryDropdown from '../components/CategoryDropdown'
 import '../styles/Admin.css'
 
 interface DocData {
@@ -94,7 +96,14 @@ export default function Admin() {
       setSaving(true)
       const docRef = doc(db, activeCollection, editedDoc.id)
       const { id, ...dataToSave } = editedDoc
-      await updateDoc(docRef, dataToSave)
+      
+      // Auto-set updatedAt timestamp
+      const dataWithTimestamp = {
+        ...dataToSave,
+        updatedAt: new Date()
+      }
+      
+      await updateDoc(docRef, dataWithTimestamp)
       
       // Reload collections
       await loadCollections()
@@ -258,22 +267,41 @@ export default function Admin() {
                       const type = typeof value
 
                       return (
-                        <div key={key} className="admin-form-group admin-form-group-full">
+                        <div key={key} className={`admin-form-group ${(['features', 'details', 'description'].includes(key)) ? 'admin-form-group-full' : ''}`}>
                           <label htmlFor={key}>
                             {key}
                             <span className="admin-field-type">({type})</span>
+                            {key === 'updatedAt' && <span className="admin-field-locked">🔒 Auto-set</span>}
                           </label>
 
-                          {/* Array Editor for features, etc */}
-                          {type === 'object' && Array.isArray(value) && key === 'features' ? (
+                          {/* Read-only timestamp field */}
+                          {key === 'updatedAt' ? (
+                            <div className="admin-timestamp-display">
+                              <p>{value instanceof Date ? value.toLocaleString() : 'Not set'}</p>
+                            </div>
+                          ) : /* Array Editor for features */
+                          type === 'object' && Array.isArray(value) && key === 'features' ? (
                             <ArrayEditor
                               value={value}
                               onChange={v => handleInputChange(key, v)}
                               fieldName={key}
                             />
+                          ) : /* Rich Text Editor for details/description */
+                          ['details', 'description'].includes(key) && type === 'string' ? (
+                            <RichTextEditor
+                              value={value}
+                              onChange={v => handleInputChange(key, v)}
+                              placeholder={`Enter ${key} with markdown support...`}
+                            />
                           ) : /* Icon Picker for icon field */
                           key === 'icon' && type === 'string' ? (
                             <IconPicker
+                              value={value}
+                              onChange={v => handleInputChange(key, v)}
+                            />
+                          ) : /* Category Dropdown */
+                          key === 'category' && type === 'string' ? (
+                            <CategoryDropdown
                               value={value}
                               onChange={v => handleInputChange(key, v)}
                             />
@@ -296,6 +324,32 @@ export default function Admin() {
                                     (e.target as HTMLImageElement).style.display = 'none';
                                   }} />
                                 </div>
+                              )}
+                            </div>
+                          ) : /* Link/URL validation field */
+                          (key === 'url' || key === 'slug') && type === 'string' ? (
+                            <div className="admin-url-field">
+                              <input
+                                id={key}
+                                type="text"
+                                value={value}
+                                onChange={e => {
+                                  const val = e.target.value;
+                                  // For URL: validate format; for slug: enforce lowercase with hyphens
+                                  if (key === 'slug') {
+                                    const cleanSlug = val.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-');
+                                    handleInputChange(key, cleanSlug);
+                                  } else {
+                                    handleInputChange(key, val);
+                                  }
+                                }}
+                                placeholder={key === 'url' ? 'https://...' : 'url-slug-format'}
+                                className="admin-input"
+                              />
+                              {key === 'url' && value && (
+                                <a href={value} target="_blank" rel="noopener noreferrer" className="admin-url-preview">
+                                  🔗 Open Link
+                                </a>
                               )}
                             </div>
                           ) : type === 'string' && value.length > 100 ? (
