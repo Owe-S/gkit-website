@@ -480,11 +480,65 @@
   border-radius: 0 0 4px 4px;
 }
 
-/* Image Field with Preview (Phase 1) */
+/* Image Field with Preview and Upload (Phase 3+) */
 .admin-image-field {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+.admin-image-input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.admin-image-input-group .admin-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-image-upload-btn {
+  background: rgba(16, 185, 129, 0.3);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: rgba(16, 185, 129, 0.9);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.admin-image-upload-btn:hover {
+  background: rgba(16, 185, 129, 0.5);
+  border-color: rgba(16, 185, 129, 0.7);
+}
+
+.admin-image-upload-btn:active {
+  transform: scale(0.98);
+}
+
+.admin-image-uploading {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: rgba(59, 130, 246, 0.9);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-image-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  color: rgba(239, 68, 68, 0.9);
+  font-size: 0.9rem;
 }
 
 .admin-image-preview {

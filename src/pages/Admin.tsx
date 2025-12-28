@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signOut, User } from 'firebase/auth'
 import { getFirestore, collection, getDocs, updateDoc, deleteDoc, doc, Timestamp } from 'firebase/firestore'
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import ArrayEditor from '../components/ArrayEditor'
 import IconPicker from '../components/IconPicker'
 import RichTextEditor from '../components/RichTextEditor'
@@ -117,6 +118,7 @@ export default function Admin() {
   const navigate = useNavigate()
   const auth = getAuth()
   const db = getFirestore()
+  const storage = getStorage()
   const [user, setUser] = useState<User | null>(null)
   const [collections, setCollections] = useState<{ [key: string]: DocData[] }>({})
   const [loading, setLoading] = useState(true)
@@ -125,6 +127,8 @@ export default function Admin() {
   const [selectedDoc, setSelectedDoc] = useState<DocData | null>(null)
   const [editedDoc, setEditedDoc] = useState<DocData | null>(null)
   const [saving, setSaving] = useState(false)
+  const [uploading, setUploading] = useState(false)
+  const [uploadError, setUploadError] = useState<string | null>(null)
 
   // Check authentication
   useEffect(() => {
@@ -186,6 +190,49 @@ export default function Admin() {
         ...editedDoc,
         [key]: value
       })
+    }
+  }
+
+  const handleImageUpload = async (file: File, fieldName: string = 'imageUrl') => {
+    if (!file) return
+    if (!editedDoc || !activeCollection) return
+
+    try {
+      setUploading(true)
+      setUploadError(null)
+
+      // Validate file type
+      if (!file.type.startsWith('image/')) {
+        setUploadError('Please select a valid image file')
+        return
+      }
+
+      // Validate file size (5MB limit)
+      if (file.size > 5 * 1024 * 1024) {
+        setUploadError('Image must be smaller than 5MB')
+        return
+      }
+
+      // Create storage path: /uploads/[collection]/[docId]/[fieldName]-[timestamp].[ext]
+      const timestamp = Date.now()
+      const ext = file.name.split('.').pop()
+      const storagePath = `uploads/${activeCollection}/${editedDoc.id}/${fieldName}-${timestamp}.${ext}`
+      
+      // Upload to Firebase Storage
+      const storageRef = ref(storage, storagePath)
+      await uploadBytes(storageRef, file)
+      
+      // Get download URL
+      const downloadUrl = await getDownloadURL(storageRef)
+      
+      // Update the form field with the URL
+      handleInputChange(fieldName, downloadUrl)
+      setUploadError(null)
+    } catch (err) {
+      console.error('Upload error:', err)
+      setUploadError(`Upload failed: ${err instanceof Error ? err.message : 'Unknown error'}`)
+    } finally {
+      setUploading(false)
     }
   }
 
@@ -405,20 +452,49 @@ export default function Admin() {
                               value={value}
                               onChange={v => handleInputChange(key, v)}
                             />
-                          ) : /* Image URL Field with Preview */
+                          ) : /* Image URL Field with Preview and Upload */
                           key === 'imageUrl' && type === 'string' ? (
                             <div className="admin-image-field">
-                              <input
-                                id={key}
-                                type="text"
-                                value={value}
-                                onChange={e =>
-                                  handleInputChange(key, e.target.value)
-                                }
-                                placeholder="/assets/products/..."
-                                className="admin-input"
-                              />
-                              {value && (
+                              <div className="admin-image-input-group">
+                                <input
+                                  id={key}
+                                  type="text"
+                                  value={value}
+                                  onChange={e =>
+                                    handleInputChange(key, e.target.value)
+                                  }
+                                  placeholder="/assets/products/..."
+                                  className="admin-input"
+                                  disabled={uploading}
+                                />
+                                <label htmlFor={`${key}-upload`} className="admin-image-upload-btn">
+                                  📁 Browse
+                                </label>
+                                <input
+                                  id={`${key}-upload`}
+                                  type="file"
+                                  accept="image/*"
+                                  onChange={e => {
+                                    const file = e.target.files?.[0]
+                                    if (file) {
+                                      handleImageUpload(file, key)
+                                    }
+                                  }}
+                                  style={{ display: 'none' }}
+                                  disabled={uploading}
+                                />
+                              </div>
+                              {uploading && (
+                                <div className="admin-image-uploading">
+                                  ⏳ Uploading image...
+                                </div>
+                              )}
+                              {uploadError && (
+                                <div className="admin-image-error">
+                                  ❌ {uploadError}
+                                </div>
+                              )}
+                              {value && !uploading && (
                                 <div className="admin-image-preview">
                                   <img src={value} alt="Preview" onError={(e) => {
                                     (e.target as HTMLImageElement).style.display = 'none';
