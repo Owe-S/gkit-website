@@ -14,16 +14,38 @@ interface ArrayEditorProps {
 export default function ArrayEditor({ value, onChange, fieldName }: ArrayEditorProps) {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
 
+  // Handle case where value is a string (incorrectly formatted)
+  if (typeof value === 'string') {
+    return (
+      <div className="admin-array-error">
+        <p>⚠️ This field contains text instead of an array.</p>
+        <p className="admin-array-error-text">"{value}"</p>
+        <button
+          type="button"
+          onClick={() => onChange([])}
+          className="admin-array-fix-btn"
+        >
+          Convert to Empty Array
+        </button>
+      </div>
+    )
+  }
+
   const items = Array.isArray(value) ? value : []
 
   const handleAddItem = () => {
-    const newItem: ArrayItem = {}
+    let newItem: ArrayItem = {}
     
     // Guess structure from existing items
     if (items.length > 0) {
       const firstItem = items[0]
-      for (const key of Object.keys(firstItem)) {
-        newItem[key] = ''
+      if (typeof firstItem === 'object') {
+        for (const key of Object.keys(firstItem)) {
+          newItem[key] = ''
+        }
+      } else {
+        // Item is a string/primitive
+        newItem = { value: '' }
       }
     } else {
       // Default structure for common fields
@@ -31,6 +53,9 @@ export default function ArrayEditor({ value, onChange, fieldName }: ArrayEditorP
         newItem.title = ''
         newItem.description = ''
         newItem.icon = ''
+      } else {
+        // Generic structure for unknown arrays
+        newItem = { value: '' }
       }
     }
     
@@ -104,7 +129,13 @@ export default function ArrayEditor({ value, onChange, fieldName }: ArrayEditorP
               >
                 <span className="admin-array-item-number">#{index + 1}</span>
                 <span className="admin-array-item-preview">
-                  {item.title || item.name || item.description?.substring(0, 50) || 'Item'}
+                  {(() => {
+                    const item = items[index]
+                    if (typeof item === 'object') {
+                      return item.title || item.name || item.label || item.description?.substring(0, 40) || 'Item'
+                    }
+                    return String(item).substring(0, 40) || 'Item'
+                  })()}
                 </span>
                 <span className="admin-array-item-arrow">
                   {expandedIndex === index ? '▼' : '▶'}
@@ -113,62 +144,78 @@ export default function ArrayEditor({ value, onChange, fieldName }: ArrayEditorP
 
               {expandedIndex === index && (
                 <div className="admin-array-item-content">
-                  {Object.keys(item).map(fieldKey => {
-                    const fieldValue = item[fieldKey]
-                    const fieldType = typeof fieldValue
+                  {typeof items[index] === 'object' ? (
+                    Object.keys(items[index]).map(fieldKey => {
+                      const fieldValue = items[index][fieldKey]
+                      const fieldType = typeof fieldValue
 
-                    return (
-                      <div key={fieldKey} className="admin-array-field">
-                        <label>{fieldKey}</label>
-                        {fieldType === 'string' && fieldValue.length > 50 ? (
-                          <textarea
-                            value={fieldValue}
-                            onChange={e =>
-                              handleUpdateField(index, fieldKey, e.target.value)
-                            }
-                            rows={3}
-                            className="admin-array-input admin-array-textarea"
-                          />
-                        ) : fieldType === 'string' ? (
-                          <input
-                            type="text"
-                            value={fieldValue}
-                            onChange={e =>
-                              handleUpdateField(index, fieldKey, e.target.value)
-                            }
-                            className="admin-array-input"
-                          />
-                        ) : fieldType === 'number' ? (
-                          <input
-                            type="number"
-                            value={fieldValue}
-                            onChange={e =>
-                              handleUpdateField(index, fieldKey, Number(e.target.value))
-                            }
-                            className="admin-array-input"
-                          />
-                        ) : fieldType === 'boolean' ? (
-                          <input
-                            type="checkbox"
-                            checked={fieldValue}
-                            onChange={e =>
-                              handleUpdateField(index, fieldKey, e.target.checked)
-                            }
-                            className="admin-array-checkbox"
-                          />
-                        ) : (
-                          <input
-                            type="text"
-                            value={String(fieldValue)}
-                            onChange={e =>
-                              handleUpdateField(index, fieldKey, e.target.value)
-                            }
-                            className="admin-array-input"
-                          />
-                        )}
-                      </div>
-                    )
-                  })}
+                      return (
+                        <div key={fieldKey} className="admin-array-field">
+                          <label>{fieldKey}</label>
+                          {fieldType === 'string' && fieldValue.length > 50 ? (
+                            <textarea
+                              value={fieldValue}
+                              onChange={e =>
+                                handleUpdateField(index, fieldKey, e.target.value)
+                              }
+                              rows={3}
+                              className="admin-array-input admin-array-textarea"
+                            />
+                          ) : fieldType === 'string' ? (
+                            <input
+                              type="text"
+                              value={fieldValue}
+                              onChange={e =>
+                                handleUpdateField(index, fieldKey, e.target.value)
+                              }
+                              className="admin-array-input"
+                            />
+                          ) : fieldType === 'number' ? (
+                            <input
+                              type="number"
+                              value={fieldValue}
+                              onChange={e =>
+                                handleUpdateField(index, fieldKey, Number(e.target.value))
+                              }
+                              className="admin-array-input"
+                            />
+                          ) : fieldType === 'boolean' ? (
+                            <input
+                              type="checkbox"
+                              checked={fieldValue}
+                              onChange={e =>
+                                handleUpdateField(index, fieldKey, e.target.checked)
+                              }
+                              className="admin-array-checkbox"
+                            />
+                          ) : (
+                            <input
+                              type="text"
+                              value={String(fieldValue)}
+                              onChange={e =>
+                                handleUpdateField(index, fieldKey, e.target.value)
+                              }
+                              className="admin-array-input"
+                            />
+                          )}
+                        </div>
+                      )
+                    })
+                  ) : (
+                    <div className="admin-array-field">
+                      <label>Value</label>
+                      <input
+                        type="text"
+                        value={String(items[index])}
+                        onChange={e => {
+                          const newItems = [...items]
+                          newItems[index] = e.target.value
+                          onChange(newItems)
+                        }}
+                        className="admin-array-input"
+                      />
+                    </div>
+                  )}
 
                   <div className="admin-array-item-actions">
                     <button
